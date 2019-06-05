@@ -26,14 +26,19 @@ body
 		.sub-header
 			.container
 				div
+					a(href="" class="sub-header__menu-item" data-type="products") Продукция
 					
-					ul
-						li
-							a(href="") Продукция
-						li
-							a(href="") Готовые решения
-						li
-							a(href="") Распродажа
+					a(href="" class="sub-header__menu-item") Готовые решения
+					
+					a(href="" class="sub-header__menu-item") Распродажа
+
+					.products-menu
+						.products-menu__list
+							each val in [{name: 'Беговые дорожки', img: 'treadmill.svg'}, {name: 'Велотренажеры', img: 'spinning.svg'}, {name: 'Эллиптические кросстренажеры', img: 'treadmill.svg'}, {name: 'Гребные тренажеры', img: 'treadmill.svg'}, {name: 'Групповые велотренировки', img: 'spinning.svg'}, {name: 'Тренажеры со стеками', img: 'treadmill.svg'}, {name: 'Свободно нагружаемые тренажеры', img: 'bench.svg'}, {name: 'Многофункциональные силовые тренажеры и Cable Station', img: 'weightlifter.svg'}, {name: 'Степперы и лестничные тренажеры', img: 'treadmill.svg'}, {name: 'Скамьи и стойки', img: 'treadmill.svg'}, {name: 'Тренажеры для верхней части тела', img: 'weight.svg'}, {name: 'Свободные веса', img: 'weights.svg'}]
+								.products-menu__list__item
+									img(src='img/' + val.img, alt="")
+									span= val.name
+
 				div
 					.sign-in
 						img(src="img/user.svg", alt="")
@@ -45,6 +50,9 @@ body
 						img(src="img/favorite.svg", alt="")
 					.cart
 						img(src="img/cart.svg", alt="")
+				
+
+
 			.socials
 					a(href="#" class="socials__item")
 						img(src="img/facebook.svg", alt="")
