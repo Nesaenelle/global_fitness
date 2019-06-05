@@ -1,0 +1,62 @@
+.home-page 
+	.text-block	
+		position: relative
+		margin: 0 200px
+		&:after
+			content: ''
+			position: absolute
+			left: -30px
+			top: 0
+			width: 5px;
+			height: 100%
+			background: #d24a43;
+
+		&--title
+			font-size: 30px
+			font-weight: 500
+			width: 700px
+		&--descr 
+			font-size: 14px
+			line-height: 1.6em
+			margin-top: 20px
+	.grid
+		display: flex
+		justify-content: space-between
+		height: 840px
+		margin-top: 50px
+		& + .bottom-block 
+			margin-top: 80px
+		& > div
+			height: 100%
+			width: calc(50% - 10px)
+			display: flex
+			justify-content: space-between
+			flex-wrap: wrap
+			align-content: space-between;
+		&__item
+			position: relative
+			img
+				width: 100%
+				height: 100%
+				display: block
+				object-fit: cover;
+			&.grid-2-1 
+				width: 100%
+				height: 100%
+			&.grid-4-4
+				width: calc(50% - 10px)
+				height: calc(50% - 10px)
+			&.grid-2-4
+				width: 100%
+				height: calc(50% - 10px)
+			&--text 
+				position absolute
+				background: $c-blue
+				padding: 16px 20px
+				display inline-block
+				color: $c-white
+				text-transform: uppercase
+				font-size: 16px
+				font-weight: 500
+				bottom: 45px
+				

@@ -1,0 +1,59 @@
+doctype html
+head
+	//- title= title
+	link(rel="shortcut icon" href="/favicon.png")
+	meta(content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1" name="viewport")
+	//- block head
+	link(href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,300i,400,400i,500,500i,700,700i,900&display=swap" rel="stylesheet")
+body
+	header
+		.top-header
+			.container
+				div
+					a(href="/" class="logo")
+						img(src="img/main_logo.png", alt="" class="logo")
+						span ukraine
+				div
+					nav
+						ul
+							each val in [{url: 'traiding', name: 'Трейдин', pageName:'traiding'}, {url: 'financing', name: 'Финансирование', pageName:'financing'}, {url: 'diller', name: 'Дилеры', pageName:'diller'}, {url: 'about', name: 'О компании', pageName: "about"}, {url: 'our-work', name: 'Наши работы', pageName:'our-work'}, {url: 'contacts', name: 'Контакты', pageName:'contacts'}]
+								li(class=((val.pageName == htmlWebpackPlugin.options.page) ? 'active' : ''))
+									a(href=val.url + '.html')
+										span= val.name
+					.language
+						.language__value RUS
+
+		.sub-header
+			.container
+				div
+					
+					ul
+						li
+							a(href="") Продукция
+						li
+							a(href="") Готовые решения
+						li
+							a(href="") Распродажа
+				div
+					.sign-in
+						img(src="img/user.svg", alt="")
+						span Вход
+					.search-input
+						input(type="text" placeholder="Поиск на сайте")
+						img(src="img/search.svg", alt="")
+					.favorites
+						img(src="img/favorite.svg", alt="")
+					.cart
+						img(src="img/cart.svg", alt="")
+			.socials
+					a(href="#" class="socials__item")
+						img(src="img/facebook.svg", alt="")
+					a(href="#" class="socials__item")
+						img(src="img/instagram.svg", alt="")
+					a(href="#" class="socials__item")
+						img(src="img/telegram.svg", alt="")
+
+	main(class=htmlWebpackPlugin.options.page + '-page')
+		block content
+
+	include  parts/footer.pug

@@ -1,0 +1,174 @@
+header
+	height: 145px 
+	position relative
+	background: #fff
+	&:before
+		content: ""
+		width: 100%
+		left: 0
+		position: absolute
+		height: 10px
+		bottom: 0;
+		z-index: -1;
+		box-shadow: 0 0 7px -3px #666;
+	nav
+		ul
+			display: flex
+			li
+				&.active, &:hover
+					a
+						span:after 
+							display block
+
+							
+				a
+					display: block
+					padding: 30px 20px
+					font-size: 16px
+				
+					span 
+						position relative
+						&:after 
+							content: ''
+							display none
+							position absolute
+							z-index: 2
+							bottom: -29px
+							height: 2px
+							width: 100%
+							left: 0
+							background: #0786ff
+	.logo 
+		display: flex
+		align-items: center
+
+		img 
+			width: 187px
+			height: 38px
+			&:after 
+				content: ''
+				height: 30px
+				width: 1px
+				backgound: #cccccc
+		span
+			font-size: 38px
+			color: #0786ff
+			font-family: 'Harlow'
+			position: relative
+			margin-left: 20px
+			&:before
+				content: ''
+				background: #aaaaaa
+				width: 1px
+				height: 15px
+				display: block
+				position: absolute
+				left: -10px	
+				top: 0
+				bottom: 0
+				margin: auto
+				
+		
+	.container
+		display: flex
+		justify-content: space-between
+		align-items:center
+		height: 100%
+		max-width: 100%
+		& > div 
+			display: flex
+			height: 100%;
+			display: flex;
+			align-items: center;
+			&:first-child {}
+				
+			&:last-child {
+				// justify-content: flex-end
+			}
+
+	.top-header
+		
+		padding: 10px 0
+		height: 75px
+		.container
+			display: flex
+			justify-content: space-between
+			align-items:center
+		.language
+			margin-left: 60px
+			&__value
+				cursor pointer
+			
+	.sub-header 
+		
+		border-top: 1px solid #f3f3f3
+		height: 70px
+		position relative
+		z-index: 1
+		ul 
+			display: flex
+			margin-left: -36px
+			li
+				a 
+					display: block;
+					color: #363636
+					font-size: 14px
+					padding: 20px 36px
+					text-transform: uppercase
+					font-weight: 600
+		.sign-in
+			display: flex
+			align-items: center
+			margin-right: 30px
+			height: 100%
+			img 
+				width: 30px
+				margin-right: 10px
+				
+		.search-input
+			height: 100%
+			display: flex
+			align-items: center
+			input 
+				border: none
+				padding: 5px 10px
+				border-bottom: 1px solid #ccc
+				margin-right: 20px
+			img
+				width: 30px
+				cursor: pointer
+
+		.favorites 
+			height: 100%
+			width: 100px
+			display flex
+			align-items: center
+			justify-content: center
+			img
+				width: 30px
+
+		.cart 
+			height: 100%
+			width: 100px
+			display flex
+			align-items: center
+			justify-content: center
+			background: #e8e8e8
+			img
+				width: 30px
+
+		.socials
+			display: flex
+			position absolute
+			right: 200px
+			&__item 
+				padding: 12px
+				background: $c-blue 
+				margin: 0 5px
+				transition: 0.1s
+				&:hover 
+					background: darken($c-blue, 10%)
+				img
+					display block
+					width: 14px
+				
