@@ -456,6 +456,35 @@ footer .address {
   color: #0786ff;
   border: 1px solid #0786ff;
 }
+.home-page {
+  padding-top: 0;
+}
+.home-page .main-slider {
+  position: relative;
+  height: calc(100vh - 145px);
+}
+.home-page .main-slider__slide {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.home-page .main-slider__slide:nth-child(1) {
+  background: #f00;
+  left: -240px;
+  z-index: 3;
+}
+.home-page .main-slider__slide:nth-child(2) {
+  left: -120px;
+  background: #008000;
+  z-index: 2;
+}
+.home-page .main-slider__slide:nth-child(3) {
+  z-index: 1;
+  left: 0;
+  background: #00f;
+}
 .home-page .text-block {
   position: relative;
   margin: 0 200px;
