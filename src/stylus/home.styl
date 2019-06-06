@@ -40,7 +40,7 @@
 			&:nth-child(3)
 				z-index: 1
 				left: 0
-				background: #ccc
+				background: #d0d0d0
 				left: 200px
 				&.active {
 					left: 0
@@ -149,9 +149,6 @@
 			align-content: space-between;
 		&__item
 			position: relative
-			&:hover
-				& ^[0]--text 
-					display: none!important
 			img
 				width: 100%
 				height: 100%
@@ -162,7 +159,7 @@
 				height: 100%
 			&.grid-4-4
 				width: calc(50% - 10px)
-				height: calc(50% - 10px)
+				height: calc(50% - 10px)		
 			&.grid-2-4
 				width: 100%
 				height: calc(50% - 10px)
@@ -176,4 +173,7 @@
 				font-size: 24px
 				font-weight: 500
 				bottom: 55px
-				
+				transition: 0.1s
+				&:hover 
+					background: $c-white
+					color: $c-blue

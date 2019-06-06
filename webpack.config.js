@@ -77,6 +77,11 @@ module.exports = {
             template: 'src/template/pages/quality.pug',
             page: 'about'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'catalog.html',
+            template: 'src/template/pages/catalog.pug',
+            page: 'catalog'
+        }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }

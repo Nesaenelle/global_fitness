@@ -35,7 +35,7 @@ body
 					.additional-menu(data-menu="products")
 						.additional-menu__products-list
 							each val in [{name: 'Беговые дорожки', img: 'treadmill.svg'}, {name: 'Велотренажеры', img: 'spinning.svg'}, {name: 'Эллиптические кросстренажеры', img: 'treadmill.svg'}, {name: 'Гребные тренажеры', img: 'treadmill.svg'}, {name: 'Групповые велотренировки', img: 'spinning.svg'}, {name: 'Тренажеры со стеками', img: 'treadmill.svg'}, {name: 'Свободно нагружаемые тренажеры', img: 'bench.svg'}, {name: 'Многофункциональные силовые тренажеры и Cable Station', img: 'weightlifter.svg'}, {name: 'Степперы и лестничные тренажеры', img: 'treadmill.svg'}, {name: 'Скамьи и стойки', img: 'treadmill.svg'}, {name: 'Тренажеры для верхней части тела', img: 'weight.svg'}, {name: 'Свободные веса', img: 'weights.svg'}]
-								.additional-menu__products-list__item
+								a(class="additional-menu__products-list__item" href="catalog.html")
 									img(src='img/' + val.img, alt="")
 									span= val.name
 						.additional-menu__sections

@@ -1,0 +1,79 @@
+.catalog-page 
+	.catalog
+		padding-top: 40px
+		display: flex
+		justify-content: space-between
+		&--descr 
+			font-size: 16px
+			color: #a9a9a9
+			margin-top: 20px;
+		&__filter
+			display: block
+			width: 300px
+			&__section
+				& + .catalog__filter__section
+					margin-top: 30px
+				&--title
+					font-size: 16px
+					text-transform: uppercase
+					font-weight: 500
+					margin:  0 0 20px 0
+				&__item
+					height: 48px
+					display: flex
+					align-items: center
+					border-bottom: 1px solid #e8e8e8
+					input
+						width: 20px
+					img 
+						width: 20px
+					span
+						font-size: 14px
+		&__goods
+			display: block
+			width: calc(100% - 300px - 20px)
+			&--title 
+				font-size: 24px
+				text-transform: uppercase
+			// &--descr
+			// 	font-size: 16px
+			// 	color: #a9a9a9
+			// 	margin-top: 20px;
+			&__sort
+				margin-top: 30px;
+				background: #f8f8f8
+				padding: 15px 20px
+				display: flex
+				justify-content: space-between
+				&__item
+					display: flex
+					align-items: center
+					&--title
+						font-size: 14px
+						margin-right: 10px
+						color: #a9a9a9
+					&--value
+						font-size: 14px
+						color: $c-blue
+						cursor: pointer
+						text-decoration: underline
+			&__grid
+				margin-top: 30px
+				display: flex
+				justify-content: space-between
+				flex-wrap: wrap
+				&__item
+					border: 1px solid #e8e8e8
+					padding: 15px
+					width: calc(100% / 4 - 20px)
+					margin-bottom: 20px
+					&--article
+						font-size: 12px
+					&--favorite
+						font-size: 14px
+					&--img
+						width: 80%
+						display: block
+						margin: auto
+					
+				
