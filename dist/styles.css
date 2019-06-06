@@ -101,7 +101,6 @@ header .container {
   max-width: 100%;
 }
 header .container > div {
-  display: flex;
   height: 100%;
   display: flex;
   align-items: center;
@@ -135,7 +134,11 @@ header .sub-header__menu-item {
   text-transform: uppercase;
   font-weight: 600;
 }
-header .sub-header__menu-item[data-type="products"]:hover ~ .products-menu {
+header .sub-header__menu-item[data-type="products"]:hover ~ .additional-menu[data-menu="products"] {
+  visibility: visible;
+  opacity: 1;
+}
+header .sub-header__menu-item[data-type="solutions"]:hover ~ .additional-menu[data-menu="solutions"] {
   visibility: visible;
   opacity: 1;
 }
@@ -153,15 +156,22 @@ header .sub-header .search-input {
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
+}
+header .sub-header .search-input.active input {
+  width: 250px;
+  padding: 0px 10px;
 }
 header .sub-header .search-input input {
+  height: 40px;
   border: none;
-  padding: 5px 10px;
   border-bottom: 1px solid #ccc;
   margin-right: 20px;
+  width: 0;
+  transition: 0.3s width;
 }
-header .sub-header .search-input img {
-  width: 30px;
+header .sub-header .search-input__img {
+  width: 23px;
   cursor: pointer;
 }
 header .sub-header .favorites {
@@ -204,7 +214,7 @@ header .sub-header .socials__item img {
   display: block;
   width: 14px;
 }
-header .products-menu {
+header .additional-menu {
   position: absolute;
   width: 100%;
   background: #fff;
@@ -216,13 +226,13 @@ header .products-menu {
   opacity: 0;
   visibility: hidden;
   display: flex;
-  transition: 0.2s;
+  transition: 0.1s;
 }
-header .products-menu:hover {
+header .additional-menu:hover {
   visibility: visible;
   opacity: 1;
 }
-header .products-menu:before {
+header .additional-menu:before {
   content: '';
   width: 100%;
   height: 0px;
@@ -231,7 +241,7 @@ header .products-menu:before {
   top: 0;
   left: 0;
 }
-header .products-menu:after {
+header .additional-menu:after {
   content: '';
   width: 100%;
   height: 20px;
@@ -239,43 +249,72 @@ header .products-menu:after {
   left: 0;
   top: -20px;
 }
-header .products-menu__list {
+header .additional-menu__products-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 80%;
 }
-header .products-menu__list__item {
+header .additional-menu__products-list__item {
   width: calc(100% / 6 - 20px);
   margin-bottom: 30px;
 }
-header .products-menu__list__item:hover img {
+header .additional-menu__products-list__item:hover img {
   transform: scale(1.05);
 }
-header .products-menu__list__item img {
+header .additional-menu__products-list__item img {
   width: 50px;
   display: block;
   margin: auto;
-  transform: 0.3s;
+  transition: 0.1s;
 }
-header .products-menu__list__item span {
+header .additional-menu__products-list__item span {
   font-size: 14px;
   width: 83%;
   display: block;
   margin: 20px auto 0;
   text-align: center;
 }
-header .products-menu__sections__item {
+header .additional-menu__sections__item {
   display: block;
   padding: 20px;
   text-transform: uppercase;
   margin-bottom: 1px;
   color: #fff;
 }
-header .products-menu__sections__item:hover {
+header .additional-menu__sections__item:hover {
   background: #0786ff !important;
 }
-header .products-menu__sections__item:last-child {
+header .additional-menu__sections__item:last-child {
   background: #0786ff;
+}
+header .additional-menu__solutions-list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+header .additional-menu__solutions-list__item {
+  width: calc(100% / 5 - 20px);
+}
+header .additional-menu__solutions-list__item:hover img {
+  filter: grayscale(0%);
+}
+header .additional-menu__solutions-list__item img {
+  width: 100%;
+  display: block;
+  margin: auto;
+  border: 1px solid #d24a43;
+  transition: 0.1s;
+  filter: grayscale(100%);
+}
+header .additional-menu__solutions-list__item span {
+  font-size: 14px;
+  width: 83%;
+  display: block;
+  margin: 20px auto 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 footer {
   background: #1f1f1f;
@@ -870,3 +909,4 @@ main {
   font-style: normal;
 }
 /*# sourceMappingURL=src/stylus/style.css.map */
+/*# sourceMappingURL=styles.css.map*/

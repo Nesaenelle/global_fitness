@@ -82,6 +82,7 @@ module.exports = {
             { from: 'src/img', to: 'img' }
         ]),
     ],
+    devtool: 'source-map',
     devServer: {
         contentBase: path.join(__dirname, ''),
         // publicPath: "/",

@@ -76,7 +76,6 @@ header
 		height: 100%
 		max-width: 100%
 		& > div 
-			display: flex
 			height: 100%;
 			display: flex;
 			align-items: center;
@@ -117,7 +116,11 @@ header
 			text-transform: uppercase
 			font-weight: 600
 			&[data-type="products"]:hover
-				& ~ .products-menu
+				& ~ .additional-menu[data-menu="products"]
+					visibility: visible
+					opacity: 1
+			&[data-type="solutions"]:hover
+				& ~ .additional-menu[data-menu="solutions"]
 					visibility: visible
 					opacity: 1
 		.sign-in
@@ -133,13 +136,22 @@ header
 			height: 100%
 			display: flex
 			align-items: center
+			justify-content: flex-end;
+			&.active
+				input
+					width: 250px
+					padding: 0px 10px
+					
 			input 
+				height: 40px
 				border: none
-				padding: 5px 10px
 				border-bottom: 1px solid #ccc
 				margin-right: 20px
-			img
-				width: 30px
+				width: 0
+				transition: 0.3s width
+				
+			&__img
+				width: 23px
 				cursor: pointer
 
 		.favorites 
@@ -177,7 +189,7 @@ header
 					display block
 					width: 14px
 				
-	.products-menu
+	.additional-menu
 		position: absolute
 		width: 100%
 		background: $c-white
@@ -189,7 +201,7 @@ header
 		opacity: 0
 		visibility: hidden
 		display: flex
-		transition: 0.2s
+		transition: 0.1s
 		&:hover 
 			visibility: visible
 			opacity: 1
@@ -208,9 +220,10 @@ header
 			position: absolute
 			left: 0
 			top: -20px
-		&__list
+		&__products-list
 			display: flex
 			flex-wrap: wrap
+			justify-content: space-between
 			width: 80%;
 			&__item
 				width: calc(100%/6 - 20px)
@@ -222,7 +235,7 @@ header
 					width: 50px
 					display: block
 					margin: auto
-					transform: 0.3s
+					transition: 0.1s
 				span
 					font-size: 14px
 					width: 83%
@@ -240,3 +253,28 @@ header
 					background: $c-blue!important
 				&:last-child
 					background: $c-blue
+		&__solutions-list
+			display: flex
+			justify-content: space-between
+			width: 100%
+			&__item
+				width: calc(100%/5 - 20px)
+				&:hover
+					img
+						// transform: scale(1.02)
+						filter: grayscale(0%)
+				img 
+					width: 100%
+					display: block
+					margin: auto
+					border: 1px solid #d24a43
+					transition: 0.1s
+					filter: grayscale(100%)
+				span
+					font-size: 14px
+					width: 83%
+					display: block
+					margin: 20px auto 0
+					text-align: center
+					text-transform:uppercase
+					font-weight: 500

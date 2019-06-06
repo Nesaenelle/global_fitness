@@ -28,30 +28,35 @@ body
 				div
 					a(href="" class="sub-header__menu-item" data-type="products") Продукция
 					
-					a(href="" class="sub-header__menu-item") Готовые решения
+					a(href="" class="sub-header__menu-item" data-type="solutions") Готовые решения
 					
 					a(href="" class="sub-header__menu-item") Распродажа
 
-					.products-menu
-						.products-menu__list
+					.additional-menu(data-menu="products")
+						.additional-menu__products-list
 							each val in [{name: 'Беговые дорожки', img: 'treadmill.svg'}, {name: 'Велотренажеры', img: 'spinning.svg'}, {name: 'Эллиптические кросстренажеры', img: 'treadmill.svg'}, {name: 'Гребные тренажеры', img: 'treadmill.svg'}, {name: 'Групповые велотренировки', img: 'spinning.svg'}, {name: 'Тренажеры со стеками', img: 'treadmill.svg'}, {name: 'Свободно нагружаемые тренажеры', img: 'bench.svg'}, {name: 'Многофункциональные силовые тренажеры и Cable Station', img: 'weightlifter.svg'}, {name: 'Степперы и лестничные тренажеры', img: 'treadmill.svg'}, {name: 'Скамьи и стойки', img: 'treadmill.svg'}, {name: 'Тренажеры для верхней части тела', img: 'weight.svg'}, {name: 'Свободные веса', img: 'weights.svg'}]
-								.products-menu__list__item
+								.additional-menu__products-list__item
 									img(src='img/' + val.img, alt="")
 									span= val.name
-						.products-menu__sections
-							a(class="products-menu__sections__item" href="" style="background: url(img/cardio.png)") Кардио
-							a(class="products-menu__sections__item" href="" style="background: url(img/straight.png)") Силовые
-							a(class="products-menu__sections__item" href="" style="background: url(img/funtional.png)") Функциональные
-							a(class="products-menu__sections__item" href="" style="background: url(img/group.png)") Групповые виды
-							a(class="products-menu__sections__item" href="") Посмотреть всю продукцию
-
+						.additional-menu__sections
+							a(class="additional-menu__sections__item" href="" style="background: url(img/cardio.png)") Кардио
+							a(class="additional-menu__sections__item" href="" style="background: url(img/straight.png)") Силовые
+							a(class="additional-menu__sections__item" href="" style="background: url(img/funtional.png)") Функциональные
+							a(class="additional-menu__sections__item" href="" style="background: url(img/group.png)") Групповые виды
+							a(class="additional-menu__sections__item" href="") Посмотреть всю продукцию
+					.additional-menu(data-menu="solutions")
+						.additional-menu__solutions-list
+							each val in [{name: 'Решение премиум', img: 'premium.png'}, {name: 'Небольшой зал', img: 'smallhall.png'}, {name: 'Отель', img: 'hotel.png'}, {name: 'Зал на 1000 км.км', img: 'bighall.png'}, {name: 'Реабилитация', img: 'reabilitation.png'}]
+								.additional-menu__solutions-list__item
+									img(src='img/' + val.img, alt="")
+									span= val.name
 				div
 					.sign-in
 						img(src="img/user.svg", alt="")
 						span Вход
 					.search-input
 						input(type="text" placeholder="Поиск на сайте")
-						img(src="img/search.svg", alt="")
+						img(src="img/search.svg", alt="" class="search-input__img")
 					.favorites
 						img(src="img/favorite.svg", alt="")
 					.cart
