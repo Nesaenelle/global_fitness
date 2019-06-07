@@ -1,4 +1,7 @@
 .catalog-page 
+	.bottom-block  {
+		margin-top: 80px
+	}
 	.catalog
 		padding-top: 40px
 		display: flex
@@ -69,6 +72,7 @@
 				font-size: 24px
 				text-transform: uppercase
 				position: relative
+				color: #666666
 				&:after
 					content: ''
 					background: $c-blue
@@ -118,6 +122,7 @@
 					display: flex
 					justify-content: space-between
 					flex-wrap: wrap
+					position: relative
 					&--article
 						display: inline-flex
 						font-size: 12px
@@ -133,17 +138,33 @@
 						img
 							width: 15px
 							margin-left: 5px
+					&--label
+						background: #f14a3f
+						padding: 6px 10px
+						font-size: 16px
+						position: absolute
+						right: 10px
+						top: 40px
+						color: $c-white
 					&--descr
 						font-size: 14px
 					&--title
 						font-weight: 500
 						margin-top: 5px
 						font-size: 18px
-					&--price
+					&--price, &--new-price
 						width: 100%
 						font-size: 20px
 						font-weight: 600
 						margin-top: 15px
+						&.disabled
+							font-size: 14px
+							color: #a4a4a4
+							font-weight: 400
+							margin-top: 7px
+					&--new-price
+						color: #f14a3f
+						margin-top: 7px
 					&--img
 						width: 80%
 						display: block
@@ -153,6 +174,8 @@
 						width: 100%
 						display: flex
 						justify-content: space-between
+						a
+							display: block
 						.btn--buy 
 							width: calc(100% - 50px - 10px)
 						.btn--compare
@@ -160,9 +183,110 @@
 							display: flex
 							justify-content: center
 							align-items: center
+							height: 100%
 							&:hover
 								img
 									width: 17px
 							img
 								width: 15px
 								transition: 0.1s
+		
+		.compare
+
+			&--title
+				width: 100%
+				font-size: 24px
+				color: #666666
+				font-weight: 500
+				position: relative
+				&:after 
+					content: ''
+					background: $c-blue
+					height: 2px
+					width: 60px
+					position: absolute
+					left: 0
+					bottom: -14px
+			&-list
+				margin-top: 40px
+				display: flex
+				justify-content: space-between
+				&__item
+					border-right: 1px solid #d6d4d4
+					padding: 10px 0px
+					width: 19%
+					&__top
+						height: 150px
+						padding: 0 30px 0 30px
+						display: flex
+						flex-wrap: wrap
+						align-items: flex-start
+						position: relative
+						&--wrap
+							width: calc(100% - 90px)
+						img
+							width: 80px
+						&--descr
+							font-size: 14px
+						&--title
+							font-size: 18px
+							font-weight: 600
+							margin-top: 4px
+						&--add
+							text-transform: uppercase
+							font-size: 18px
+							font-weight: 500
+							position: absolute
+							width: 200px
+							display: flex
+							align-items: center
+							top: 0
+							bottom: 0
+							margin: auto
+							right: 30px
+							cursor: pointer
+							&:hover
+								i
+									transform: scale(1.05)
+							i 	
+								transition: 0.1s
+								min-width: 50px
+								width: 50px
+								height: 50px
+								background: $c-blue
+								display:  block
+								margin-right: 10px
+								border-radius: 100%
+								position: relative
+								display: flex
+								justify-content: center
+								align-items: center
+								font-style: normal
+								color: $c-white
+								font-size: 38px
+								&:after 
+									content: '+'
+									
+						.btn
+							margin-top: 10px
+							width: 100%
+					&--main
+						display: block
+						width: 24%
+						.compare-list__item__top 
+							img
+								opacity: 0.5
+								width: 180px
+							
+						.compare-list__item--section
+							padding: 0 10px
+							font-weight: 500
+					&--section
+						height: 50px
+						padding: 0 70px
+						color: #424242
+						margin: 20px  0
+						display: flex
+						align-items: center
+						&:nth-child(4)
+							background: #e8e8e8

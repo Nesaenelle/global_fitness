@@ -1,0 +1,37 @@
+extends ../layout.pug
+
+block content
+	.container
+		ul(class="breadcrumbs")
+			li(class="breadcrumbs__item")
+				a(href="/") Главная
+			li(class="breadcrumbs__item") Сравнение
+
+		.catalog
+			.compare
+				.compare--title Сравнение
+				.compare-list
+					.compare-list__item.compare-list__item--main
+						.compare-list__item__top
+							img(src="img/trainersearch.png", alt="")
+							.compare-list__item__top--add 
+								i
+								span Добавить еще одну модель
+						each val in ['Тип инвентаря', 'Цена', 'Производитель', 'Группы мышц', 'Линия', 'Тип упражнения']
+							.compare-list__item--section= val
+					each val in [1,2,3,4]
+						.compare-list__item
+							.compare-list__item__top
+								img(src="img/trainersearch.png", alt="")
+								.compare-list__item__top--wrap
+									.compare-list__item__top--descr Бицепс/трицепс машина 
+									.compare-list__item__top--title Pulsefitness 368
+								button(class="btn btn--buy")
+									svg(viewBox="0 0 2138.327 2138.327")
+										use(xlink:href="#icon-cart")
+									span Купить
+
+							each val in ['Велотренажеры', '68 000 грн.', 'Pulsefitness', 'Пресс', 'Pulsefitness', 'Универсальный']
+								.compare-list__item--section= val
+
+	include ../parts/bottom-block.pug

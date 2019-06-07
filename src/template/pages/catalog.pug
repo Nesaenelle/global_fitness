@@ -32,9 +32,13 @@ block content
 							.catalog__goods__grid__item--price= val.price
 
 							.catalog__goods__grid__item__buttons
-								button(class="btn btn--buy") Купить
-								button(class="btn btn--compare")
-									img(src="img/balance.png", alt="")
+								button(class="btn btn--buy")
+									svg(viewBox="0 0 2138.327 2138.327")
+										use(xlink:href="#icon-cart")
+									span Купить
+								a(href="compare.html")
+									button(class="btn btn--compare")
+										img(src="img/balance.png", alt="")
 				.catalog__goods__bottom
 					include ../parts/pagination.pug
 					button(class="btn btn--transparent") Показать еще
