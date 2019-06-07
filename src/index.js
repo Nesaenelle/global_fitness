@@ -13,7 +13,7 @@ $('.main-slider__slide').hover(
         $(this).prevAll().addClass("inactive");
     },
     function() {
-  
+
     }
 );
 
@@ -32,9 +32,13 @@ $(".slider-range").slider({
         $('.slider-range__to input').val(ui.values[1]);
     },
     create: function() {
-      $('.slider-range__from input').val( $( ".slider-range" ).slider( "values")[0]);
-      $('.slider-range__to input').val( $( ".slider-range" ).slider( "values")[1]);
+        $('.slider-range__from input').val($(".slider-range").slider("values")[0]);
+        $('.slider-range__to input').val($(".slider-range").slider("values")[1]);
     }
 });
 
 
+$('.compare-list__item__top--add').on('click', function() {
+    var compItem = $('.compare-list__scroller').find('.compare-list__item:first').clone();
+    $('.compare-list__scroller').append(compItem);
+});

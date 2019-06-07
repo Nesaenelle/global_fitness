@@ -1,4 +1,5 @@
 extends ../layout.pug
+include ../mixins/product-item
 
 block content
 	.container
@@ -21,24 +22,7 @@ block content
 
 				.catalog__goods__grid
 					each val in [{descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'},{descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}]
-						.catalog__goods__grid__item
-							.catalog__goods__grid__item--article Артикул: 
-								span 1234
-							.catalog__goods__grid__item--favorite Избранное
-								img(src="img/favorite.svg", alt="")
-							img(class="catalog__goods__grid__item--img" src="img/trainersearch.png")
-							.catalog__goods__grid__item--descr= val.descr
-							a(class="catalog__goods__grid__item--title" href="product-card.pug")= val.title
-							.catalog__goods__grid__item--price= val.price
-
-							.catalog__goods__grid__item__buttons
-								button(class="btn btn--buy")
-									svg(viewBox="0 0 2138.327 2138.327")
-										use(xlink:href="#icon-cart")
-									span Купить
-								a(href="compare.html")
-									button(class="btn btn--compare")
-										img(src="img/balance.png", alt="")
+						+product-item(val)
 				.catalog__goods__bottom
 					include ../parts/pagination.pug
 					button(class="btn btn--transparent") Показать еще

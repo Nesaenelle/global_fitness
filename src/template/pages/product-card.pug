@@ -1,15 +1,27 @@
 extends ../layout.pug
+include ../mixins/product-item
+include ../mixins/product-item-discount
 
 block content
 	.container
 		ul(class="breadcrumbs")
 			li(class="breadcrumbs__item")
 				a(href="/") Главная
-			li(class="breadcrumbs__item") Каталог товаров
+			li(class="breadcrumbs__item")
+				a(href="/")  Дополнительное оборудование для тренировок 
+			li(class="breadcrumbs__item")
+				a(href="/") Рукоятки для тяги для тренировок 
+			li(class="breadcrumbs__item") Манжет для тяги улучшеный InterAtletika M13-09-MD
 
 		.catalog
-			include ../parts/catalog-filter.pug
+			.product-card
 
-
+				.catalog--title Похожие товары
+				.catalog__goods__grid 
+					each val in [{descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.', discount: true, newPrice: '65 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.', discount: true, newPrice: '65 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.', discount: true, newPrice: '65 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}]
+						if val.discount
+							+product-item-discount(val)
+						else 
+							+product-item(val)
 
 	include ../parts/bottom-block.pug
