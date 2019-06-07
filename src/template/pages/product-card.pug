@@ -1,0 +1,15 @@
+extends ../layout.pug
+
+block content
+	.container
+		ul(class="breadcrumbs")
+			li(class="breadcrumbs__item")
+				a(href="/") Главная
+			li(class="breadcrumbs__item") Каталог товаров
+
+		.catalog
+			include ../parts/catalog-filter.pug
+
+
+
+	include ../parts/bottom-block.pug

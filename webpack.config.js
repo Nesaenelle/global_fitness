@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StylusNibPlugin = require('nib')
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
     entry: './src/index.js',
@@ -82,11 +83,28 @@ module.exports = {
             template: 'src/template/pages/catalog.pug',
             page: 'catalog'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'sell-out.html',
+            template: 'src/template/pages/sell-out.pug',
+            page: 'catalog'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'product-card.html',
+            template: 'src/template/pages/product-card.pug',
+            page: 'catalog'
+        }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }
         ]),
+        new webpack.ProvidePlugin({
+            // $: "jquery",
+            // jQuery: "jquery",
+            // "window.jQuery": "jquery'",
+            // "window.$": "jquery"
+         })
     ],
+
     devtool: 'source-map',
     devServer: {
         contentBase: path.join(__dirname, ''),

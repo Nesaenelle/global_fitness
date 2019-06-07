@@ -1,0 +1,7 @@
+.pagination
+	each val in [1,2,3,4,5]
+		div(class=(val === 1 ? 'pagination__item active' : 'pagination__item'))= val
+	.pagination__item.dots ...
+	each val in [11,12]
+		.pagination__item= val
+	.pagination__item.next <<

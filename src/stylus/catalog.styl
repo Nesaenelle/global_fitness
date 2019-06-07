@@ -7,6 +7,8 @@
 			font-size: 16px
 			color: #a9a9a9
 			margin-top: 20px;
+			line-height: 1.5em;
+			font-weight: 300;
 		&__filter
 			display: block
 			width: 300px
@@ -16,25 +18,65 @@
 				&--title
 					font-size: 16px
 					text-transform: uppercase
-					font-weight: 500
+					font-weight: 800
 					margin:  0 0 20px 0
+					position: relative
+					color: #424242
+					display: flex
+					align-items: center
+					cursor: pointer
+					font-family: 'Open Sans', sans-serif
+					&.active
+						&:before
+							transform: rotate(-135deg);
+							-webkit-transform: rotate(-135deg);
+							top: 2px
+					&:before
+						content: ''
+						// left: 0
+						margin-right: 7px
+						border: solid black
+						border-width: 0 1px 1px 0
+						display: inline-block
+						padding: 3px
+						position: relative
+						top: -2px
+						// position: absolute
+						transform: rotate(45deg)
+						-webkit-transform: rotate(45deg)
+						transition: 0.2s
 				&__item
 					height: 48px
 					display: flex
 					align-items: center
 					border-bottom: 1px solid #e8e8e8
+					cursor: pointer
 					input
 						width: 20px
 					img 
 						width: 20px
 					span
 						font-size: 14px
+						font-weight: 500
+				.checkbox
+					display: flex
+					& + .checkbox
+						margin-top: 20px
 		&__goods
 			display: block
 			width: calc(100% - 300px - 20px)
 			&--title 
 				font-size: 24px
 				text-transform: uppercase
+				position: relative
+				&:after
+					content: ''
+					background: $c-blue
+					height: 2px
+					width: 60px
+					position: absolute
+					left: 0
+					bottom: -14px
 			// &--descr
 			// 	font-size: 16px
 			// 	color: #a9a9a9
@@ -57,6 +99,12 @@
 						color: $c-blue
 						cursor: pointer
 						text-decoration: underline
+			&__bottom
+				display: flex
+				justify-content: space-between
+				align-items: flex-start
+				margin-top: 20px
+				margin-bottom: 20px
 			&__grid
 				margin-top: 30px
 				display: flex
@@ -67,13 +115,54 @@
 					padding: 15px
 					width: calc(100% / 4 - 20px)
 					margin-bottom: 20px
+					display: flex
+					justify-content: space-between
+					flex-wrap: wrap
 					&--article
+						display: inline-flex
 						font-size: 12px
 					&--favorite
+						font-size: 12px
+						display: inline-flex
+						align-items: center
+						cursor: pointer
+						&:hover 
+							text-decoration: underline
+							img
+								transform: scale(1.1)
+						img
+							width: 15px
+							margin-left: 5px
+					&--descr
 						font-size: 14px
+					&--title
+						font-weight: 500
+						margin-top: 5px
+						font-size: 18px
+					&--price
+						width: 100%
+						font-size: 20px
+						font-weight: 600
+						margin-top: 15px
 					&--img
 						width: 80%
 						display: block
 						margin: auto
-					
-				
+					&__buttons
+						margin-top: 15px
+						width: 100%
+						display: flex
+						justify-content: space-between
+						.btn--buy 
+							width: calc(100% - 50px - 10px)
+						.btn--compare
+							width: 50px
+							display: flex
+							justify-content: center
+							align-items: center
+							&:hover
+								img
+									width: 17px
+							img
+								width: 15px
+								transition: 0.1s

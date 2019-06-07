@@ -1,0 +1,85 @@
+.catalog__filter
+	.catalog__filter__section
+		.catalog__filter__section--title.active Тип инвентаря
+		.catalog__filter__content
+			each val in [{name: 'Велотренажеры'}, {name: 'Беговые дорожки'}, {name: 'Эллиптические кросстренажеры'}, {name: 'Свободно нагружаемые тренажеры'}, {name: 'Многофункциональные силовые тренажеры'}, {name: 'Степперы и лестничные тренажеры'}, {name: 'Гребные тренажеры'}, { name: 'Групповые велотренировки'}, {name: 'Тренажеры со стеками'}, {name: 'Скамьи и стойки'}, {name: 'Тренажеры для верхней части тела'}, {name: 'Свободные веса'}]
+				label(class="catalog__filter__section__item")
+					.checkbox
+						input(type="checkbox")
+						.checkbox--icon
+					img(src="", alt="")
+					span= val.name
+	.catalog__filter__section
+		.catalog__filter__section--title.active Цена
+		.catalog__filter__content
+			.slider-range__wrapper
+				.slider-range__from
+					span от 
+					input(type="text")
+				.slider-range__to
+					span до
+					input(type="text")
+			.slider-range
+
+	.catalog__filter__section
+		.catalog__filter__section--title.active Производитель
+		
+		.catalog__filter__content
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text Pulsefitness
+				.checkbox--extra (24)
+		
+	.catalog__filter__section
+		.catalog__filter__section--title.active Группы мышц
+
+		.catalog__filter__content
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text ноги
+				.checkbox--extra (8)
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text пресс
+				.checkbox--extra (5)
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text универсальный
+				.checkbox--extra (11)
+
+	.catalog__filter__section
+		.catalog__filter__section--title.active Линия
+		.catalog__filter__content
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text Pulsefitness
+				.checkbox--extra (8)
+		
+	.catalog__filter__section
+		.catalog__filter__section--title.active Тип упражнения
+		.catalog__filter__content
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text жим
+				.checkbox--extra (8)
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text отводящие/приводящие
+				.checkbox--extra (8)
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text сгибание/разгибание
+				.checkbox--extra (8)
+			label.checkbox
+				input(type="checkbox")
+				.checkbox--icon
+				.checkbox--text универсальный
+				.checkbox--extra (8)
