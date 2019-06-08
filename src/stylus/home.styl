@@ -11,16 +11,20 @@
 			left: 0
 			top: 0
 			transition: 0.5s ease-in-out
+			animation: slidein 1s ease-in-out
+			visibility: hidden
+			animation-fill-mode: both
 			&:nth-child(1)
 				background: url(../img/slide1.png)
 				background-size: cover
 				background-position: center top
 				
 				z-index: 3
-				left: calc((-100%) + 200px);
+				left: calc((-100%) + 200px)
 				&.active {
 					left: -400px
 				}
+				animation-delay: 0s
 			&:nth-child(2)
 				background: url(../img/slide2.png)
 				background-size: cover
@@ -37,6 +41,7 @@
 				&.inactive {
 					left: calc((-100%) + (200px * 2));
 				}
+				animation-delay: 0.5s
 			&:nth-child(3)
 				z-index: 1
 				left: 0
@@ -45,6 +50,7 @@
 				&.active {
 					left: 0
 				}
+				animation-delay: 1s
 				
 	.banner-block
 		 
@@ -111,7 +117,26 @@
 				font-size: 18px
 				border: none
 				width: 100%
-			
+	.world-map
+		position: relative
+		display: flex
+		padding-left: 400px
+		align-items: center
+		height: 100%
+		&__list
+			background: #f3f3f3
+			border-left: 2px solid $c-border-red
+			padding: 0 30px
+			&--item
+				font-size: 16px
+				color: #1f1f1f
+				padding: 18px 0
+				font-weight: 500
+				&:hover
+					cursor: pointer
+				&:nth-child(2)
+					border-top: 1px solid #c5c5c5
+					border-bottom: 1px solid #c5c5c5
 	
 	.text-block	
 		position: relative
@@ -177,3 +202,16 @@
 				&:hover 
 					background: $c-white
 					color: $c-blue
+					
+
+@keyframes slidein {
+  from {
+  		visibility: hidden
+		transform: translateX(100%)
+  }
+
+  to {
+  	visibility: visible
+  	transform: translateX(0%)
+  }
+}	

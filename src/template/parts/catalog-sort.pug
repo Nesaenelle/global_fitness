@@ -1,0 +1,10 @@
+.catalog__goods__sort
+	each val in [{name: 'Сортировка:', val: 'От дорогих'}, {name: 'Категория:', val: 'Выбрать'}, {name: 'Рекоммендованные:', val: 'Выбрать'}, {name: 'По названию:', val: 'По названию'}, {name: 'По зоне размещения: ', val: 'Выбрать'}]
+		.catalog__goods__sort__item(data-dropdown)
+			.catalog__goods__sort__item--title= val.name
+			.catalog__goods__sort__item--value(data-dropdown-value)= val.val
+			.catalog__goods__sort__item__dropdown
+				.catalog__goods__sort__item__dropdown--item(data-dropdown-item)= val.val + 1
+				.catalog__goods__sort__item__dropdown--item(data-dropdown-item)= val.val + 2
+				.catalog__goods__sort__item__dropdown--item(data-dropdown-item)= val.val + 3
+

@@ -8,6 +8,7 @@
 @import 'home.styl'
 @import 'about.styl'
 @import 'catalog.styl'
+@import 'modal.styl'
 
 $breakpoints = {
 	hd: 1280px
@@ -25,6 +26,17 @@ input, button
 main 
 	min-height: calc(100% - 145px - 270px)
 	padding-top: 30px
+	position: relative
+	overflow: hidden
+	&:after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		box-shadow: 0 0 5px 1px #666
+		height: 0px
+		z-index: 4
 	
 .container 
 	max-width: 1600px;
@@ -46,77 +58,6 @@ main
 			&:before 
 				content: '|'
 				margin: 0 5px
-
-		// a 
-	// padding 0
-	// margin 0
-	// width 100%
-	// height 100%
-	// font-size 100%
-	// @media(max-width $breakpoints.tablet)
-	// 		font-size 90%
-	// font-family 'Nunito', sans-serif
-	// background linear-gradient(45deg,$purple,$light_purple)
-	// display flex
-	// flex-direction column
-	// justify-content center
-	// align-items center
-// h1
-// 	font-size 4rem
-// 	@media(max-width $breakpoints.mobile)
-// 			font-size 3rem
-// 	margin 0
-// 	user-select none
-// h1,h2
-// 	font-family: 'Montserrat', sans-serif
-// 	color #FFF
-// h1,h2,h3
-// 	text-shadow 1px 3px 5px rgba(0,0,0,.3)
-// 	text-align center
-// 	margin 5px 10px
-// h3
-// 	&:hover
-// 		span
-// 			display inline-block
-// 			animation-duration 1s
-// 			// animation-delay .5s	
-// 			animation-timing-function: linear
-// 			animation-iteration-count infinite
-// 			animation-direction: alternate
-// 		span:first-child
-// 			animation-name: leftFlame
-// 			transform-origin right center
-// 		span:last-child
-// 			animation-name: rightFlame
-// 			transform-origin left center
-// a
-// 	color #FFF
-// 	display inline-block
-// 	text-decoration:  none
-// 	user-select none
-// 	transition: transform .1s ease-in
-// 	&:hover
-// 		text-decoration:  underline
-// a.logo
-// 	font-size 1.2em
-// 	& ~ span
-// 			transition: transform 1s ease-out
-// 			transform: translate(0,0)
-// 	&:hover
-// 		transform translate(10px,0)
-// 		& ~ span
-// 			display inline-block
-// 			transform: translate(45px,-100px)
-// 			transition: transform .2s ease-in
-// p	
-// 	text-align center
-// 	display flex
-// 	@media(max-width $breakpoints.mobile)
-// 		flex-direction column
-// 		a
-// 			margin 0 0 10px 0 !important
-// 	a
-// 		margin 0 10px	
 
 
 .bottom-block
@@ -160,6 +101,39 @@ main
 		right: 20px
 		top: 0
 		line-height: 1em
+		
+
+.quality-list
+	margin-top: 40px
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	&__item
+		position: relative
+		width: calc( 100% / 2 - 120px)
+		margin-left: 90px
+		margin-bottom: 30px
+		border-top: 1px solid #ccc
+		padding-top: 30px
+		&:nth-child(1), &:nth-child(2) 
+			border: none
+		img 
+			position: absolute
+			width: 70px
+			left: -90px
+			top: 30px
+			
+		&--title
+			// text-transform: uppercase
+			color: #4f4f4f
+			font-weight: 500
+			
+		&--text
+			margin-top: 20px
+			color: #4f4f4f
+			font-size: 14px
+			font-weight: 300
+			line-height: 1.5em
 
 @font-face {
 	font-family: 'Harlow';

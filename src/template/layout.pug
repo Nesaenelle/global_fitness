@@ -6,6 +6,7 @@ head
 	//- block head
 	link(href="https://fonts.googleapis.com/css?family=Roboto:100,200,300,300i,400,400i,500,500i,700,700i,900&display=swap" rel="stylesheet")
 	link(href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap" rel="stylesheet")
+	link(href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet")
 
 body
 	header
@@ -53,16 +54,17 @@ body
 									img(src='img/' + val.img, alt="")
 									span= val.name
 				div
-					.sign-in
+					.sign-in(modal-button="sign-in")
 						img(src="img/user.svg", alt="")
 						span Вход
 					.search-input
 						input(type="text" placeholder="Поиск на сайте")
 						img(src="img/search.svg", alt="" class="search-input__img")
-					.favorites
+					a(class="favorites" href="")
 						img(src="img/favorite.svg", alt="")
-					.cart
+					a(class="cart" href="")
 						img(src="img/cart.svg", alt="")
+						.cart--value 1
 				
 
 
@@ -78,6 +80,8 @@ body
 		block content
 
 	include  parts/footer.pug
+
+	include parts/sign-in-modal.pug
 
 	div(style="display: none")
 		include  sprite.svg

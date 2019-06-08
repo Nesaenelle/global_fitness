@@ -16,12 +16,130 @@ block content
 		.catalog
 			.product-card
 
+				.product-card__top
+					.catalog--title Манжет для тяги улучшеный InterAtletika M13-09-MD
+					a(href="catalog.html")
+						button(class="btn btn--transparent") Вернуться в каталог
+
+				.product-card__main
+					.product-card__main__slider
+						.product-card__main__slider__thumbs
+							//- each val in [1,2,3,4,5]
+							.product-card__main__slider__thumbs--item
+								img(src="img/product-1.png", alt="")
+							.product-card__main__slider__thumbs--item
+								img(src="img/pulse.png", alt="")
+							.product-card__main__slider__thumbs--item
+								img(src="img/product-1.png", alt="")
+							.product-card__main__slider__thumbs--item
+								img(src="img/product-1.png", alt="")
+							.product-card__main__slider__thumbs--item
+								img(src="img/product-1.png", alt="")
+
+						.product-card__main__slider__img
+							img(src="img/product-1.png", alt="")
+
+						.product-card__main__slider--favorite
+							img(src="img/favorite.svg", alt="")
+						.product-card__main__slider--compare
+							img(src="img/balance-grey.png", alt="")
+						.product-card__main__slider--zoom
+							svg
+								use(xlink:href="#icon-zoom")
+					.product-card__main__info
+						.product-card__main__info--article Артикул: 1234
+						.product-card__main__info--state
+							span Состояние оборудования:
+							b Новое
+						.product-card__main__info--price 142 грн
+						.product-card__main__info--status Есть в наличии
+						.product-card__main__info--buttons
+							button(class="btn btn--buy btn--buy-blue")
+								svg
+									use(xlink:href="#icon-cart")
+								span В корзину
+
+							.input-number
+								input(type="text" init-value="4" max-value="20")
+
+							.dropdown(data-dropdown)
+								.dropdown--value(data-dropdown-value) Дополнительная гарантия
+								.dropdown__list
+									.dropdown__list--item(data-dropdown-item) Дополнительная гарантия 1
+									.dropdown__list--item(data-dropdown-item) Дополнительная гарантия 2
+									.dropdown__list--item(data-dropdown-item) Дополнительная гарантия 3
+
+							button(class="btn btn--transparent") Заказать в 1 клик
+
+						.product-card__main__info__list
+							b Адресная доставка
+							span - цену уточняйте
+
+						.product-card__main__info__list
+							b Самовывоз
+							span - со склада Новой Почты 
+
+						.product-card__main__info__bottom
+							a(href="#")
+								.product-card__main__info__bottom__banner
+									img(src="img/product-banner.png", alt="")
+									.product-card__main__info__bottom__banner--text Inter Atletika
+							.product-card__main__info__bottom--link
+								svg
+									use(xlink:href="#icon-credit-card")
+								span Трейдин
+							.product-card__main__info__bottom--link 
+								svg
+									use(xlink:href="#icon-mobile-shopping")
+								span Лизинг
+				.product-card--wrapper
+					.product-card__menu
+						.product-card__menu--top
+							each val in [{name: 'Описание', active: true}, {name: 'Характеристики'}, {name: 'Комплектация'}]
+								.product-card__menu--item(class=val.active ? 'active' : '')= val.name
+						.product-card__menu--title Описание / Манжет для тяги улучшеный InterAtletika M13-09-MD
+						.product-card__menu--descr Манжет для тяги InterAtletika М3-09 (лямки для щиколоток) имеет удобную и практичную форму. Он применяется как во время выполнения силовых упражнений, так и при занятиях фитнесом, или физкультурой. Сама конструкция состоит из двух комплектующих – D-усиленного кольца, сделанного из стали, и самого неопренового манжета. Все комплектующие высококачественны и износоустойчивы.
+					.product-card__details
+						.product-card__details--top
+							.product-card__details--title Детали производства - почему стоит покупать у нас!
+						.quality-list
+							.quality-list__item
+								img(src="img/award.svg", alt="")
+								.quality-list__item--title Сертифицированный (Восстановленный)
+								.quality-list__item--text Все наши сертифицированные подержанные эллиптические тренажеры прошли инспекцию в 42 пункта. Наши машины тщательно протестированы, профессионально детализированы и упакованы. Этот процесс документируется с помощью изображений и видео и передается покупателю перед отправкой. Наши сертифицированные операционные фитнес-продукты действительно находятся в собственной лиге.
+							.quality-list__item
+								img(src="img/six-pack.svg", alt="")
+								.quality-list__item--title Пластмассы и кожухи
+								.quality-list__item--text Несмотря на незначительные дефекты, кожухи двигателя и другие пластиковые защитные элементы имеют решающее значение для непрерывной работы наших подержанных эллиптических и поперечных тренажеров. Поэтому, после прохождения процесса проверки, только те машины, которые продемонстрировали требуемую целостность, становятся доступными для нашей базы постоянных клиентов.
+							.quality-list__item
+								img(src="img/chip.svg", alt="")
+								.quality-list__item--title Электроника
+								.quality-list__item--text В GFI мы понимаем, что различные электронные функции фитнес-продукта позволяют пользователям оставаться на связи со своими тренировочными целями. В связи с этим все электронные платы и соединения в нашем перечне подержанных эллиптических машин проходят предварительные испытания, чтобы гарантировать, что они соответствуют и превосходят наши строгие стандарты испытаний.
+							.quality-list__item
+								img(src="img/bracket.svg", alt="")
+								.quality-list__item--title Состояние рамы
+								.quality-list__item--text В Global Fitness состояние рамы и других конструктивных элементов - это то, что дает нашим бывшим в употреблении эллиптическим машинам одни из самых высоких оценок в отрасли за поддержку и спокойствие. Мы достигаем этой цели посредством глубокого тестирования и проверки, выполняемой высококвалифицированными инженерами по продукции.
+
+
 				.catalog--title Похожие товары
 				.catalog__goods__grid 
+					.catalog__goods__grid__arrows
+						.catalog__goods__grid__arrows--left
+						.catalog__goods__grid__arrows--right
 					each val in [{descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.', discount: true, newPrice: '65 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.', discount: true, newPrice: '65 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.', discount: true, newPrice: '65 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}]
 						if val.discount
 							+product-item-discount(val)
 						else 
 							+product-item(val)
+				.product-card__bottom
+					a(href="our-clients.html")
+						button(class="btn btn--blue") Отзывы клиентов
+					a(href="catalog.html" class="product-card--back-link") Вернуться в каталог
+
+		.catalog--descr Таким образом сложившаяся структура организации представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Не следует, однако забывать, что консультация с широким активом требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров позволяет оценить значение системы обучения кадров, соответствует насущным потребностям. Товарищи! рамки и место обучения кадров способствует подготовки и реализации дальнейших направлений развития.
+
+		.catalog--descr С другой стороны укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Не следует, однако забывать, что укрепление и развитие структуры играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Товарищи! сложившаяся структура организации в значительной степени обуславливает создание направлений прогрессивного развития.
+
+
 
 	include ../parts/bottom-block.pug

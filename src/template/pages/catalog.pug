@@ -14,11 +14,7 @@ block content
 			.catalog__goods
 				.catalog__goods--title Гидравлические тренажеры
 				.catalog--descr Предлагаем заказать создание сайта под ключ - визитку или корпоративный сайт с уникальным дизайном и полностью готовый под поисковое продвижение. При создании выполняется оптимизация под SEO. Мы создаём адаптивный дизайн, занимаемся доработкой и поддержкой уже работающих ресурсов, делаем их продуктивными и прибыльными.
-				.catalog__goods__sort
-					each val in [{name: 'Сортировка:', val: 'От дорогих'}, {name: 'Категория:', val: 'Выбрать'}, {name: 'Рекоммендованные:', val: 'Выбрать'}, {name: 'По названию:', val: 'По названию'}, {name: 'По зоне размещения: ', val: 'Выбрать'}]
-						.catalog__goods__sort__item
-							.catalog__goods__sort__item--title= val.name
-							.catalog__goods__sort__item--value= val.val
+				include ../parts/catalog-sort.pug
 
 				.catalog__goods__grid
 					each val in [{descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'},{descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}]

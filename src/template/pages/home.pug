@@ -11,15 +11,18 @@ block content
 				a(class="banner-block--link" href="") узнай больше
 		.main-slider__slide
 			.search-block
-				a(href="" class="search-block__link") Кардио оборудование
-				a(href="" class="search-block__link") Зона свободных весов
+				a(href="search.html" class="search-block__link") Кардио оборудование
+				a(href="search.html" class="search-block__link") Зона свободных весов
 				.search-block__input
 					img(src="img/search.svg", alt="" class="search-input__img")
 					input(type="text" placeholder="Что вы ищите?" )
-				a(href="" class="search-block__link") Профессиональные тренажеры
-				a(href="" class="search-block__link") Силовое оборудование
+				a(href="search.html" class="search-block__link") Профессиональные тренажеры
+				a(href="search.html" class="search-block__link") Силовое оборудование
 		.main-slider__slide
-			//- div 3
+			.world-map
+				.world-map__list
+					each val in [{name: 'Европа'}, {name: 'Азиатско-Тихоокеанский регион'}, {name: 'Африка'}]
+						.world-map__list--item= val.name
 
 	.container
 		.text-block 

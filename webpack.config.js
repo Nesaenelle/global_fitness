@@ -98,6 +98,11 @@ module.exports = {
             template: 'src/template/pages/compare.pug',
             page: 'catalog'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'search.html',
+            template: 'src/template/pages/search.pug',
+            page: 'catalog'
+        }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }
