@@ -19,6 +19,7 @@ $breakpoints = {
 
 body 
 	font-family: 'Roboto', sans-serif
+	color: #1f1f1f
 input, button 
 	font-family: 'Roboto', sans-serif
 	
@@ -61,37 +62,41 @@ main
 
 
 .bottom-block
-	padding: 50px 0
+	padding: 39px 0 41px 0
 	margin-top: 50px
 	background: #fafafa
 	position relative
 	overflow: hidden
 	.container 
+		max-width: 1435px
 		position relative
+		align-items: center
 		&:after 
 			content: ''
 			width: 5px
-			height: 100%
-			left: 0
-			top: 0
-			background: $c-border-red
+			height: 86%
+			left: 14px
+			top: 9px
+			background: #f14a3f
 			position: absolute
+			background: $c-border-red
 	& > div
 		display: flex 
 	.btn 
 		z-index: 1
 		position: relative
 	&__title 
-		font-size: 32px
+		font-size: 36px
 		text-transform: uppercase
 		font-weight: 600
 		position relative
 		z-index: 1
 	&__text
-		margin-top: 20px
-		font-size: 16px
-		position relative
-		z-index: 1
+		margin-top: 23px;
+		font-size: 16px;
+		position: relative;
+		z-index: 1;
+		line-height: 1.5em;
 	&__bg-text 
 		font-size: 212px
 		position: absolute

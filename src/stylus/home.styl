@@ -59,22 +59,34 @@
 		right: 0px
 		background: $c-white
 		width: 730px
-		padding: 30px
-		border-left: 2px solid $c-border-red
+		padding: 38px 29px 33px 29px
+		border-left: 3px solid $c-border-red
 		&--title
-			font-size: 36px
+			font-size: 48px
+			font-weight: 600
 		&--text
-			margin-top: 20px
+			margin-top: 14px
 			font-size: 16px
+			line-height: 1.5em
 		&--link
-			margin-top: 20px
+			margin-top: 30px
 			display: block
-			font-size: 16px
+			font-size: 18px
 			color: $c-blue
 			text-transform: uppercase
+			display: flex;
+			align-items: center;
+			&:hover
+				text-decoration: underline
+			svg
+				margin-left: 10px
+				fill: $c-blue
+				width: 16px
+				height: 16px
+				margin-top: -1px
 	.search-block
-		margin-left: 400px
-		width: 460px
+		margin-left: 375px
+		width: 465px
 		display: flex
 		flex-wrap: wrap
 		align-items: center
@@ -82,7 +94,7 @@
 		&:after
 			content: ''
 			position: absolute
-			right: 35px
+			right: 44px
 			height: 180%
 			width: 1px
 			background: $c-white
@@ -97,10 +109,9 @@
 			margin: 14px 0
 			&:hover
 				color: $c-border-red
-			// font-family: mad
 		&__input
 			width: 100%
-			margin: 30px 0
+			margin: 42px 0 46px 0
 			background: $c-white
 			border: 1px solid $c-border-red
 			position: relative
@@ -140,14 +151,14 @@
 	
 	.text-block	
 		position: relative
-		margin: 40px 200px 0 200px
+		margin: 81px 228px 0px 228px
 		&:after
 			content: ''
 			position: absolute
 			left: -30px
-			top: 0
+			top: 10px
 			width: 5px;
-			height: 100%
+			height: calc(100% - 15px)
 			background: $c-border-red;
 
 		&--title
@@ -155,23 +166,25 @@
 			font-weight: 600
 			width: 800px
 		&--descr 
-			font-size: 14px
-			line-height: 1.6em
+			font-size: 16px
+			line-height: 1.65em
 			margin-top: 20px
 	.grid
 		display: flex
 		justify-content: space-between
-		height: 840px
-		margin-top: 50px
+		height: 851px
+		margin-top: 85px
 		& + .bottom-block 
-			margin-top: 80px
+			margin-top: 95px
 		& > div
 			height: 100%
-			width: calc(50% - 10px)
+			width: calc(50%)
 			display: flex
 			justify-content: space-between
 			flex-wrap: wrap
 			align-content: space-between;
+			&:first-child
+				width: calc(50% - 20px)
 		&__item
 			position: relative
 			img
@@ -191,13 +204,13 @@
 			&--text 
 				position absolute
 				background: $c-blue
-				padding: 16px 35px 16px 25px
+				padding: 16px 39px 16px 25px
 				display inline-block
 				color: $c-white
 				text-transform: uppercase
 				font-size: 24px
 				font-weight: 500
-				bottom: 55px
+				bottom: 60px
 				transition: 0.1s
 				&:hover 
 					background: $c-white

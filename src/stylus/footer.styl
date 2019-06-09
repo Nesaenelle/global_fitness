@@ -1,7 +1,7 @@
 footer 
-	background: #1f1f1f
+	background: #191919
 	height: 270px
-	padding: 50px 0
+	padding: 67px 0 50px 0
 	
 	.container
 		max-width: 100%
@@ -9,25 +9,37 @@ footer
 		color: #fff
 		align-items: flex-start
 		justify-content: space-between
+		padding: 0px 40px 0 14px
 		
 	.left
-		width: 35%
+		width: 45%
 		display: flex
 		
 		ul 
+			margin-top: 15px
 			width: 50%
 			display: inline-block
 			vertical-align: top
+			& + ul 
+				width: 45%
+				margin-left: 10px
 			li
-				margin: 5px 0;
+				margin: 8px 0
 				a
 					font-weight: 300
-					// line-height: 2em
+					letter-spacing: 0.8px
 					font-size: 14px
 					&:hover
 						text-decoration: underline
+		.address
+			margin-left: 58px
+			font-weight: 300
+			line-height: 2em
+			font-size: 14px
+			margin-top: 7px
+			letter-spacing: 0.8px
 	.right
-		width: 65%
+		width: 55%
 		display: flex
 		flex-wrap: wrap
 		align-items: center
@@ -35,25 +47,33 @@ footer
 	
 	.menu
 		display: flex
-		margin-top: 30px
+		margin-top: 34px
 		li
 			display: flex
 			font-weight: 300
 			// line-height: 2em
 			font-size: 14px
-			margin: 0 20px
+			margin: 0 25px
 			a
+				letter-spacing: 0.7px
 				&:hover
 					text-decoration: underline
 	
 	.order
 		background: #3b3b3b
-		padding: 15px
+		padding: 19px 20px 19px 23px
 		display: flex
-		max-width: 700px
+		max-width: 636px
 		align-items: center
-		line-height: 1.5em
+		line-height: 1.6em
 		margin-right: 30px
+		font-weight: 300
+		letter-spacing: 0.7px
+		& + a
+			margin-right: 25px
+			margin-left: 47px
+			margin-top: 9px
+
 		.btn
 			margin-left: 20px
 	.logo 
@@ -85,10 +105,5 @@ footer
 				top: 0
 				bottom: 0
 				margin: auto
-	
-	.address
-		margin-left: 30px
-		font-weight: 300
-		line-height: 2em
-		font-size: 14px
+
 		

@@ -13,7 +13,7 @@ body
 		.top-header
 			.container
 				div
-					a(href="" class="logo")
+					a(href="index.html" class="logo")
 						img(src="img/main_logo.png", alt="" class="logo")
 						span ukraine
 				div
@@ -23,8 +23,13 @@ body
 								li(class=((val.pageName == htmlWebpackPlugin.options.page) ? 'active' : ''))
 									a(href=val.url + '.html')
 										span= val.name
-					.language
-						.language__value RUS
+					.language(data-dropdown)
+						.language__value(data-dropdown-value) RUS
+						.language__list
+							.language__list--item(data-dropdown-item) RUS
+							.language__list--item(data-dropdown-item) UA
+							.language__list--item(data-dropdown-item) EN
+
 
 		.sub-header
 			.container
