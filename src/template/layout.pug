@@ -47,15 +47,15 @@ body
 									img(src='img/' + val.img, alt="")
 									span= val.name
 						.additional-menu__sections
-							a(class="additional-menu__sections__item" href="" style="background: url(img/cardio.png)") Кардио
-							a(class="additional-menu__sections__item" href="" style="background: url(img/straight.png)") Силовые
-							a(class="additional-menu__sections__item" href="" style="background: url(img/funtional.png)") Функциональные
-							a(class="additional-menu__sections__item" href="" style="background: url(img/group.png)") Групповые виды
+							each val in [{name: 'Кардио', url: 'cardio.png'}, {name: 'Силовые', url: 'straight.png'}, {name: 'Функциональные', url: 'funtional.png'}, {name: 'Групповые виды', url: 'group.png'}]
+								a(class="additional-menu__sections__item" href="" style={background: 'url(img/'+val.url+')'})= val.name
+									svg
+										use(xlink:href="#icon-right-arrow")
 							a(class="additional-menu__sections__item" href="") Посмотреть всю продукцию
 					.additional-menu(data-menu="solutions")
 						.additional-menu__solutions-list
 							each val in [{name: 'Решение премиум', img: 'premium.png'}, {name: 'Небольшой зал', img: 'smallhall.png'}, {name: 'Отель', img: 'hotel.png'}, {name: 'Зал на 1000 км.км', img: 'bighall.png'}, {name: 'Реабилитация', img: 'reabilitation.png'}]
-								.additional-menu__solutions-list__item
+								a(class="additional-menu__solutions-list__item" href="#")
 									img(src='img/' + val.img, alt="")
 									span= val.name
 				div
@@ -86,7 +86,7 @@ body
 
 	include  parts/footer.pug
 
-	include parts/sign-in-modal.pug
+	include parts/modals.pug
 
 	div(style="display: none")
 		include  sprite.svg

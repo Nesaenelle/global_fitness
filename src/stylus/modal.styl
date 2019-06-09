@@ -33,12 +33,12 @@
 		width: 100%
 		background: $c-white
 		box-shadow: 0 0 20px -10px #666
-		padding: 35px
+		padding: 38px 30px 30px 34px
 		position: relative
 	&--close
 		position: absolute
-		right: 10px
-		top: 10px
+		right: 4px
+		top: 9px
 		width: 20px
 		height: 20px
 		cursor: pointer
@@ -52,12 +52,14 @@
 		font-weight: 500
 		width: 100%
 		color: #666666
-		margin-bottom: 20px
+		margin-bottom: 23px
+		letter-spacing: 0.6px;
 	label
 		font-size: 14px
 		color: #555555
 		line-height: 1.4em
-		font-weight: 300
+		font-weight: 400
+		letter-spacing: 0.2px;
 	&--link
 		color: $c-blue
 		font-size: 16px
@@ -72,38 +74,40 @@
 		flex-wrap: wrap
 		width: 100%
 		.modal--link
-			margin: 10px 0 15px 0
+			margin: 14px 0 18px 0
 		.modal--link
 			width: 100%
 			margin-left: auto
 		input
 			margin-top: 15px
 			width: 100%
-			padding: 17px 15px
+			padding: 19px 15px
 			border: 1px solid #e8e8e8
 			& + label
-				margin-top: 20px
-		
+				margin-top: 27px
+		input[type="password"]
+			& + label
+				margin-top: 18px
 	&--left
 		display: flex
 		flex-wrap: wrap
-		width: calc(65% - 30px)
+		width: calc(65% - 47px)
 	&--right
 		// display: none
 		position: relative
 		// flex-wrap: wrap
-		width: calc(35%)
+		width: calc(35% + 14px)
 		
 		img
 			cursor: pointer
-			margin-top: 12px
+			margin-top: 14px
 			&:hover
 				transform: scale(1.01)
 			& + img
-				margin-top: 8px
+				margin-top: 11px
 			
 		.modal--link 
-			bottom: 13px
+			bottom: 16px
 			right: 0px
 			position: absolute
 			
@@ -115,18 +119,20 @@
 	.sign-in
 		.modal--form
 			.btn 
-				margin-right: 10px
-				padding: 12px 10px
-				width: 150px
+				margin-right: 26px
+				padding: 17px 10px
+				width: 166px
 				&--transparent
+					font-size: 16px
+					width: auto
 					border-color: transparent
 	.sign-up
 		.modal--form
 			.btn 
 				margin-right: 10px
-				padding: 14px 10px
-				font-size: 14px
-				font-weight: 400
+				padding: 17px 10px;
+				font-size: 16px;
+				font-weight: 500
 				margin-top: 10px
 				& + label
 					margin-top: 15px

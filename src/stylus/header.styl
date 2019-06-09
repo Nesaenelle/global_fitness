@@ -8,9 +8,9 @@ header
 		left: 0
 		position: absolute
 		height: 10px
-		bottom: 0;
-		z-index: -1;
-		box-shadow: 0 0 7px -3px #666;
+		bottom: 0
+		z-index: -1
+		box-shadow: 0 0 7px -3px #666
 	nav
 		ul
 			display: flex
@@ -36,7 +36,7 @@ header
 							display none
 							position absolute
 							z-index: 2
-							bottom: -29px
+							bottom: -32px
 							height: 2px
 							width: 100%
 							left: 0
@@ -79,9 +79,9 @@ header
 		height: 100%
 		max-width: 100%
 		& > div 
-			height: 100%;
-			display: flex;
-			align-items: center;
+			height: 100%
+			display: flex
+			align-items: center
 			&:first-child {}
 				
 			&:last-child {
@@ -135,10 +135,10 @@ header
 		z-index: 4
 		
 		.container
-			padding: 0 51px 0 0px;
+			padding: 0 51px 0 0px
 			
 		&__menu-item 
-			display: block;
+			display: block
 			color: #363636
 			font-size: 14px
 			padding: 20px 32px
@@ -172,14 +172,14 @@ header
 				position: absolute
 				right: -12px
 			img 
-				width: 25px;
-				margin-right: 13px;
+				width: 25px
+				margin-right: 13px
 				
 		.search-input
 			height: 100%
 			display: flex
 			align-items: center
-			justify-content: flex-end;
+			justify-content: flex-end
 			position: relative
 			margin-right: 26 px
 			&:after
@@ -232,24 +232,24 @@ header
 				background: darken(#e8e8e8, 10%)
 			img
 				width: 26px
-				position: relative;
-				left: -6px;
+				position: relative
+				left: -6px
 			&--value
-				// font-family: 'PT Sans', sans-serif;
+				// font-family: 'PT Sans', sans-serif
 				position: absolute
 				background: $c-blue
 				font-size: 11px
 				color: $c-white
-				border-radius: 100%;
-				width: 18px;
-				display: flex;
+				border-radius: 100%
+				width: 18px
+				display: flex
 				font-weight: 300
-				align-items: center;
-				justify-content: center;
-				height: 18px;
-				left: 50px;
-				top: 15px;
-				line-height: 1.6em;
+				align-items: center
+				justify-content: center
+				height: 18px
+				left: 50px
+				top: 15px
+				line-height: 1.6em
 
 		.socials
 			display: flex
@@ -259,7 +259,7 @@ header
 			&__item 
 				padding: 11px
 				background: $c-blue 
-				margin: 0 0px 0 9px;
+				margin: 0 0px 0 9px
 				transition: 0.1s
 				&:hover 
 					background: darken($c-blue, 10%)
@@ -274,12 +274,17 @@ header
 		top: 64px
 		left: 0
 		border-bottom: 2px solid $c-border-red
-		padding: 50px 50px
+		
 		z-index: 1
 		opacity: 0
 		visibility: hidden
 		display: flex
+		justify-content: space-between
 		transition: 0.1s
+		&[data-menu=solutions]
+			padding: 42px 33px 30px 50px
+		&[data-menu=products]
+			padding: 68px 50px 30px 41px
 		&:hover 
 			visibility: visible
 			opacity: 1
@@ -302,10 +307,11 @@ header
 			display: flex
 			flex-wrap: wrap
 			justify-content: space-between
-			width: 80%;
+			width: 67%
+			align-content: space-between
 			&__item
 				width: calc(100%/6 - 20px)
-				margin-bottom: 30px
+				min-height: 150px;
 				&:hover
 					img
 						transform: scale(1.05)
@@ -316,21 +322,37 @@ header
 					transition: 0.1s
 				span
 					font-size: 14px
-					width: 83%
+					width: 100%
 					display: block
-					margin: 20px auto 0
+					margin: 19px auto 0
 					text-align: center
 		&__sections
+			width: calc(33% - 60px)
+			padding-right: 150px
+			margin-top: -6px
 			&__item
 				display: block
-				padding: 20px
+				padding: 18px 34px 16px 34px
 				text-transform: uppercase
-				margin-bottom: 1px
+				margin-bottom: 2px
 				color: $c-white
+				font-size: 14px
+				position: relative
+				svg 
+					top: 0
+					bottom: 0
+					right: 17px
+					margin: auto
+					fill: $c-white
+					width: 18px
+					position: absolute
+					height: 18px
 				&:hover
 					background: $c-blue!important
 				&:last-child
 					background: $c-blue
+					text-align: center
+					font-weight: 500
 		&__solutions-list
 			display: flex
 			justify-content: space-between
@@ -352,7 +374,7 @@ header
 					font-size: 14px
 					width: 83%
 					display: block
-					margin: 20px auto 0
+					margin: 22px auto 0
 					text-align: center
 					text-transform:uppercase
 					font-weight: 500
