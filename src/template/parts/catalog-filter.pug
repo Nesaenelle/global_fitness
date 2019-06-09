@@ -1,5 +1,5 @@
 .catalog__filter
-	.catalog__filter__section
+	.catalog__filter__section.no--border
 		.catalog__filter__section--title.active Тип инвентаря
 		.catalog__filter__content
 			each val in [{name: 'Велотренажеры'}, {name: 'Беговые дорожки'}, {name: 'Эллиптические кросстренажеры'}, {name: 'Свободно нагружаемые тренажеры'}, {name: 'Многофункциональные силовые тренажеры'}, {name: 'Степперы и лестничные тренажеры'}, {name: 'Гребные тренажеры'}, { name: 'Групповые велотренировки'}, {name: 'Тренажеры со стеками'}, {name: 'Скамьи и стойки'}, {name: 'Тренажеры для верхней части тела'}, {name: 'Свободные веса'}]
@@ -9,7 +9,7 @@
 						.checkbox--icon
 					img(src="img/treadmill.svg", alt="")
 					span= val.name
-	.catalog__filter__section
+	.catalog__filter__section.no--border
 		.catalog__filter__section--title.active Цена
 		.catalog__filter__content
 			.slider-range__wrapper
@@ -60,7 +60,7 @@
 				.checkbox--text Pulsefitness
 				.checkbox--extra (8)
 		
-	.catalog__filter__section
+	.catalog__filter__section.no--border
 		.catalog__filter__section--title.active Тип упражнения
 		.catalog__filter__content
 			label.checkbox

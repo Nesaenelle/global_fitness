@@ -18,28 +18,29 @@
 				justify-content: center
 				color: $c-blue
 	&--icon
-		width: 16px
-		height: 16px
+		width: 15px
+		height: 15px
 		// background: #ccc
 		border: 1px solid #a9a9a9
 		display: inline-flex
 		align-items: center
 	&--text
 		font-size: 14px
-		margin-left: 10px
+		margin-left: 15px
 		color: #424242
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Open Sans', sans-serif
 		
 	&--extra 
 		margin-left: auto
 		font-size: 16px
 		color: #a1a1a1
-		font-family: 'Open Sans', sans-serif;
+		font-weight: 300
+		font-family: 'Open Sans', sans-serif
 .pagination
 	display: flex
 	&__item
 		font-size: 14px
-		margin: 0 3px
+		margin: 0 2px
 		background: $c-white
 		border: 1px solid #e8e8e8
 		padding: 12px 10px
@@ -52,6 +53,8 @@
 			border: 1px solid $c-blue
 		&.dots
 			border: none
+			width: 18px
+			padding: 14px 0 8px
 			
 		&.next
 			background: #e8e8e8
@@ -63,25 +66,26 @@
 		display: flex
 		justify-content: space-between
 		width: 100%
+		margin-top: 23px
 	&__from, &__to
-		font-family: 'Open Sans', sans-serif;
+		font-family: 'Open Sans', sans-serif
 		color: #424242
 		font-weight: 300
 		input 
 			width: 100%
-			max-width: 120px
-			margin-left: 4px
+			max-width: 110px
+			margin-left: 8px
 			font-size: 16px
 			text-align: center
 			padding: 4px
 			color: #9b9b9b
 			border: 1px solid #e8e8e8
-			font-family: 'Open Sans', sans-serif;
+			font-family: 'Open Sans', sans-serif
 			
 .ui-slider 
 	margin-top: 20px
 	&.ui-slider-horizontal 
-		background: #f1f1f1;
+		background: #f1f1f1
 		height: 3px
 		.ui-slider-range
 			background: $c-blue
@@ -95,11 +99,11 @@
 			// position: relative
 			&:after
 				content: ''
-				width: 0; 
-				height: 0; 
-				border-left: 6px solid transparent;
-				border-right: 6px solid transparent;
-				border-top: 8px solid $c-blue;
+				width: 0 
+				height: 0 
+				border-left: 6px solid transparent
+				border-right: 6px solid transparent
+				border-top: 8px solid $c-blue
 				position: absolute
 				top: 8px
 				
@@ -109,7 +113,7 @@
 	position: relative
 	input
 		text-align: center
-		width: 50px
+		width: 42px
 		font-weight: 600
 		border: 1px solid #e8e8e8
 		color: #4f4f4f
@@ -137,7 +141,7 @@
 	display: inline-flex
 	align-items: center
 	position: relative
-	max-width: 230px
+	width: 227px
 	&.active
 		.dropdown__list
 			opacity: 1
@@ -152,6 +156,7 @@
 		color: #4f4f4f
 		border: 1px solid #e8e8e8
 		height: 100%
+		width: 100%
 		display: flex
 		align-items: center
 		padding: 0 25px 0 15px

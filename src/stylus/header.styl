@@ -103,6 +103,11 @@ header
 			width: 30px
 			margin-top: -2px
 			&.active
+				.language__value
+					&:after
+						top: 3px
+						transform: rotate(225deg)
+						-webkit-transform: rotate(225deg)
 				.language__list
 					opacity: 1
 					visibility: visible
@@ -110,6 +115,24 @@ header
 				text-align: right
 				font-size: 14px
 				cursor pointer
+				color: #1f1f1f
+				&:after
+					content: ''
+					margin-right: 7px
+					border: solid #1f1f1f
+					border-width: 0 1px 1px 0
+					display: inline-block
+					padding: 2px
+					position: absolute
+					right: -13px
+					bottom: 0
+					top: -3px
+					margin: auto
+					width: 0
+					height: 0
+					transform: rotate(45deg)
+					-webkit-transform: rotate(45deg)
+					transition: 0.2s
 			&__list
 				width: 100px
 				background: $c-white
@@ -118,7 +141,7 @@ header
 				visibility: hidden
 				z-index: 6
 				box-shadow: 0 3px 14px -8px #000
-				right: 0
+				right: -18px
 				transition: 0.1s
 				&--item
 					padding: 5px 10px
@@ -311,7 +334,7 @@ header
 			align-content: space-between
 			&__item
 				width: calc(100%/6 - 20px)
-				min-height: 150px;
+				min-height: 150px
 				&:hover
 					img
 						transform: scale(1.05)
