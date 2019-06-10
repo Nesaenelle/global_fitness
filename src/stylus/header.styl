@@ -325,11 +325,18 @@ header
 			z-index: 1
 			@media mqBigMobile
 				right: 20px
+			@media mqMidMobile
+				flex-wrap: wrap
+				width: 36px
+				right: 0
 			&__item 
 				padding: 11px
 				background: $c-blue 
 				margin: 0 0px 0 9px
 				transition: 0.1s
+				@media mqMidMobile
+					margin: 0
+					margin-bottom: 4px
 				&:hover 
 					background: darken($c-blue, 10%)
 				img

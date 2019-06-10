@@ -187,8 +187,12 @@
 			padding-right: 0
 		& + .text
 			margin-top: 45px
+			@media mqSmallTablet
+				margin-top: 25px
 			& + .text 
 				margin-top: 23px
+				@media mqSmallTablet
+					margin-top: 15px
 		&__item
 			width: calc(100%/ 4 - 13px)
 			position relative
@@ -227,17 +231,29 @@
 			margin-top: 39px
 			display: flex
 			justify-content: space-between
+			@media mqBigMobile
+				flex-wrap: wrap
 			&--img
 				min-width: 500px
 				margin-right: 30px
 				border: 2px solid #e8e8e8
+				@media mqSmallTablet
+					min-width: 320px
+				@media mqBigMobile
+					min-width: 280px
+					margin-right: 0
 				img
 					width: 100%
 					display: block
+					height: 100%
+					object-fit: cover
+			
 			&--title
 				font-size: 16px
 				font-weight: 500
 				text-transform: uppercase
+				@media mqBigMobile
+					margin-top: 20px
 			&--descr
 				margin-top: 10px
 				font-size: 14px
@@ -256,6 +272,8 @@
 			position: relative
 			letter-spacing: -0.8px
 			color: #363636
+			@media mqBigMobile
+				margin: 35px 0 35px 0
 			&:after 
 				content: ''
 				background: #e8e8e8
@@ -276,10 +294,25 @@
 			// flex-wrap: wrap
 			padding-right: 20px
 			justify-content: space-between
+			@media mqMidTablet
+				flex-wrap: wrap
+			
 			& + .about-us-menu 
 				margin-top: 96px
+				@media mqMidTablet
+					margin-top: 50px
+				@media mqMidMobile
+					margin-top: 30px
+					
 			&__item
 				width: calc( 100% / 5 - 22px)
+				@media mqMidTablet
+					width: calc( 100% / 3 - 22px)
+					margin-bottom: 30px
+				@media mqBigMobile
+					width: calc( 100% / 2 - 22px)
+				@media mqMidMobile
+					width: 100%
 				img 
 					margin-top: 15px
 					width: 100%
@@ -304,29 +337,49 @@
 		justify-content: space-between
 		margin-top: 30px
 		padding-right: 20px
+		@media mqSmallTablet
+			padding-right: 0
 		& + .text
 			margin-top: 40px
+			@media mqBigMobile 
+				margin-top: 25px
 		&__item 
 			width: calc( 100% / 4 - 15px)
 			height: 206px
 			margin-bottom: 16px
 			border: 2px solid #ececec
 			position: relative
+			display: flex
+			align-items: center
+			justify-content: center
+			@media mqSmallTablet
+				width: calc( 100% / 3 - 15px)
+			@media mqBigMobile
+				width: calc( 100% / 2 - 15px)
+				height: 170px
+			@media mqMidMobile
+				width: 100%
 			&:hover
 				& > div
 					background: $c-blue
 					opacity: 1
 			img
+				width: 100%
+				max-width: 180px
+				object-fit: contain
+				@media mqBigMobile
+					max-width: 150px
+			& > div
 				position: absolute
 				left: 0
-				right: 0
+				// right: 0
 				top: 0
-				bottom: 0
-				margin: auto
-			& > div
+				// bottom: 0
+				// margin: auto
+				
 				opacity: 0
 				padding: 20px
-				position: relative
+				// position: relative
 				transition: 0.1s
 				height: 100%
 				

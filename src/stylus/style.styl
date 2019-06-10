@@ -156,6 +156,12 @@ main
 		margin-bottom: 35px
 		border-top: 1px solid #ccc
 		padding-top: 43px
+		@media mqBigMobile
+			width: 100%
+		@media mqMidMobile
+			padding-top: 25px
+			margin: 0 0 10px 0
+			text-align: center
 		&:nth-child(1), &:nth-child(2) 
 			border: none
 		img 
@@ -163,6 +169,11 @@ main
 			width: 66px
 			left: -88px
 			top: 41px
+			@media mqMidMobile
+				display: block
+				margin: 0 auto 20px
+				position: static
+				width: 55px
 			
 		&--title
 			// text-transform: uppercase
