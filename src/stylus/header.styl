@@ -2,6 +2,8 @@ header
 	height: 145px 
 	position relative
 	background: #fff
+
+	
 	&:before
 		content: ""
 		width: 100%
@@ -12,42 +14,54 @@ header
 		z-index: -1
 		box-shadow: 0 0 7px -3px #666
 	nav
+		@media mqBigMobile
+			display: none
 		ul
 			display: flex
 			li
 				margin: 0 6px
 				&.active, &:hover
-					a
-						span:after 
-							display block
+					a:after 
+						display block
 
-							
 				a
 					display: block
-					padding: 29px 20px 31px 20px
+					padding: 29px 20px 31px
 					font-size: 14px
 					color: #1f1f1f
 					letter-spacing: 0.5px
-				
-					span 
-						position relative
-						&:after 
-							content: ''
-							display none
-							position absolute
-							z-index: 2
-							bottom: -32px
-							height: 2px
-							width: 100%
-							left: 0
-							background: #0786ff
+					position: relative
+					&:after 
+						content: ''
+						display none
+						position absolute
+						z-index: 2
+						bottom: -1px
+						height: 2px
+						width: 100%
+						left: 0
+						background: #0786ff
+					@media mqSmallDesktop
+						padding: 30px 5px 31px
+					@media mqMidTablet
+						font-size: 12px
+						padding: 30px 2px 33px
+
 	.logo 
 		display: flex
 		align-items: center
-
+		@media mqBigMobile
+			display: none
 		img 
 			width: 187px
 			height: 38px
+			object-fit: contain
+			@media mqBigTablet
+				width: 140px
+			@media mqMidTablet
+				width: 120px
+			@media mqSmallTablet
+				width: 100px
 			&:after 
 				content: ''
 				height: 30px
@@ -59,6 +73,13 @@ header
 			font-family: 'Harlow'
 			position: relative
 			margin-left: 20px
+			@media mqBigTablet
+				font-size: 32px
+			@media mqMidTablet
+				// font-size: 28px
+				display: none
+			@media mqSmallTablet
+				// font-size: 24px
 			&:before
 				content: ''
 				background: #aaaaaa
@@ -97,11 +118,15 @@ header
 			justify-content: space-between
 			align-items:center
 			padding: 0 64px 0 32px
+			@media mqBigMobile
+				padding: 0 30px 0 20px
 		.language
 			margin-left: 60px
 			position: relative
 			width: 30px
 			margin-top: -2px
+			@media mqSmallDesktop
+				margin-left: 25px
 			&.active
 				.language__value
 					&:after
@@ -116,6 +141,10 @@ header
 				font-size: 14px
 				cursor pointer
 				color: #1f1f1f
+				@media mqMidTablet
+					font-size: 12px
+				@media mqBigMobile
+					font-size: 14px
 				&:after
 					content: ''
 					margin-right: 7px
@@ -148,6 +177,8 @@ header
 					font-size: 14px
 					color: #1f1f1f
 					cursor: pointer
+					@media mqMidTablet
+						font-size: 12px
 					&:hover
 						background: #e8e8e8
 	.sub-header 
@@ -168,6 +199,15 @@ header
 			text-transform: uppercase
 			letter-spacing: 0.5px
 			font-weight: 600
+			@media mqBigMobile
+				display: none
+				
+			&:first-child
+				@media mqMidTablet
+					margin-left: 30px
+			@media mqMidTablet
+				padding: 20px 10px
+				font-size: 12px
 			&[data-type="products"]:hover
 				& ~ .additional-menu[data-menu="products"]
 					visibility: visible
@@ -251,6 +291,8 @@ header
 			background: #e8e8e8
 			position: relative
 			cursor: pointer
+			@media mqBigMobile
+				width: 60px
 			&:hover
 				background: darken(#e8e8e8, 10%)
 			img
@@ -273,12 +315,16 @@ header
 				left: 50px
 				top: 15px
 				line-height: 1.6em
+				@media mqBigMobile
+					display: none
 
 		.socials
 			display: flex
 			position absolute
 			right: 202px
 			z-index: 1
+			@media mqBigMobile
+				right: 20px
 			&__item 
 				padding: 11px
 				background: $c-blue 
@@ -297,13 +343,14 @@ header
 		top: 64px
 		left: 0
 		border-bottom: 2px solid $c-border-red
-		
 		z-index: 1
 		opacity: 0
 		visibility: hidden
 		display: flex
 		justify-content: space-between
 		transition: 0.1s
+		overflow: hidden
+		
 		&[data-menu=solutions]
 			padding: 42px 33px 30px 50px
 		&[data-menu=products]

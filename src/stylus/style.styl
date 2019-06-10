@@ -1,6 +1,6 @@
-// @import url('https://fonts.googleapis.com/css?family=Montserrat:900|Nunito:400,700')
 @import 'reset.css'
 @import 'variables.styl'
+@import 'mixins.styl'
 @import 'controls.styl'
 @import 'header.styl'
 @import 'footer.styl'
@@ -9,13 +9,6 @@
 @import 'about.styl'
 @import 'catalog.styl'
 @import 'modal.styl'
-
-$breakpoints = {
-	hd: 1280px
-	desktop: 1024px
-	tablet: 768px
-	mobile: 400px
-}
 
 body 
 	font-family: 'Roboto', sans-serif
@@ -43,6 +36,8 @@ main
 	max-width: 1620px
 	margin: auto
 	padding: 0 40px
+	@media mqBigMobile
+		padding: 0 20px
 
 .breadcrumbs
 	&__item
@@ -67,10 +62,19 @@ main
 	background: #fafafa
 	position relative
 	overflow: hidden
+	@media mqBigTablet
+		padding: 30px 30px
+	@media mqBigMobile
+		padding: 30px 30px
+	@media mqSmallMobile
+		padding: 20px
 	.container 
 		max-width: 1435px
 		position relative
 		align-items: center
+		& > div
+			@media mqBigMobile
+				width: 100%
 		&:after 
 			content: ''
 			width: 5px
@@ -80,23 +84,42 @@ main
 			background: #f14a3f
 			position: absolute
 			background: $c-border-red
+			z-index: 1
+			@media mqBigMobile
+				left: 0
+				width: 4px
 	& > div
 		display: flex 
+		@media mqBigMobile
+			flex-wrap: wrap
 	.btn 
 		z-index: 1
 		position: relative
+		@media mqBigMobile
+			margin-top: 20px
+			width: auto
+			padding: 16px 40px
+		@media mqSmallMobile
+			padding: 13px 30px
 	&__title 
 		font-size: 36px
 		text-transform: uppercase
 		font-weight: 600
 		position relative
 		z-index: 1
+		@media mqBigMobile
+			font-size: 28px
+			width: 100%
+		@media mqSmallMobile
+			font-size: 22px
 	&__text
 		margin-top: 23px
 		font-size: 16px
 		position: relative
 		z-index: 1
 		line-height: 1.5em
+		@media mqSmallMobile
+			font-size: 14px
 	&__bg-text 
 		font-size: 212px
 		position: absolute
@@ -106,6 +129,20 @@ main
 		right: 20px
 		top: 0
 		line-height: 1em
+		@media mqBigTablet
+			font-size: 170px
+			bottom: 0
+			top: 0
+			margin: auto
+			height: 100px
+		@media mqSmallTablet
+			font-size: 140px
+		@media mqBigMobile
+			font-size: 100px
+		@media mqMidMobile
+			font-size: 70px
+		@media mqSmallMobile
+			font-size: 60px
 		
 
 .quality-list

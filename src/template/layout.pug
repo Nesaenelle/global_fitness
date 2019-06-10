@@ -21,15 +21,13 @@ body
 						ul
 							each val in [{url: 'traiding', name: 'Трейдин', pageName:'traiding'}, {url: 'financing', name: 'Финансирование', pageName:'financing'}, {url: 'diller', name: 'Дилеры', pageName:'diller'}, {url: 'about', name: 'О компании', pageName: "about"}, {url: 'our-work', name: 'Наши работы', pageName:'our-work'}, {url: 'contacts', name: 'Контакты', pageName:'contacts'}]
 								li(class=((val.pageName == htmlWebpackPlugin.options.page) ? 'active' : ''))
-									a(href=val.url + '.html')
-										span= val.name
+									a(href=val.url + '.html')= val.name
 					.language(data-dropdown)
 						.language__value(data-dropdown-value) RUS
 						.language__list
 							.language__list--item(data-dropdown-item) RUS
 							.language__list--item(data-dropdown-item) UA
 							.language__list--item(data-dropdown-item) EN
-
 
 		.sub-header
 			.container
