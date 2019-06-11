@@ -1,15 +1,20 @@
 $leftWidth = 283px
 .catalog-page 
-	.bottom-block  {
+	.bottom-block
 		margin-top: 80px
-	}
+		@media mqBigMobile
+			margin-top: 40px
 	.catalog
 		padding-top: 43px
 		display: flex
 		padding-right: 20px
 		justify-content: space-between
+		@media mqSmallTablet
+			padding-right: 0
 		& ~ .catalog--descr
 			padding-left: 65px
+			@media mqSmallTablet
+				padding-left: 0
 		&--descr 
 			font-size: 14px
 			color: #a9a9a9
@@ -32,9 +37,41 @@ $leftWidth = 283px
 				position: absolute
 				left: 0
 				bottom: -20px
+		&__filter-switcher
+			display: inline-flex
+			cursor: pointer
+			color: $c-blue
+			margin-top: 20px
 		&__filter
 			display: block
 			width: $leftWidth
+			
+			&.active
+				opacity: 1
+				transform: translateX(0%)
+			@media mqSmallTablet
+				position: fixed
+				left: 0
+				background: $c-white
+				z-index: 5
+				padding: 20px
+				box-shadow: 0 0 20px -5px #ccc
+				transform: translateX(-100%)
+				opacity: 0
+				transition: 0.2s
+				width: $leftWidth + 50px
+				top: 0
+				height: 100%
+				overflow-y: auto
+			&--close
+				position: absolute
+				display: none
+				cursor: pointer
+				right: 20px
+				top: 20px
+				z-index: 5
+				@media mqMidMobile
+					display: block
 			&__section
 				position: relative
 				&:not(.no--border):after
@@ -103,6 +140,8 @@ $leftWidth = 283px
 		&__goods
 			display: block
 			width: "calc(100% - %s - 24px)" % $leftWidth
+			@media mqSmallTablet
+				width: 100%
 			&--title 
 				font-size: 24px
 				// text-transform: uppercase
@@ -166,11 +205,19 @@ $leftWidth = 283px
 				align-items: flex-start
 				margin-top: 25px
 				margin-bottom: 20px
+				@media mqBigMobile
+					flex-wrap: wrap
+					justify-content: center
 				.btn--transparent
 					letter-spacing: 0.4px
 					padding: 12px 38px
+					@media mqBigMobile
+						margin-top: 20px
 				.pagination 
 					margin-left: -3px
+					@media mqBigMobile
+						width: 100%
+						justify-content: center
 			&__grid
 				margin-top: 23px
 				display: flex
@@ -218,7 +265,16 @@ $leftWidth = 283px
 					justify-content: space-between
 					flex-wrap: wrap
 					position: relative
-					
+					@media mqBigTablet
+						width: calc(100% / 3 - 16px)
+					@media mqMidTablet
+						width: calc(100% / 2 - 16px)
+					@media mqSmallTablet
+						width: calc(100% / 3 - 12px)
+					@media mqBigMobile
+						width: calc(100% / 2 - 10px)
+					@media mqMidMobile
+						width: 100%
 					&--link
 						display: block
 						width: 100%
@@ -251,11 +307,19 @@ $leftWidth = 283px
 						margin-top: 13px
 						font-size: 14px
 						letter-spacing: 0.5px
+						@media mqSemiMobile
+							font-size: 13px
+						@media mqMidMobile
+							font-size: 14px
 					&--title
 						font-weight: 500
 						margin-top: 5px
 						font-size: 18px
 						letter-spacing: 0.9px
+						@media mqSemiMobile
+							font-size: 16px
+						@media mqMidMobile
+							font-size: 18px
 					&--price, &--new-price
 						width: 100%
 						font-size: 20px
@@ -263,6 +327,10 @@ $leftWidth = 283px
 						margin-top: 15px
 						margin-top: 20px
 						letter-spacing: 1px
+						@media mqSemiMobile
+							font-size: 18px
+						@media mqMidMobile
+							font-size: 20px
 	
 						&.disabled
 							font-size: 14px
