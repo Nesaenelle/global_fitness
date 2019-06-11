@@ -4,9 +4,10 @@ mixin product-item(params)
 			span 1234
 		.catalog__goods__grid__item--favorite Избранное
 			img(src="img/favorite.svg", alt="")
-		img(class="catalog__goods__grid__item--img" src="img/trainersearch.png")
-		.catalog__goods__grid__item--descr= params.descr
-		a(class="catalog__goods__grid__item--title" href="product-card.html")= params.title
+		a(class="catalog__goods__grid__item--link" href="product-card.html")
+			img(class="catalog__goods__grid__item--img" src="img/trainersearch.png")
+			.catalog__goods__grid__item--descr= params.descr
+			.catalog__goods__grid__item--title= params.title
 		.catalog__goods__grid__item--price= params.price
 
 		.catalog__goods__grid__item__buttons

@@ -1,5 +1,8 @@
 import './stylus/style.styl'
 import $ from 'jquery'
+import './animate'
+import './jquery.magnify.js'
+
 require('webpack-jquery-ui/slider');
 
 $('.search-input__img').on('click', function() {
@@ -18,7 +21,7 @@ setTimeout(()=> {
 
         }
     );
-}, 2000)
+}, 1000)
 
 $('.catalog__filter__section--title').on('click', function() {
     $(this).next().stop().slideToggle(200);
@@ -58,7 +61,15 @@ $('.product-card__menu--item').on('click', function() {
 
 $('.product-card__main__slider__thumbs--item').on('click', function() {
     var src = $(this).find('img').attr('src');
+    var bigImg = $(this).find('img').attr('data-magnify-src');
     $('.product-card__main__slider__img img').attr('src', src);
+    $('.product-card__main__slider__img img').attr('data-magnify-src', bigImg);
+
+    if(magnifyInstance) {
+       magnifyInstance.destroy(); 
+       magnifyInit();
+    }
+ 
 });
 
 $('.input-number').each(function(i, el) {
@@ -95,6 +106,7 @@ $('.input-number').each(function(i, el) {
 
 $('[data-dropdown-value]').on('click', function(e) {
     e.stopPropagation();
+    $('[data-dropdown]').removeClass('active');
     $(this).closest('[data-dropdown]').toggleClass('active');
 });
 
@@ -128,3 +140,36 @@ $('[modal-close]').on('click', function() {
     $('.modal--overlay').removeClass('active');
     $('.modal').removeClass('active');
 });
+
+$('.catalog__goods__grid__item--favorite').on('click', function() {
+       $(this).toggleClass('active')
+});
+
+
+var magnifyInstance = undefined;
+
+$('.product-card__main__slider--zoom').on('click', function() {
+    if(magnifyInstance) {
+        magnifyInstance.destroy();
+        magnifyInstance = undefined;
+    } else {
+        magnifyInit();
+    }
+});
+
+
+function magnifyInit() {
+    magnifyInstance = $('.product-card__main__slider__img img').magnify({
+      'src': '',
+      'speed': 100, 
+      'timeout': -1, 
+      'touchBottomOffset': 0,
+      'finalWidth': null,
+      'finalHeight': null,
+      'magnifiedWidth': null,
+      'magnifiedHeight': null,
+      'limitBounds': false,
+      'mobileCloseEvent': 'touchstart',
+      'afterLoad': function(){}
+    });
+}

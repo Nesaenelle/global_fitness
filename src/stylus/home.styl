@@ -152,6 +152,16 @@
 	.text-block	
 		position: relative
 		margin: 81px 228px 0px 228px
+		@media mqBigTablet
+			margin: 81px 120px 0px 120px
+		@media mqSmallTablet
+			margin: 70px 70px 0px 70px
+		@media mqBigMobile
+			margin: 60px 50px 0px 50px
+		@media mqMidMobile
+			margin: 60px 30px 0px 30px
+		@media mqSmallMobile
+			margin: 60px 15px 0px 15px
 		&:after
 			content: ''
 			position: absolute
@@ -159,23 +169,42 @@
 			top: 10px
 			width: 5px;
 			height: calc(100% - 15px)
-			background: $c-border-red;
+			background: $c-border-red
+			@media mqMidMobile
+				width: 3px
+				left: -20px
 
 		&--title
 			font-size: 36px
 			font-weight: 600
 			width: 800px
+			@media mqBigMobile
+				width: 100%
+				font-size: 26px
+			@media mqMidMobile
+				font-size: 22px
+			@media mqSmallMobile
+				font-size: 18px
 		&--descr 
 			font-size: 16px
 			line-height: 1.65em
 			margin-top: 20px
+			@media mqMidMobile
+				font-size: 14px
 	.grid
 		display: flex
 		justify-content: space-between
 		height: 851px
 		margin-top: 85px
+		@media mqMidTablet
+			flex-wrap: wrap
+			height: auto
 		& + .bottom-block 
 			margin-top: 95px
+			@media mqMidTablet
+				margin-top: 60px
+			@media mqMidMobile
+				margin-top: 30px
 		& > div
 			height: 100%
 			width: calc(50%)
@@ -183,10 +212,19 @@
 			justify-content: space-between
 			flex-wrap: wrap
 			align-content: space-between;
+			@media mqMidTablet
+				width: 100%
 			&:first-child
 				width: calc(50% - 20px)
+				@media mqMidTablet
+					width: 100%
 		&__item
 			position: relative
+			@media mqMidTablet
+				height: 300px!important
+				margin-bottom: 20px
+			@media mqSmallMobile
+				height: 200px!important
 			img
 				width: 100%
 				height: 100%
@@ -212,6 +250,17 @@
 				font-weight: 500
 				bottom: 60px
 				transition: 0.1s
+				@media mqBigTablet
+					font-size: 20px
+					padding: 14px 30px 14px 23px
+				@media mqBigMobile
+					font-size: 18px
+					padding: 12px 22px 12px 22px
+					bottom: 40px
+				@media mqSmallMobile
+					font-size: 16px
+					padding: 12px 15px 12px 15px
+					
 				&:hover 
 					background: $c-white
 					color: $c-blue
@@ -219,12 +268,12 @@
 
 @keyframes slidein {
   from {
-  		visibility: hidden
+		visibility: hidden
 		transform: translateX(100%)
   }
 
   to {
-  	visibility: visible
-  	transform: translateX(0%)
+	visibility: visible
+	transform: translateX(0%)
   }
 }	

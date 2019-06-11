@@ -79,6 +79,11 @@
 			border-radius: 100%
 			border: 5px solid $c-blue
 			background: $c-white
+			cursor: pointer
+			&:hover
+				.circle-block__info
+					opacity: 1
+					visibility: visible
 			@media mqBigTablet
 				border: 4px solid $c-blue
 			&:nth-child(1)
@@ -87,7 +92,11 @@
 				@media mqBigTablet
 					left: 18px
 					top: 27px
-				& > div
+				.circle-block__info
+					transform: translate(50px, -50%)
+					@media mqBigTablet
+						transform: translate(50px, -50%)
+				& > div:first-child
 					right: 63px
 					@media mqBigMobile
 						right: 0
@@ -98,10 +107,14 @@
 			&:nth-child(2)
 				left: 40px
 				top: 323px
+				.circle-block__info
+					transform: translate(50px, -50%)
+					@media mqBigTablet
+						transform: translate(25%, -30%)
 				@media mqBigTablet
 					left: 10px
 					top: 220px
-				& > div
+				& > div:first-child
 					right: 73px
 					@media mqBigMobile
 						right: -5px
@@ -112,17 +125,36 @@
 			&:nth-child(3)
 				left: 370px
 				top: 252px
+				.circle-block__info
+					transform: translate(90%, -50%)
+					@media mqBigTablet
+						transform: translate(60%, -20%)
+
 				@media mqBigTablet
 					left: 253px
 					top: 200px
-				& > div
+				& > div:first-child
 					left: 54px
 					@media mqBigMobile
 						left: -38px
 						top: 33px
 					@media mqMidMobile
 						left: -60px
-			& > div
+			&:nth-child(4)
+				right: 65px
+				top: 20px
+				.circle-block__info
+					transform: translate(90%, -50%)
+					@media mqBigTablet
+						transform: translate(70%, -50%)
+				@media mqBigTablet
+					right: 29px
+				& > div:first-child
+					left: 60px
+					@media mqSemiMobile
+						left: -19px
+						top: -57px
+			& > div:first-child
 				margin-top: 0px
 				position absolute
 				white-space: nowrap
@@ -142,26 +174,21 @@
 			background: $c-white
 			padding: 23px 30px 28px 30px
 			position: absolute
-			right: 4px
-			transform: translateX(90%)
-			top: -5px
+			right: 0
+			transition: 0.1s
+			top: 0
+			opacity: 0
+			visibility: hidden
+			z-index: 1
 			@media mqBigTablet
 				width: 300px
-				top: -35px
-				right: 20px
 				padding: 15px 20px 15px 20px
-			@media mqSmallTablet
-				top: -35px
-				right: 150px
 			@media mqBigMobile
+				width: 260px
+				padding: 12px 15px 12px 15px
+			@media mqSemiMobile
 				display: none
-				// left: 0
-				// right: 0
-				// margin: auto
-				// transform: none
-				// top: -170px
-			
-			
+
 			&--title
 				font-size: 18px
 				text-transform: uppercase
@@ -169,6 +196,8 @@
 				color: #4d4d4d
 				@media mqBigTablet
 					font-size: 16px
+				@media mqBigMobile
+					font-size: 14px
 			&--text
 				margin-top: 16px
 				font-weight: 300
@@ -196,6 +225,12 @@
 		&__item
 			width: calc(100%/ 4 - 13px)
 			position relative
+			&:hover 
+				.about-us-menu
+					&__item
+						&--text
+							background: $c-white
+							color: $c-blue
 			@media mqMidTablet
 				width: calc(100%/ 2 - 1%)
 				margin-bottom: 20px
@@ -214,16 +249,19 @@
 			&--text
 				position absolute
 				background: $c-blue
-				padding: 16px 9px 16px 19px
+				padding: 15px 9px 16px 18px
 				display inline-block
 				color: $c-white
 				text-transform: uppercase
 				font-size: 16px
 				font-weight: 500
 				bottom: 18px
+				border: 1px solid $c-blue
+				border-left: none
+				transition: 0.1s
 				@media mqBigTablet
 					font-size: 14px
-					padding: 14px 6px 14px 15px
+					padding: 13px 6px 13px 15px
 	
 
 	.our-team
@@ -306,6 +344,9 @@
 					
 			&__item
 				width: calc( 100% / 5 - 22px)
+				&:hover
+					img
+						transform: scale(1.02)
 				@media mqMidTablet
 					width: calc( 100% / 3 - 22px)
 					margin-bottom: 30px
@@ -313,13 +354,17 @@
 					width: calc( 100% / 2 - 22px)
 				@media mqMidMobile
 					width: 100%
-				img 
+				&--img
 					margin-top: 15px
+					overflow: hidden
+					border: 2px solid #e8e8e8
+				img 
 					width: 100%
 					height: 258px
 					object-fit: cover
 					display: block
-					border: 2px solid #e8e8e8
+					transition: 0.1s
+					
 				&--title
 					font-size: 16px
 					font-weight: 600

@@ -9,6 +9,7 @@
 @import 'about.styl'
 @import 'catalog.styl'
 @import 'modal.styl'
+@import 'magnify.css'
 
 body 
 	font-family: 'Roboto', sans-serif
@@ -149,6 +150,17 @@ main
 	display: flex
 	flex-wrap: wrap
 	justify-content: space-between
+	&[data-animate="true"]
+		.quality-list__item
+			&:nth-child(odd) 
+				animation: 1s slideinRight ease-in-out
+				animation-fill-mode: both
+			&:nth-child(even) 
+				animation: 1s slideinLeft ease-in-out
+				animation-fill-mode: both
+			for row in 1 2 3 4 5 6 7 8
+				&:nth-child({row})
+					animation-delay: 0.3s * row
 	&__item
 		position: relative
 		width: calc( 100% / 2 - 120px)
@@ -156,6 +168,11 @@ main
 		margin-bottom: 35px
 		border-top: 1px solid #ccc
 		padding-top: 43px
+		opacity: 0
+		visibility: hidden
+		
+
+				
 		@media mqBigMobile
 			width: 100%
 		@media mqMidMobile
@@ -192,3 +209,34 @@ main
 	font-family: 'Harlow'
 	src url('./Harlow.ttf')
 	font-style: normal
+
+
+
+@keyframes slideinRight {
+	from {
+		transform: translateX(100%)
+		opacity: 0
+		visibility: hidden
+	}
+
+	to {
+		transform: translateX(0)
+		opacity: 1
+		visibility: visible
+	}
+}
+
+	
+@keyframes slideinLeft {
+	from {
+		transform: translateX(-100%)
+		opacity: 0
+		visibility: hidden
+	}
+
+	to {
+		transform: translateX(0)
+		opacity: 1
+		visibility: visible
+	}
+}

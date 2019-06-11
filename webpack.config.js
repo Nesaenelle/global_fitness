@@ -108,10 +108,10 @@ module.exports = {
             { from: 'src/img', to: 'img' }
         ]),
         new webpack.ProvidePlugin({
-            // $: "jquery",
-            // jQuery: "jquery",
-            // "window.jQuery": "jquery'",
-            // "window.$": "jquery"
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery'",
+            "window.$": "jquery"
          })
     ],
 

@@ -150,7 +150,7 @@ $leftWidth = 283px
 						width: 200px
 						background: $c-white
 						display: none
-						left: 0
+						right: 0
 						top: 100%
 						z-index: 1
 						box-shadow: 0 0 14px -10px #000
@@ -218,6 +218,10 @@ $leftWidth = 283px
 					justify-content: space-between
 					flex-wrap: wrap
 					position: relative
+					
+					&--link
+						display: block
+						width: 100%
 					&--article
 						display: inline-flex
 						font-size: 12px
@@ -244,6 +248,7 @@ $leftWidth = 283px
 						top: 50px
 						color: $c-white
 					&--descr
+						margin-top: 13px
 						font-size: 14px
 						letter-spacing: 0.5px
 					&--title
@@ -458,6 +463,10 @@ $leftWidth = 283px
 		
 		.product-card
 			padding-top: 7px
+			
+			// .magnify
+			// 	width: 100%
+			// 	height: 100%
 			&__top
 				display: flex
 				justify-content: center
@@ -652,7 +661,8 @@ $leftWidth = 283px
 				position: absolute
 				right: 0
 				color: $c-blue
-				text-decoration: underline
+				&:hover
+					text-decoration: underline
 				&:before
 					content: ''
 					margin-right: 10px
@@ -741,6 +751,9 @@ $leftWidth = 283px
 						margin-bottom: 7px
 						width: 100%
 						border-top: none
+						animation: none
+						opacity: 1
+						visibility: visible
 						img
 							left: -86px
 							top: 22px
