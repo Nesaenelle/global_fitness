@@ -2235,7 +2235,7 @@ footer .logo span:before {
 @media only screen and (max-width: 768px) {
   .about-page .our-clients-list__item {
     width: calc(100% / 2 - 15px);
-    height: 170px;
+    height: 190px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -2266,6 +2266,11 @@ footer .logo span:before {
   transition: 0.1s;
   height: 100%;
 }
+@media only screen and (max-width: 1280px) {
+  .about-page .our-clients-list__item > div {
+    padding: 15px;
+  }
+}
 .about-page .our-clients-list__item--title {
   text-transform: uppercase;
   color: #fff;
@@ -2276,6 +2281,23 @@ footer .logo span:before {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.5em;
+}
+@media only screen and (max-width: 1280px) {
+  .about-page .our-clients-list__item--text {
+    margin-top: 15px;
+    line-height: 1.3em;
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .about-page .our-clients-list__item--text {
+    margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .about-page .our-clients-list__item--text {
+    font-size: 14px;
+  }
 }
 .about-page .btn--blue {
   margin: auto;
@@ -2294,6 +2316,11 @@ footer .logo span:before {
   display: flex;
   padding-right: 20px;
   justify-content: space-between;
+}
+@media only screen and (max-width: 1280px) {
+  .catalog-page .catalog {
+    padding-top: 30px;
+  }
 }
 @media only screen and (max-width: 980px) {
   .catalog-page .catalog {
@@ -2333,10 +2360,22 @@ footer .logo span:before {
   bottom: -20px;
 }
 .catalog-page .catalog__filter-switcher {
-  display: inline-flex;
-  cursor: pointer;
-  color: #0786ff;
   margin-top: 20px;
+  display: none;
+  font-size: 14px;
+  padding: 10px;
+  width: 150px;
+  text-align: center;
+}
+@media only screen and (max-width: 980px) {
+  .catalog-page .catalog__filter-switcher {
+    display: block;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .catalog-page .catalog__filter-switcher {
+    margin: 20px auto 0;
+  }
 }
 .catalog-page .catalog__filter {
   display: block;
@@ -2463,6 +2502,16 @@ footer .logo span:before {
   color: #666;
   letter-spacing: 1.5px;
 }
+@media only screen and (max-width: 1280px) {
+  .catalog-page .catalog__goods--title {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .catalog-page .catalog__goods--title {
+    font-size: 18px;
+  }
+}
 .catalog-page .catalog__goods--title:after {
   content: '';
   background: #0786ff;
@@ -2478,14 +2527,20 @@ footer .logo span:before {
 .catalog-page .catalog__goods__sort {
   margin-top: 19px;
   background: #f8f8f8;
-  padding: 12px 67px 10px 13px;
+  padding: 12px 67px 5px 13px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .catalog-page .catalog__goods__sort__item {
   display: flex;
   align-items: center;
   position: relative;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.catalog-page .catalog__goods__sort__item:last-child {
+  margin-right: 0;
 }
 .catalog-page .catalog__goods__sort__item.active .catalog__goods__sort__item__dropdown {
   display: block;
@@ -2513,6 +2568,11 @@ footer .logo span:before {
   top: 100%;
   z-index: 1;
   box-shadow: 0 0 14px -10px #000;
+}
+@media only screen and (max-width: 480px) {
+  .catalog-page .catalog__goods__sort__item__dropdown {
+    left: 0;
+  }
 }
 .catalog-page .catalog__goods__sort__item__dropdown--item {
   padding: 10px 10px;
@@ -3477,6 +3537,11 @@ main {
   padding-top: 34px;
   position: relative;
   overflow: hidden;
+}
+@media only screen and (max-width: 768px) {
+  main {
+    padding-top: 20px;
+  }
 }
 main:after {
   content: '';
