@@ -863,12 +863,11 @@ header .additional-menu__solutions-list__item span {
 }
 footer {
   background: #191919;
-  height: 270px;
   padding: 67px 0 50px 0;
 }
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1024px) {
   footer {
-    display: none;
+    padding: 30px 0;
   }
 }
 footer .container {
@@ -879,15 +878,56 @@ footer .container {
   justify-content: space-between;
   padding: 0px 40px 0 14px;
 }
+@media only screen and (max-width: 1440px) {
+  footer .container {
+    flex-wrap: wrap;
+    padding: 0px 40px 0 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer .container {
+    padding: 0 20px;
+  }
+}
 footer .left {
   width: 45%;
   display: flex;
+}
+@media only screen and (max-width: 1440px) {
+  footer .left > div:first-child {
+    display: flex;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  footer .left {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 980px) {
+  footer .left {
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer .left {
+    display: block;
+  }
 }
 footer .left ul {
   margin-top: 15px;
   width: 50%;
   display: inline-block;
   vertical-align: top;
+}
+@media only screen and (max-width: 1440px) {
+  footer .left ul {
+    margin: 0 20px;
+  }
+}
+@media only screen and (max-width: 980px) {
+  footer .left ul {
+    display: none;
+  }
 }
 footer .left ul + ul {
   width: 45%;
@@ -912,6 +952,22 @@ footer .left .address {
   margin-top: 7px;
   letter-spacing: 0.8px;
 }
+@media only screen and (max-width: 1440px) {
+  footer .left .address {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  footer .left .address {
+    font-size: 12px;
+    line-height: 1.7em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer .left .address {
+    text-align: center;
+  }
+}
 footer .right {
   width: 55%;
   display: flex;
@@ -919,15 +975,59 @@ footer .right {
   align-items: center;
   justify-content: flex-end;
 }
+@media only screen and (max-width: 1440px) {
+  footer .right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
 footer .menu {
   display: flex;
   margin-top: 34px;
+}
+@media only screen and (max-width: 980px) {
+  footer .menu {
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer .menu {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
 }
 footer .menu li {
   display: flex;
   font-weight: 300;
   font-size: 14px;
   margin: 0 25px;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 1440px) {
+  footer .menu li:first-child {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  footer .menu li {
+    margin: 0 10px;
+    white-space: initial;
+  }
+}
+@media only screen and (max-width: 980px) {
+  footer .menu li {
+    margin: 0;
+    padding: 0 5px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  footer .menu li {
+    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
+  }
 }
 footer .menu li a {
   letter-spacing: 0.7px;
@@ -946,21 +1046,79 @@ footer .order {
   font-weight: 300;
   letter-spacing: 0.7px;
 }
+@media only screen and (max-width: 1440px) {
+  footer .order {
+    margin-top: 15px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  footer .order {
+    font-size: 14px;
+    padding: 14px 15px 14px 15px;
+  }
+}
+@media only screen and (max-width: 980px) {
+  footer .order {
+    margin: 20px 0px 0 0;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 480px) {
+  footer .order {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 480px) {
+  footer .order > div {
+    text-align: center;
+  }
+}
 footer .order + a {
   margin-right: 25px;
   margin-left: 47px;
   margin-top: 9px;
 }
+@media only screen and (max-width: 1024px) {
+  footer .order + a {
+    margin: 20px auto 0;
+    display: block;
+  }
+}
 footer .order .btn {
   margin-left: 20px;
+}
+@media only screen and (max-width: 1024px) {
+  footer .order .btn {
+    padding: 13px;
+    width: 250px;
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  footer .order .btn {
+    margin-top: 10px;
+  }
 }
 footer .logo {
   display: flex;
   align-items: center;
 }
+@media only screen and (max-width: 768px) {
+  footer .logo {
+    margin: auto;
+  }
+}
 footer .logo img {
   width: 187px;
-  height: 38px;
+  object-fit: contain;
+}
+@media only screen and (max-width: 480px) {
+  footer .logo img {
+    width: 160px;
+  }
 }
 footer .logo img:after {
   content: '';
@@ -974,6 +1132,11 @@ footer .logo span {
   font-family: 'Harlow';
   position: relative;
   margin-left: 20px;
+}
+@media only screen and (max-width: 480px) {
+  footer .logo span {
+    font-size: 32px;
+  }
 }
 footer .logo span:before {
   content: '';
