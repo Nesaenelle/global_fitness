@@ -1,9 +1,15 @@
+$slideOffsetDesktop = 200px
+$slideOffsetTablet = 150px
+$slideOffsetMobile = 100px
+
 .home-page 
 	padding-top: 0
 	.main-slider
 		position: relative
 		height: calc(100vh - 145px)
 		overflow: hidden
+		@media mqBigMobile
+			height: auto
 		&__slide
 			height: 100%
 			width: 100%
@@ -14,46 +20,64 @@
 			animation: slidein 1s ease-in-out
 			visibility: hidden
 			animation-fill-mode: both
+			
+			@media mqBigMobile
+				height: calc(100vh - 145px)
+				position: relative
+				animation: none
+				opacity: 1
+				visibility: visible
+				left: auto!important
+				top: auto!important
+				transition: none
 			&:nth-child(1)
 				background: url(../img/slide1.png)
 				background-size: cover
 				background-position: center top
 				
 				z-index: 3
-				left: calc((-100%) + 200px)
-				&.active {
-					left: -400px
-				}
+				left: "calc(-100% + %s)" % $slideOffsetDesktop
+				@media mqBigTablet
+					left: "calc(-100% + %s)" % $slideOffsetTablet
+				&.active
+					left: "calc(-%s * 2)" % $slideOffsetDesktop
+					@media mqBigTablet
+						left: "calc(-%s * 2)" % $slideOffsetTablet
+			
 				animation-delay: 0s
 			&:nth-child(2)
 				background: url(../img/slide2.png)
 				background-size: cover
 				background-position: center top
 				z-index: 2
-				left: -200px
+				left: -($slideOffsetDesktop)
 				display: flex
 				align-items: center
 				justify-content: center
-				
-				&.active {
-					left: -200px
-				}
-				&.inactive {
-					left: calc((-100%) + (200px * 2));
-				}
+				@media mqBigTablet
+					left: -($slideOffsetTablet)
+				&.active
+					left: -($slideOffsetDesktop)
+					@media mqBigTablet
+						left: -($slideOffsetTablet)
+				&.inactive
+					left: "calc(-100% + %s * 2)" % $slideOffsetDesktop
+					@media mqBigTablet
+						left: "calc(-100% + %s * 2)" % $slideOffsetTablet
 				animation-delay: 0.5s
 			&:nth-child(3)
 				z-index: 1
 				left: 0
 				background: #d0d0d0
-				left: 200px
+				left: $slideOffsetDesktop
+				@media mqBigTablet
+					left: $slideOffsetTablet
 				&.active {
 					left: 0
 				}
 				animation-delay: 1s
 				
 	.banner-block
-		 
 		position: absolute
 		bottom: 30px
 		right: 0px
@@ -61,13 +85,29 @@
 		width: 730px
 		padding: 38px 29px 33px 29px
 		border-left: 3px solid $c-border-red
+		@media mqBigTablet
+			padding: 25px
+			width: 600px
+		@media mqMidTablet
+			width: 460px
+			padding: 22px
+		@media mqSemiMobile
+			width: 320px
 		&--title
 			font-size: 48px
 			font-weight: 600
+			@media mqBigTablet
+				font-size: 42px
+			@media mqMidTablet
+				font-size: 32px
+			@media mqBigMobile
+				font-size: 26px
 		&--text
 			margin-top: 14px
 			font-size: 16px
 			line-height: 1.5em
+			@media mqBigMobile
+				font-size: 14px
 		&--link
 			margin-top: 30px
 			display: block
@@ -76,6 +116,8 @@
 			text-transform: uppercase
 			display: flex;
 			align-items: center;
+			@media mqBigMobile
+				font-size: 16px
 			&:hover
 				text-decoration: underline
 			svg
@@ -91,14 +133,21 @@
 		flex-wrap: wrap
 		align-items: center
 		position: relative
+		@media mqBigTablet
+			width: 350px
+		@media mqBigMobile
+			margin: auto
+			width: 300px
 		&:after
 			content: ''
 			position: absolute
 			right: 44px
-			height: 180%
+			height: 70vh
 			width: 1px
 			background: $c-white
 			z-index: -1
+			@media mqBigTablet
+				height: 60vh
 		&__link 
 			display: block
 			width: 100%
@@ -107,6 +156,9 @@
 			text-align: right
 			padding-right: 70px
 			margin: 14px 0
+			@media mqBigTablet
+				font-size: 20px
+				margin: 6px 0
 			&:hover
 				color: $c-border-red
 		&__input
@@ -115,6 +167,8 @@
 			background: $c-white
 			border: 1px solid $c-border-red
 			position: relative
+			@media mqBigTablet
+				margin: 30px 0 32px 0
 			img 
 				position: absolute
 				width: 24px
@@ -128,12 +182,18 @@
 				font-size: 18px
 				border: none
 				width: 100%
+				@media mqBigTablet
+					padding: 14px 18px
 	.world-map
 		position: relative
 		display: flex
 		padding-left: 400px
 		align-items: center
 		height: 100%
+		@media mqBigTablet
+			padding-left: "calc(%s * 2)" % $slideOffsetTablet
+		@media mqBigMobile
+			padding-left: 0
 		&__list
 			background: #f3f3f3
 			border-left: 2px solid $c-border-red
@@ -159,9 +219,9 @@
 		@media mqBigMobile
 			margin: 60px 50px 0px 50px
 		@media mqMidMobile
-			margin: 60px 30px 0px 30px
+			margin: 50px 30px 0px 30px
 		@media mqSmallMobile
-			margin: 60px 15px 0px 15px
+			margin: 30px 15px 0px 15px
 		&:after
 			content: ''
 			position: absolute
@@ -178,6 +238,8 @@
 			font-size: 36px
 			font-weight: 600
 			width: 800px
+			@media mqBigTablet
+				font-size: 30px
 			@media mqBigMobile
 				width: 100%
 				font-size: 26px
@@ -199,12 +261,16 @@
 		@media mqMidTablet
 			flex-wrap: wrap
 			height: auto
+		@media mqBigMobile
+			margin-top: 60px
+		@media mqMidMobile
+			margin-top: 40px
 		& + .bottom-block 
 			margin-top: 95px
 			@media mqMidTablet
 				margin-top: 60px
 			@media mqMidMobile
-				margin-top: 30px
+				margin-top: 0px
 		& > div
 			height: 100%
 			width: calc(50%)
@@ -223,6 +289,8 @@
 			@media mqMidTablet
 				height: 300px!important
 				margin-bottom: 20px
+			@media mqSemiMobile
+				height: 250px!important
 			@media mqSmallMobile
 				height: 200px!important
 			img

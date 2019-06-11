@@ -35,6 +35,8 @@
 		box-shadow: 0 0 20px -10px #666
 		padding: 38px 30px 30px 34px
 		position: relative
+		@media mqBigMobile
+			padding: 20px
 	&--close
 		position: absolute
 		right: 4px
@@ -54,18 +56,26 @@
 		color: #666666
 		margin-bottom: 23px
 		letter-spacing: 0.6px;
+		@media mqBigMobile
+			font-size: 20px
+		@media mqMidMobile
+			font-size: 18px
 	label
 		font-size: 14px
 		color: #555555
 		line-height: 1.4em
 		font-weight: 400
 		letter-spacing: 0.2px;
+		@media mqMidMobile
+			font-size: 12px
 	&--link
 		color: $c-blue
 		font-size: 16px
 		text-transform: uppercase
 		text-decoration: underline
 		cursor: pointer
+		@media mqBigMobile
+			font-size: 14px
 		&-small
 			font-size: 14px
 			text-transform: none
@@ -83,24 +93,38 @@
 			width: 100%
 			padding: 19px 15px
 			border: 1px solid #e8e8e8
+			@media mqBigMobile
+				margin-top: 8px
+				padding: 14px 10px
+			@media mqMidMobile
+				padding: 10px 8px
 			& + label
 				margin-top: 27px
+				@media mqBigMobile
+					margin-top: 15px
 		input[type="password"]
 			& + label
 				margin-top: 18px
+				@media mqBigMobile
+					margin-top: 12px
 	&--left
 		display: flex
 		flex-wrap: wrap
 		width: calc(65% - 47px)
+		@media mqBigMobile
+			width: calc(65% - 30px)
 	&--right
 		// display: none
 		position: relative
 		// flex-wrap: wrap
 		width: calc(35% + 14px)
-		
+		@media mqBigMobile
+			width: calc(35 + 10px)
 		img
 			cursor: pointer
 			margin-top: 14px
+			max-width: 170px
+			width: 100%
 			&:hover
 				transform: scale(1.01)
 			& + img
@@ -110,6 +134,7 @@
 			bottom: 16px
 			right: 0px
 			position: absolute
+			
 			
 	.sign-in, .sign-up 
 		display: flex
@@ -122,10 +147,15 @@
 				margin-right: 26px
 				padding: 17px 10px
 				width: 166px
+				@media mqBigMobile
+					padding: 10px 8px
+					font-size: 14px
 				&--transparent
 					font-size: 16px
 					width: auto
 					border-color: transparent
+					@media mqBigMobile
+						font-size: 14px
 	.sign-up
 		.modal--form
 			.btn 
@@ -134,6 +164,9 @@
 				font-size: 16px;
 				font-weight: 500
 				margin-top: 10px
+				@media mqBigMobile
+					padding: 10px 8px
+					font-size: 14px
 				& + label
 					margin-top: 15px
 			.modal--link
