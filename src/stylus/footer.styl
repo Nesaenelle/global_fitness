@@ -149,6 +149,9 @@ footer
 			@media mqMidTablet
 				margin: 20px auto 0 
 				display: block
+			@media mqMidMobile
+				img
+					width: 120px
 
 		.btn
 			margin-left: 20px
@@ -157,6 +160,7 @@ footer
 				width: 250px
 				font-size: 14px
 			@media mqMidMobile
+				margin-left: 0
 				margin-top: 10px
 	.logo 
 		display: flex
@@ -175,22 +179,27 @@ footer
 				backgound: #cccccc
 		span
 			font-size: 38px
-			color: #0786ff
+			// color: #0786ff
 			font-family: 'Harlow'
 			position: relative
-			margin-left: 20px
+			&:first-child
+				color: #e3e3e3
+			&:last-child
+				color: $c-blue
+				margin-left: 20px
+				&:before
+					content: ''
+					background: #aaaaaa
+					width: 1px
+					height: 15px
+					display: block
+					position: absolute
+					left: -10px	
+					top: 0
+					bottom: 0
+					margin: auto
+	
 			@media mqMidMobile
 				font-size: 32px
-			&:before
-				content: ''
-				background: #aaaaaa
-				width: 1px
-				height: 15px
-				display: block
-				position: absolute
-				left: -10px	
-				top: 0
-				bottom: 0
-				margin: auto
 
 		

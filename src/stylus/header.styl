@@ -67,30 +67,31 @@ header
 				backgound: #cccccc
 		span
 			font-size: 38px
-			color: #0786ff
 			font-family: 'Harlow'
 			position: relative
-			margin-left: 20px
+			&:first-child
+				color: #282828
+			&:last-child
+				color: #0786ff
+				margin-left: 20px
+				&:before
+					content: ''
+					background: #aaaaaa
+					width: 1px
+					height: 15px
+					display: block
+					position: absolute
+					left: -10px	
+					top: 0
+					bottom: 0
+					margin: auto
+					
 			@media mqBigTablet
-				font-size: 32px
+				font-size: 30px
 			@media mqMidTablet
-				// font-size: 28px
+				font-size: 24px
+			@media screen and (max-width: 880px)
 				display: none
-			@media mqSmallTablet
-				// font-size: 24px
-			&:before
-				content: ''
-				background: #aaaaaa
-				width: 1px
-				height: 15px
-				display: block
-				position: absolute
-				left: -10px	
-				top: 0
-				bottom: 0
-				margin: auto
-				
-		
 	.container
 		display: flex
 		justify-content: space-between
