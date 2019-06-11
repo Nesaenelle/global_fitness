@@ -1,9 +1,11 @@
 footer 
 	background: #191919
-	height: 270px
+	// height: 270px
 	padding: 67px 0 50px 0
-	@media mqBigTablet
-		display: none
+	// @media mqBigTablet
+	// 	display: none
+	@media mqMidTablet
+		padding: 30px 0
 	.container
 		max-width: 100%
 		display: flex
@@ -11,16 +13,33 @@ footer
 		align-items: flex-start
 		justify-content: space-between
 		padding: 0px 40px 0 14px
+		@media mqSmallDesktop
+			flex-wrap: wrap
+			padding: 0px 40px 0 40px
+		@media mqBigMobile
+			padding: 0 20px
 		
 	.left
 		width: 45%
 		display: flex
-		
+		& > div:first-child
+			@media mqSmallDesktop
+				display: flex
+		@media mqSmallDesktop
+			width: 100%
+		@media mqSmallTablet
+			justify-content: space-between
+		@media mqBigMobile
+			display: block
 		ul 
 			margin-top: 15px
 			width: 50%
 			display: inline-block
 			vertical-align: top
+			@media mqSmallDesktop
+				margin: 0 20px
+			@media mqSmallTablet
+				display: none
 			& + ul 
 				width: 45%
 				margin-left: 10px
@@ -39,22 +58,58 @@ footer
 			font-size: 14px
 			margin-top: 7px
 			letter-spacing: 0.8px
+			@media mqSmallDesktop
+				margin: 0
+			@media mqMidTablet
+				font-size: 12px
+				line-height: 1.7em
+			@media mqBigMobile
+				text-align: center
 	.right
 		width: 55%
 		display: flex
 		flex-wrap: wrap
 		align-items: center
 		justify-content: flex-end
+		@media mqSmallDesktop
+			width: 100%
+			justify-content: flex-start 
+		// @media mqMidTablet
+		// 	display: block
+			
+		// @media mqSmallTablet
+		// 	display: flex
+		// 	justify-content: center
 	
 	.menu
 		display: flex
 		margin-top: 34px
+		@media mqSmallTablet
+			text-align: center
+			width: 100%
+			justify-content: space-between
+		@media mqBigMobile
+			flex-wrap: wrap
+			margin-top: 20px
 		li
 			display: flex
 			font-weight: 300
-			// line-height: 2em
 			font-size: 14px
 			margin: 0 25px
+			white-space: nowrap
+			&:first-child
+				@media mqSmallDesktop
+					margin-left: 0
+			@media mqMidTablet
+				margin: 0 10px
+				white-space: initial
+			@media mqSmallTablet
+				margin: 0
+				padding: 0 5px
+			@media mqBigMobile
+				margin-top: 5px
+				width: 100%
+				justify-content: center
 			a
 				letter-spacing: 0.7px
 				&:hover
@@ -70,20 +125,49 @@ footer
 		margin-right: 30px
 		font-weight: 300
 		letter-spacing: 0.7px
+		@media mqSmallDesktop
+			margin-top: 15px
+		@media mqMidTablet
+			font-size: 14px
+			padding: 14px 15px 14px 15px
+		@media mqSmallTablet
+			margin: 20px 0px 0 0
+			width: 100%
+			max-width: 100%
+			justify-content: space-between
+		@media mqMidMobile
+			flex-wrap: wrap
+			justify-content: center
+			
+		& > div
+			@media mqMidMobile
+				text-align: center
 		& + a
 			margin-right: 25px
 			margin-left: 47px
 			margin-top: 9px
+			@media mqMidTablet
+				margin: 20px auto 0 
+				display: block
 
 		.btn
 			margin-left: 20px
+			@media mqMidTablet
+				padding: 13px
+				width: 250px
+				font-size: 14px
+			@media mqMidMobile
+				margin-top: 10px
 	.logo 
 		display: flex
 		align-items: center
-
+		@media mqBigMobile
+			margin: auto
 		img 
 			width: 187px
-			height: 38px
+			object-fit: contain
+			@media mqMidMobile
+				width: 160px
 			&:after 
 				content: ''
 				height: 30px
@@ -95,6 +179,8 @@ footer
 			font-family: 'Harlow'
 			position: relative
 			margin-left: 20px
+			@media mqMidMobile
+				font-size: 32px
 			&:before
 				content: ''
 				background: #aaaaaa
