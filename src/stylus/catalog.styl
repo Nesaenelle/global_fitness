@@ -9,6 +9,8 @@ $leftWidth = 283px
 		display: flex
 		padding-right: 20px
 		justify-content: space-between
+		@media mqBigTablet
+			padding-top: 30px
 		@media mqSmallTablet
 			padding-right: 0
 		& ~ .catalog--descr
@@ -38,10 +40,16 @@ $leftWidth = 283px
 				left: 0
 				bottom: -20px
 		&__filter-switcher
-			display: inline-flex
-			cursor: pointer
-			color: $c-blue
 			margin-top: 20px
+			display: none
+			font-size: 14px
+			padding: 10px
+			width: 150px
+			text-align: center
+			@media mqSmallTablet
+				display: block
+			@media mqMidMobile
+				margin: 20px auto 0
 		&__filter
 			display: block
 			width: $leftWidth
@@ -148,6 +156,10 @@ $leftWidth = 283px
 				position: relative
 				color: #666666
 				letter-spacing: 1.5px
+				@media mqBigTablet
+					font-size: 20px
+				@media mqMidMobile
+					font-size: 18px
 				&:after
 					content: ''
 					background: $c-blue
@@ -161,13 +173,18 @@ $leftWidth = 283px
 			&__sort
 				margin-top: 19px
 				background: #f8f8f8
-				padding: 12px 67px 10px 13px
+				padding: 12px 67px 5px 13px
 				display: flex
 				justify-content: space-between
+				flex-wrap: wrap
 				&__item
 					display: flex
 					align-items: center
 					position: relative
+					margin-right: 10px
+					margin-bottom: 5px
+					&:last-child
+						margin-right: 0
 					&.active
 						.catalog__goods__sort__item__dropdown
 							display: block
@@ -193,6 +210,8 @@ $leftWidth = 283px
 						top: 100%
 						z-index: 1
 						box-shadow: 0 0 14px -10px #000
+						@media mqMidMobile
+							left: 0
 						&--item
 							padding: 10px 10px
 							font-size: 13px
