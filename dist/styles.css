@@ -1164,11 +1164,26 @@ header .additional-menu {
   transition: 0.1s;
   overflow: hidden;
 }
+@media only screen and (max-width: 768px) {
+  header .additional-menu {
+    display: none;
+  }
+}
 header .additional-menu[data-menu=solutions] {
   padding: 42px 33px 30px 50px;
 }
+@media only screen and (max-width: 1280px) {
+  header .additional-menu[data-menu=solutions] {
+    padding: 30px;
+  }
+}
 header .additional-menu[data-menu=products] {
   padding: 68px 50px 30px 41px;
+}
+@media only screen and (max-width: 1280px) {
+  header .additional-menu[data-menu=products] {
+    padding: 30px;
+  }
 }
 header .additional-menu:hover {
   visibility: visible;
@@ -1198,9 +1213,26 @@ header .additional-menu__products-list {
   width: 67%;
   align-content: space-between;
 }
+@media only screen and (max-width: 1024px) {
+  header .additional-menu__products-list {
+    width: 58%;
+  }
+}
 header .additional-menu__products-list__item {
   width: calc(100% / 6 - 20px);
   min-height: 150px;
+}
+@media only screen and (max-width: 1280px) {
+  header .additional-menu__products-list__item {
+    width: calc(100% / 4 - 20px);
+    min-height: 110px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header .additional-menu__products-list__item {
+    width: calc(100% / 3 - 20px);
+    min-height: 90px;
+  }
 }
 header .additional-menu__products-list__item:hover img {
   transform: scale(1.05);
@@ -1211,6 +1243,11 @@ header .additional-menu__products-list__item img {
   margin: auto;
   transition: 0.1s;
 }
+@media only screen and (max-width: 1280px) {
+  header .additional-menu__products-list__item img {
+    width: 40px;
+  }
+}
 header .additional-menu__products-list__item span {
   font-size: 14px;
   width: 100%;
@@ -1218,10 +1255,25 @@ header .additional-menu__products-list__item span {
   margin: 19px auto 0;
   text-align: center;
 }
+@media only screen and (max-width: 1280px) {
+  header .additional-menu__products-list__item span {
+    font-size: 12px;
+  }
+}
 header .additional-menu__sections {
   width: calc(33% - 60px);
   padding-right: 150px;
   margin-top: -6px;
+}
+@media only screen and (max-width: 1024px) {
+  header .additional-menu__sections {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 1600px) {
+  header .additional-menu__sections {
+    padding-right: 0;
+  }
 }
 header .additional-menu__sections__item {
   display: block;
@@ -1231,6 +1283,11 @@ header .additional-menu__sections__item {
   color: #fff;
   font-size: 14px;
   position: relative;
+}
+@media only screen and (max-width: 1024px) {
+  header .additional-menu__sections__item {
+    padding: 15px 25px;
+  }
 }
 header .additional-menu__sections__item svg {
   top: 0;

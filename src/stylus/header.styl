@@ -617,11 +617,17 @@ header
 		justify-content: space-between
 		transition: 0.1s
 		overflow: hidden
+		@media mqBigMobile
+			display: none
 		
 		&[data-menu=solutions]
 			padding: 42px 33px 30px 50px
+			@media mqBigTablet
+				padding: 30px
 		&[data-menu=products]
 			padding: 68px 50px 30px 41px
+			@media mqBigTablet
+				padding: 30px
 		&:hover 
 			visibility: visible
 			opacity: 1
@@ -646,9 +652,17 @@ header
 			justify-content: space-between
 			width: 67%
 			align-content: space-between
+			@media mqMidTablet
+				width: 58%
 			&__item
 				width: calc(100%/6 - 20px)
 				min-height: 150px
+				@media mqBigTablet
+					width: calc(100%/4 - 20px)
+					min-height: 110px
+				@media mqMidTablet
+					width: calc(100%/3 - 20px)
+					min-height: 90px
 				&:hover
 					img
 						transform: scale(1.05)
@@ -657,16 +671,25 @@ header
 					display: block
 					margin: auto
 					transition: 0.1s
+					@media mqBigTablet
+						width: 40px
 				span
 					font-size: 14px
 					width: 100%
 					display: block
 					margin: 19px auto 0
 					text-align: center
+					@media mqBigTablet
+						font-size: 12px
 		&__sections
 			width: calc(33% - 60px)
 			padding-right: 150px
 			margin-top: -6px
+			@media mqMidTablet
+				width: 40%
+			@media screen and (max-width: 1600px)
+				padding-right: 0
+				
 			&__item
 				display: block
 				padding: 18px 34px 16px 34px
@@ -675,6 +698,8 @@ header
 				color: $c-white
 				font-size: 14px
 				position: relative
+				@media mqMidTablet
+					padding: 15px 25px
 				svg 
 					top: 0
 					bottom: 0
