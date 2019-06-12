@@ -140,16 +140,16 @@ $(window).on('click', function(e) {
     }
 });
 
-$('[modal-button]').on('click', function(e) {
+$('[data-modal-button]').on('click', function(e) {
     e.stopPropagation();
-    var id = $(this).attr('modal-button');
+    var id = $(this).attr('data-modal-button');
     $('.modal').removeClass('active');
 
     $('.modal--overlay').addClass('active');
-    $('.modal').filter(`[modal-id=${id}]`).addClass('active');
+    $('.modal').filter(`[data-modal-id=${id}]`).addClass('active');
 });
 
-$('[modal-close]').on('click', function() {
+$('[data-modal-close]').on('click', function() {
     $('.modal--overlay').removeClass('active');
     $('.modal').removeClass('active');
 });
