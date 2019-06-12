@@ -21,7 +21,12 @@ module.exports = {
             // Include pug-loader to process the pug files
             {
                 test: /\.pug$/,
-                use: 'pug-loader'
+                use: {
+                    loader: 'pug-loader',
+                    options: {
+                        pretty: true
+                    }
+                }
             },
             {
                 test: /\.(css|styl)$/,
