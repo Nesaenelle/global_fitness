@@ -759,6 +759,16 @@ header .sub-header .search-input {
   position: relative;
   margin-right: 26px;
 }
+@media only screen and (max-width: 768px) {
+  header .sub-header .search-input {
+    position: static;
+  }
+}
+@media only screen and (max-width: 480px) {
+  header .sub-header .search-input {
+    margin-right: 20px;
+  }
+}
 @media only screen and (max-width: 375px) {
   header .sub-header .search-input {
     margin-right: 15px;
@@ -775,12 +785,75 @@ header .sub-header .search-input:after {
   position: absolute;
   right: -30px;
 }
+@media only screen and (max-width: 768px) {
+  header .sub-header .search-input:after {
+    width: 95%;
+    height: 1px;
+    top: 145px;
+    background: #ccc;
+    bottom: 0;
+    right: auto;
+    left: 14px;
+    z-index: 5;
+    display: none;
+  }
+}
 header .sub-header .search-input.active {
   margin-left: 30px;
+}
+@media only screen and (max-width: 375px) {
+  header .sub-header .search-input.active {
+    margin-left: 0;
+    margin-right: 15px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header .sub-header .search-input.active:after {
+    display: block;
+    opacity: 0.6;
+  }
+}
+@media only screen and (max-width: 480px) {
+  header .sub-header .search-input.active:after {
+    display: none;
+  }
 }
 header .sub-header .search-input.active input {
   width: 250px;
   padding: 0px 0px;
+}
+@media only screen and (max-width: 768px) {
+  header .sub-header .search-input.active input {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 59px;
+    background: #0786ff;
+    z-index: 5;
+    padding: 10px 15px;
+    height: 55px;
+    color: #fff;
+    font-weight: 300;
+    border: none;
+  }
+  header .sub-header .search-input.active input::-webkit-input-placeholder {
+    color: #fff;
+  }
+  header .sub-header .search-input.active input::-moz-placeholder {
+    color: #fff;
+  }
+  header .sub-header .search-input.active input:-ms-input-placeholder {
+    color: #fff;
+  }
+  header .sub-header .search-input.active input:-moz-placeholder {
+    color: #fff;
+  }
+}
+@media only screen and (max-width: 480px) {
+  header .sub-header .search-input.active input {
+    top: 44px;
+    height: 45px;
+  }
 }
 header .sub-header .search-input input {
   height: 30px;
@@ -789,6 +862,16 @@ header .sub-header .search-input input {
   margin-right: 20px;
   width: 0;
   transition: 0.3s width;
+}
+@media only screen and (max-width: 768px) {
+  header .sub-header .search-input input {
+    transition: none;
+  }
+}
+@media only screen and (max-width: 375px) {
+  header .sub-header .search-input input {
+    margin-right: 0;
+  }
 }
 header .sub-header .search-input__img {
   width: 23px;
@@ -877,6 +960,12 @@ header .sub-header .burger {
   z-index: 10;
   transition: all 0.2s linear;
   cursor: pointer;
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  header .sub-header .burger {
+    display: block;
+  }
 }
 @media only screen and (max-width: 480px) {
   header .sub-header .burger {
@@ -886,15 +975,37 @@ header .sub-header .burger {
 }
 header .sub-header .burger.opened span {
   width: 30px;
-  background: #0786ff;
+  background: none;
 }
 header .sub-header .burger.opened span:before {
   width: 30px;
   background: #0786ff;
+  top: 0px;
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media only screen and (max-width: 480px) {
+  header .sub-header .burger.opened span:before {
+    width: 25px;
+  }
 }
 header .sub-header .burger.opened span:after {
   background: #0786ff;
   width: 30px;
+  top: 0px;
+  left: 0;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+@media only screen and (max-width: 480px) {
+  header .sub-header .burger.opened span:after {
+    width: 25px;
+  }
 }
 header .sub-header .burger span {
   position: relative;
@@ -944,6 +1055,69 @@ header .sub-header .burger span:after {
     top: 7px;
   }
 }
+header .sub-header .dropdown-menu {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  padding: 20px;
+  left: 0;
+  top: 0px;
+  transition: 0.2s;
+  box-shadow: 0px 10px 20px -15px #000;
+  text-align: center;
+  will-change: transform;
+  z-index: -1;
+}
+@media screen and (min-width: 769px) {
+  header .sub-header .dropdown-menu {
+    display: none;
+  }
+}
+header .sub-header .dropdown-menu .socials {
+  margin-top: 10px;
+  position: static;
+  display: flex;
+  justify-content: center;
+}
+header .sub-header .dropdown-menu .socials__item {
+  margin: 0 4px;
+}
+header .sub-header .dropdown-menu.opened {
+  top: 58px;
+  opacity: 1;
+  visibility: visible;
+}
+@media only screen and (max-width: 480px) {
+  header .sub-header .dropdown-menu.opened {
+    top: 44px;
+  }
+}
+header .sub-header .dropdown-menu nav {
+  width: 100%;
+  padding: 0;
+  display: block;
+}
+header .sub-header .dropdown-menu nav ul {
+  display: block;
+}
+header .sub-header .dropdown-menu nav ul li a {
+  font-size: 14px;
+  padding: 16px 0;
+}
+header .sub-header .dropdown-menu nav ul li a:after {
+  width: 100px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 5px;
+}
+@media only screen and (max-width: 480px) {
+  header .sub-header .dropdown-menu nav ul li a {
+    padding: 10px 0;
+  }
+}
 header .sub-header .socials {
   display: flex;
   position: absolute;
@@ -952,14 +1126,8 @@ header .sub-header .socials {
 }
 @media only screen and (max-width: 768px) {
   header .sub-header .socials {
+    display: none;
     right: 20px;
-  }
-}
-@media only screen and (max-width: 480px) {
-  header .sub-header .socials {
-    flex-wrap: wrap;
-    width: 36px;
-    right: 0;
   }
 }
 header .sub-header .socials__item {
@@ -1538,7 +1706,7 @@ footer .logo span:last-child:before {
 }
 @media only screen and (max-width: 768px) {
   .home-page .main-slider__slide {
-    height: calc(100vh - 145px);
+    height: calc(100vh - 100px);
     position: relative;
     animation: none;
     opacity: 1;
@@ -1546,6 +1714,11 @@ footer .logo span:last-child:before {
     left: auto !important;
     top: auto !important;
     transition: none;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .home-page .main-slider__slide {
+    height: calc(100vh - 80px);
   }
 }
 .home-page .main-slider__slide:nth-child(1) {
@@ -3277,6 +3450,11 @@ footer .logo span:last-child:before {
   width: 80%;
   display: block;
   margin: auto;
+}
+@media only screen and (max-width: 480px) {
+  .catalog-page .catalog__goods__grid__item--img {
+    max-width: 230px;
+  }
 }
 .catalog-page .catalog__goods__grid__item__buttons {
   margin-top: 32px;
