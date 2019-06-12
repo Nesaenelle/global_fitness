@@ -17,11 +17,7 @@ body
 					include parts/sign-in-icon.pug
 				div
 					include parts/favorite-icon.pug
-					nav
-						ul
-							each val in [{url: 'traiding', name: 'Трейдин', pageName:'traiding'}, {url: 'financing', name: 'Финансирование', pageName:'financing'}, {url: 'diller', name: 'Дилеры', pageName:'diller'}, {url: 'about', name: 'О компании', pageName: "about"}, {url: 'our-work', name: 'Наши работы', pageName:'our-work'}, {url: 'contacts', name: 'Контакты', pageName:'contacts'}]
-								li(class=((val.pageName == htmlWebpackPlugin.options.page) ? 'active' : ''))
-									a(href=val.url + '.html')= val.name
+					include parts/main-menu.pug
 					.language(data-dropdown)
 						.language__value(data-dropdown-value) RUS
 						.language__list
@@ -62,7 +58,7 @@ body
 				div
 					include parts/sign-in-icon.pug
 					.search-input
-						input(type="text" placeholder="Поиск на сайте")
+						input(type="text" placeholder="Поиск на сайте" maxlength="50")
 						img(src="img/search.svg", alt="" class="search-input__img")
 					include parts/favorite-icon.pug
 					a(class="cart" href="")
@@ -72,13 +68,14 @@ body
 
 					.burger
 						span
-			.socials
-					a(href="#" class="socials__item")
-						img(src="img/facebook.svg", alt="")
-					a(href="#" class="socials__item")
-						img(src="img/instagram.svg", alt="")
-					a(href="#" class="socials__item")
-						img(src="img/telegram.svg", alt="")
+
+			.dropdown-menu
+				include parts/main-menu.pug
+				include parts/socials.pug
+
+			include parts/socials.pug
+
+			include parts/mobile-menu.pug
 
 	main(class=htmlWebpackPlugin.options.page + '-page')
 		block content

@@ -22,7 +22,7 @@ $slideOffsetMobile = 100px
 			animation-fill-mode: both
 			
 			@media mqBigMobile
-				height: calc(100vh - 145px)
+				height: calc(100vh - 100px)
 				position: relative
 				animation: none
 				opacity: 1
@@ -30,6 +30,8 @@ $slideOffsetMobile = 100px
 				left: auto!important
 				top: auto!important
 				transition: none
+			@media mqMidMobile
+				height: calc(100vh - 80px)
 			&:nth-child(1)
 				background: url(../img/slide1.png)
 				background-size: cover

@@ -9,6 +9,12 @@ $('.search-input__img').on('click', function() {
     $(this).parent().toggleClass('active');
 });
 
+$('.burger').on('click', function(e) {
+    e.stopPropagation()
+    $(this).toggleClass('opened')
+    $('.dropdown-menu').toggleClass('opened')
+});
+
 
 setTimeout(() => {
     $('.main-slider__slide').hover(
@@ -137,6 +143,11 @@ $(window).on('click', function(e) {
 
     if ($('.catalog__filter').length && !$('.catalog__filter')[0].contains(e.target)) {
         $('.catalog__filter').removeClass('active')
+    }
+
+    if ($('.burger').length && !$('.dropdown-menu')[0].contains(e.target)) {
+        $('.burger').removeClass('opened')
+        $('.dropdown-menu').removeClass('opened')
     }
 });
 

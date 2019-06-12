@@ -320,6 +320,10 @@ header
 			justify-content: flex-end
 			position: relative
 			margin-right: 26px
+			@media mqBigMobile
+				position: static
+			@media mqMidMobile
+				margin-right: 20px
 			@media mqSmallMobile
 				margin-right: 15px
 			&:after
@@ -332,11 +336,53 @@ header
 				margin: auto
 				position: absolute
 				right: -30px
+				@media mqBigMobile
+					width: 95%
+					height: 1px
+					top: 145px
+					background: #ccc
+					bottom: 0
+					right: auto
+					left: 14px
+					z-index: 5
+					display: none
 			&.active
 				margin-left: 30px
+				@media mqSmallMobile
+					margin-left: 0
+					margin-right: 15px
+				&:after
+					@media mqBigMobile
+						display: block
+						opacity: 0.6
+					@media mqMidMobile
+						display: none
 				input
 					width: 250px
 					padding: 0px 0px
+					@media mqBigMobile
+						position: absolute
+						left: 0
+						width: 100%
+						top: 59px
+						background: $c-blue
+						z-index: 5
+						padding: 10px 15px
+						height: 55px
+						color: $c-white
+						font-weight: 300
+						border: none
+						&::-webkit-input-placeholder
+							color: $c-white
+						&::-moz-placeholder
+							color: $c-white
+						&:-ms-input-placeholder
+							color: $c-white
+						&:-moz-placeholder
+							color: $c-white
+					@media mqMidMobile
+						top: 44px
+						height: 45px
 					
 			input 
 				height: 30px
@@ -345,7 +391,10 @@ header
 				margin-right: 20px
 				width: 0
 				transition: 0.3s width
-				
+				@media mqBigMobile
+					transition: none
+				@media mqSmallMobile
+					margin-right: 0
 			&__img
 				width: 23px
 				cursor: pointer
@@ -407,33 +456,42 @@ header
 			z-index: 10
 			transition: all .2s linear
 			cursor: pointer
+			display: none
+			@media mqBigMobile
+				display: block
 			@media mqMidMobile
 				width: 25px
 				height: 27px
 			&.opened
 				span
-					// background: none;
-					width: 30px;
-					background: $c-blue
+					
+					width: 30px
+					background: none
 
 					&:before
-						width: 30px;
+						width: 30px
 						background: $c-blue
-						// top: 0px;
-						// -webkit-transform: rotate(45deg);
-						// -ms-transform: rotate(45deg);
-						// -o-transform: rotate(45deg);
-						// transform: rotate(45deg);
+						top: 0px
+						left: 0
+						-webkit-transform: rotate(45deg)
+						-ms-transform: rotate(45deg)
+						-o-transform: rotate(45deg)
+						transform: rotate(45deg)
+						@media mqMidMobile
+							width:25px
 					
 
 					&:after
 						background: $c-blue
-						width: 30px;
-						// top: 0px;
-						// -webkit-transform: rotate(-45deg);
-						// -ms-transform: rotate(-45deg);
-						// -o-transform: rotate(-45deg);
-						// transform: rotate(-45deg);
+						width: 30px
+						top: 0px
+						left: 0
+						-webkit-transform: rotate(-45deg)
+						-ms-transform: rotate(-45deg)
+						-o-transform: rotate(-45deg)
+						transform: rotate(-45deg)
+						@media mqMidMobile
+							width:25px
 							
 			span
 				position: relative
@@ -472,18 +530,65 @@ header
 					@media mqMidMobile
 						height: 2px
 						top: 7px
-				
+		
+		.dropdown-menu
+			opacity: 0
+			visibility: hidden
+			position: absolute
+			width: 100%
+			background: #fff
+			padding: 20px
+			left: 0
+			top: 0px
+			transition: 0.2s
+			box-shadow: 0px 10px 20px -15px #000
+			text-align: center
+			will-change: transform
+			z-index: -1
+
+			@media screen and (min-width: 769px) 
+				display: none
+	
+			.socials
+				margin-top: 10px
+				position: static
+				display: flex
+				justify-content: center
+				&__item
+					margin: 0 4px
+			&.opened
+				top: 58px
+				opacity: 1
+				visibility: visible
+				@media mqMidMobile
+					top: 44px
+			nav 
+				width: 100%
+				padding: 0
+				display: block
+				ul
+					display: block
+					li
+						a
+							font-size: 14px
+							padding: 16px 0
+							&:after
+								width: 100px
+								left: 0
+								right: 0
+								margin: auto
+								bottom: 5px;
+							@media mqMidMobile
+								padding: 10px 0
+	
 		.socials
 			display: flex
 			position absolute
 			right: 202px
 			z-index: 1
 			@media mqBigMobile
+				display: none
 				right: 20px
-			@media mqMidMobile
-				flex-wrap: wrap
-				width: 36px
-				right: 0
 			&__item 
 				padding: 11px
 				background: $c-blue 
