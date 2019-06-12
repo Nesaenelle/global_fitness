@@ -2,6 +2,10 @@ header
 	height: 145px 
 	position relative
 	background: #fff
+	@media mqBigMobile
+		height: 100px
+	@media mqMidMobile
+		height: 80px
 	&:before
 		content: ""
 		width: 100%
@@ -21,7 +25,6 @@ header
 				&.active, &:hover
 					a:after 
 						display block
-
 				a
 					display: block
 					padding: 29px 20px 31px
@@ -74,6 +77,8 @@ header
 			&:last-child
 				color: #0786ff
 				margin-left: 20px
+				@media mqMidMobile
+					margin-left: 16px
 				&:before
 					content: ''
 					background: #aaaaaa
@@ -85,13 +90,21 @@ header
 					top: 0
 					bottom: 0
 					margin: auto
+					@media mqMidMobile
+						left: -8px
+				@media screen and (max-width: 880px)
+					display: none
+	
 					
 			@media mqBigTablet
 				font-size: 30px
 			@media mqMidTablet
 				font-size: 24px
-			@media screen and (max-width: 880px)
-				display: none
+			@media mqMidMobile
+				font-size: 18px
+			@media mqSmallMobile
+				font-size: 16px
+
 	.container
 		display: flex
 		justify-content: space-between
@@ -108,17 +121,79 @@ header
 				// justify-content: flex-end
 			}
 
+	.sign-in
+		display: flex
+		align-items: center
+		margin-right: 17px
+		height: 100%
+		cursor: pointer
+		font-size: 14px
+		position: relative
+		&:after
+			content: ''
+			width: 1px
+			height: 20px
+			top: 0
+			background: #ccc
+			bottom: 0
+			margin: auto
+			position: absolute
+			right: -12px
+		img 
+			width: 25px
+			margin-right: 13px
+			
+	.favorites 
+		height: 100%
+		width: 85px
+		display flex
+		align-items: center
+		justify-content: center
+		img
+			width: 27px
+
 	.top-header
 		
 		padding: 10px 0
 		height: 80px
+		@media mqBigMobile
+			height: 40px
+		@media mqMidMobile
+			height: 35px
 		.container
 			display: flex
 			justify-content: space-between
 			align-items:center
 			padding: 0 64px 0 32px
+			@media mqSmallTablet
+				padding: 0 40px 0 30px
 			@media mqBigMobile
 				padding: 0 30px 0 20px
+				
+		.sign-in
+			display: none
+			@media mqMidMobile
+				font-size: 12px
+			img
+				@media mqMidMobile
+					width: 22px
+					margin-right: 9px
+			&:after
+				display: none
+			@media mqBigMobile
+				display: flex!important
+				
+		.favorites 
+			display: none
+			@media mqBigMobile
+				display: flex!important
+				width: 30px
+				
+			img
+				@media mqBigMobile
+					width: 23px
+				@media mqMidMobile
+					width: 20px
 		.language
 			margin-left: 60px
 			position: relative
@@ -126,6 +201,8 @@ header
 			margin-top: -2px
 			@media mqSmallDesktop
 				margin-left: 25px
+			@media mqBigMobile
+				margin-left: 15px
 			&.active
 				.language__value
 					&:after
@@ -186,12 +263,29 @@ header
 		height: 65px
 		position relative
 		z-index: 4
-		
+		@media mqBigMobile
+			height: 60px
+		@media mqMidMobile
+			height: 45px
 		.container
 			padding: 0 51px 0 0px
 			@media mqBigMobile
 				padding: 0
-			
+		.sign-in
+			@media mqBigMobile
+				display: none
+		.favorites 
+			@media mqBigMobile
+				display: none
+				
+		.logo 
+			display: none
+			margin-left: 20px
+			@media mqBigMobile
+				display: flex
+			span
+				display: block
+				
 		&__menu-item 
 			display: block
 			color: #363636
@@ -205,7 +299,7 @@ header
 				
 			&:first-child
 				@media mqMidTablet
-					margin-left: 30px
+					margin-left: 20px
 			@media mqMidTablet
 				padding: 20px 10px
 				font-size: 12px
@@ -217,27 +311,7 @@ header
 				& ~ .additional-menu[data-menu="solutions"]
 					visibility: visible
 					opacity: 1
-		.sign-in
-			display: flex
-			align-items: center
-			margin-right: 17px
-			height: 100%
-			cursor: pointer
-			font-size: 14px
-			position: relative
-			&:after
-				content: ''
-				width: 1px
-				height: 20px
-				top: 0
-				background: #ccc
-				bottom: 0
-				margin: auto
-				position: absolute
-				right: -12px
-			img 
-				width: 25px
-				margin-right: 13px
+	
 				
 		.search-input
 			height: 100%
@@ -245,7 +319,9 @@ header
 			align-items: center
 			justify-content: flex-end
 			position: relative
-			margin-right: 26 px
+			margin-right: 26px
+			@media mqSmallMobile
+				margin-right: 15px
 			&:after
 				content: ''
 				width: 1px
@@ -273,15 +349,11 @@ header
 			&__img
 				width: 23px
 				cursor: pointer
+				@media mqMidMobile
+					width: 19px
+				@media mqSmallMobile
+					width: 16px
 
-		.favorites 
-			height: 100%
-			width: 85px
-			display flex
-			align-items: center
-			justify-content: center
-			img
-				width: 27px
 
 		.cart 
 			height: 100%
@@ -293,15 +365,22 @@ header
 			position: relative
 			cursor: pointer
 			@media mqBigMobile
-				width: 60px
+				background: $c-blue
+			@media mqBigMobile
+				width: 55px
+			@media mqMidMobile
+				width: 48px
 			&:hover
 				background: darken(#e8e8e8, 10%)
-			img
+			svg
 				width: 26px
 				position: relative
 				left: -6px
 				@media mqBigMobile
 					left: 0
+					fill: $c-white
+				@media mqMidMobile
+					width: 20px
 			&--value
 				// font-family: 'PT Sans', sans-serif
 				position: absolute
@@ -320,7 +399,80 @@ header
 				line-height: 1.6em
 				@media mqBigMobile
 					display: none
+		.burger
+			width: 30px
+			height: 30px
+			margin-left: 20px
+			margin-right: 20px
+			z-index: 10
+			transition: all .2s linear
+			cursor: pointer
+			@media mqMidMobile
+				width: 25px
+				height: 27px
+			&.opened
+				span
+					// background: none;
+					width: 30px;
+					background: $c-blue
 
+					&:before
+						width: 30px;
+						background: $c-blue
+						// top: 0px;
+						// -webkit-transform: rotate(45deg);
+						// -ms-transform: rotate(45deg);
+						// -o-transform: rotate(45deg);
+						// transform: rotate(45deg);
+					
+
+					&:after
+						background: $c-blue
+						width: 30px;
+						// top: 0px;
+						// -webkit-transform: rotate(-45deg);
+						// -ms-transform: rotate(-45deg);
+						// -o-transform: rotate(-45deg);
+						// transform: rotate(-45deg);
+							
+			span
+				position: relative
+				width: 100%
+				height: 3px
+				display: inline-block
+				background:  $c-blue
+				transform: translateY(-50%)
+				transition: all 0.2s linear
+				@media mqMidMobile
+					height: 2px
+				&:before
+					content: ""
+					display: block
+					width: 100%
+					height: 3px
+					background:  $c-blue
+					position: absolute
+					right: 0
+					top: -9px
+					transition: all 0.2s linear
+					@media mqMidMobile
+						height: 2px
+						top: -7px
+
+				&:after 
+					content: ""
+					display: block
+					width: 100%
+					height: 3px
+					background:  $c-blue
+					position: absolute
+					right: 0
+					top: 9px
+					transition: all 0.2s linear
+					@media mqMidMobile
+						height: 2px
+						top: 7px
+				
 		.socials
 			display: flex
 			position absolute

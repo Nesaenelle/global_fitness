@@ -93,6 +93,8 @@ $slideOffsetMobile = 100px
 			padding: 22px
 		@media mqSemiMobile
 			width: 320px
+		@media mqMidMobile
+			width: 300px
 		&--title
 			font-size: 48px
 			font-weight: 600
@@ -118,6 +120,8 @@ $slideOffsetMobile = 100px
 			align-items: center;
 			@media mqBigMobile
 				font-size: 16px
+			@media mqMidMobile
+				font-size: 14px
 			&:hover
 				text-decoration: underline
 			svg
@@ -126,6 +130,9 @@ $slideOffsetMobile = 100px
 				width: 16px
 				height: 16px
 				margin-top: -1px
+				@media mqMidMobile
+					width: 13px
+					height: 13px
 	.search-block
 		margin-left: 375px
 		width: 465px
@@ -159,6 +166,8 @@ $slideOffsetMobile = 100px
 			@media mqBigTablet
 				font-size: 20px
 				margin: 6px 0
+			@media mqBigMobile
+				font-size: 18px
 			&:hover
 				color: $c-border-red
 		&__input
@@ -198,11 +207,16 @@ $slideOffsetMobile = 100px
 			background: #f3f3f3
 			border-left: 2px solid $c-border-red
 			padding: 0 30px
+			@media mqBigMobile
+				padding: 0 20px
 			&--item
 				font-size: 16px
 				color: #1f1f1f
 				padding: 18px 0
 				font-weight: 500
+				@media mqBigMobile
+					font-size: 14px
+					padding: 12px 0
 				&:hover
 					cursor: pointer
 				&:nth-child(2)

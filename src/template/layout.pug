@@ -13,10 +13,10 @@ body
 		.top-header
 			.container
 				div
-					a(href="index.html" class="logo")
-						span globalfitness
-						span ukraine
+					include parts/main-logo.pug
+					include parts/sign-in-icon.pug
 				div
+					include parts/favorite-icon.pug
 					nav
 						ul
 							each val in [{url: 'traiding', name: 'Трейдин', pageName:'traiding'}, {url: 'financing', name: 'Финансирование', pageName:'financing'}, {url: 'diller', name: 'Дилеры', pageName:'diller'}, {url: 'about', name: 'О компании', pageName: "about"}, {url: 'our-work', name: 'Наши работы', pageName:'our-work'}, {url: 'contacts', name: 'Контакты', pageName:'contacts'}]
@@ -32,11 +32,14 @@ body
 		.sub-header
 			.container
 				div
+					
 					a(href="catalog.html" class="sub-header__menu-item" data-type="products") Продукция
 					
 					a(href="" class="sub-header__menu-item" data-type="solutions") Готовые решения
 					
 					a(href="sell-out.html" class="sub-header__menu-item") Распродажа
+
+					include parts/main-logo.pug
 
 					.additional-menu(data-menu="products")
 						.additional-menu__products-list
@@ -57,20 +60,18 @@ body
 									img(src='img/' + val.img, alt="")
 									span= val.name
 				div
-					.sign-in(modal-button="sign-in")
-						img(src="img/user.svg", alt="")
-						span Вход
+					include parts/sign-in-icon.pug
 					.search-input
 						input(type="text" placeholder="Поиск на сайте")
 						img(src="img/search.svg", alt="" class="search-input__img")
-					a(class="favorites" href="")
-						img(src="img/favorite.svg", alt="")
+					include parts/favorite-icon.pug
 					a(class="cart" href="")
-						img(src="img/cart.svg", alt="")
+						svg
+							use(xlink:href="#icon-cart")
 						.cart--value 1
-				
 
-
+					.burger
+						span
 			.socials
 					a(href="#" class="socials__item")
 						img(src="img/facebook.svg", alt="")
