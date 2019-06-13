@@ -1,0 +1,7 @@
+mixin about-list(params)
+	.about-us-menu
+		each val in params
+			.about-us-menu__item
+				a(href=val.url)
+				img(src=val.img, alt="")
+				.about-us-menu__item--text= val.name
