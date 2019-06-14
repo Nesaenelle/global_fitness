@@ -27,7 +27,7 @@ setTimeout(() => {
 
         }
     );
-}, 1000)
+}, 500)
 
 $('.catalog__filter__section--title').on('click', function() {
     $(this).next().stop().slideToggle(200);
@@ -121,10 +121,10 @@ $('.input-number').each(function(i, el) {
 
 $('[data-dropdown-value]').on('click', function(e) {
     e.stopPropagation();
-    if(!$(this).closest('[data-dropdown]').hasClass('active')) {
+    if (!$(this).closest('[data-dropdown]').hasClass('active')) {
         $('[data-dropdown]').removeClass('active');
     }
-   
+
     $(this).closest('[data-dropdown]').toggleClass('active');
 });
 
@@ -200,3 +200,102 @@ function magnifyInit() {
         'afterLoad': function() {}
     });
 }
+
+
+var countriesEU = [
+    'RU', 'FR', 'UA', 'SE', 'BY', 'SK', 'SI', 'RS', 'ES', 'RO', 'DE',
+    'NL', 'GB', 'PT', 'IS', 'NO', 'TR', 'BG', 'MD', 'IT', 'PL', 'GR',
+    'IE', 'CH', 'CZ', 'AT', 'LT', 'LV', 'EE', 'FI', 'CY', 'MK', 'BE',
+    'LU', 'DK', 'HU', 'BA', 'HR', 'AL', 'ME', 'AM', 'GE', 'FO'
+];
+
+var countriesAsian = [
+    'CN', 'IN', 'MN', 'JP', 'MM', 'IN', 'NP', 'LK', 'ID', 'MY', 'ID',
+    'PG', 'AU', 'NZ', 'SB', 'NC', 'BD', 'BT', 'TL', 'PH', 'VN', 'KH',
+    'LA', 'TH', 'TW', 'BN', 'KP', 'KR', 'FJ', 'VU', 'SG'
+];
+
+var countriesAfrica = [
+    'TD', 'DZ', 'LY', 'EG', 'SD', 'TD', 'MR', 'ML', 'NG', 'NE', 'CD',
+    'AO', 'ZA', 'BW', 'NA', 'ZW', 'MZ', 'TZ', 'KE', 'ET', 'GA', 'CG',
+    'CM', 'BJ', 'TG', 'GH', 'BF', 'CI', 'LR', 'SL', 'CF', 'GQ', 'SO',
+    'SZ', 'LS', 'ZM', 'SS', 'MW', 'UG', 'GN', 'SN', 'MA', 'ER', 'RW',
+    'BI', 'MG', 'GM', 'GW', 'EH', 'TN', 'RE', 'MU', 'DJ', 'SC'
+];
+
+var europeRegion = countriesEU.map(r => '#world-map path#' + r);
+
+var asianRegion = countriesAsian.map(r => '#world-map path#' + r);
+
+var africaRegion = countriesAfrica.map(r => '#world-map path#' + r);
+
+$('.world-map__list--item').hover(
+    function() {
+        let id = $(this).data('region-id');
+        //find on svg
+        if (id === 'europe') {
+            $(europeRegion.join(',')).addClass('active')
+        }
+
+        if (id === 'asian-pacific') {
+            $(asianRegion.join(',')).addClass('active')
+        }
+
+        if (id === 'africa') {
+            $(africaRegion.join(',')).addClass('active')
+        }
+    },
+    function() {
+        let id = $(this).data('region-id');
+        if (id === 'europe') {
+            $(europeRegion.join(',')).removeClass('active')
+        }
+
+        if (id === 'asian-pacific') {
+            $(asianRegion.join(',')).removeClass('active')
+        }
+
+        if (id === 'africa') {
+            $(africaRegion.join(',')).removeClass('active')
+        }
+    }
+);
+
+$('.world-map__list__item').on('click', function() {
+    let id = $(this).data('region-id');
+
+    if (id === 'europe') {
+        $('#world-map').hide();
+        $('#africa-map').hide();
+        $('#asian-map').hide();
+
+        $('#europe-map').show();
+        $('.world-map__list').addClass('internal');
+    }
+
+    if (id === 'asian-pacific') {
+        $('#world-map').hide();
+        $('#africa-map').hide();
+        $('#europe-map').hide();
+
+        $('#asian-map').show();
+        $('.world-map__list').addClass('internal');
+    }
+
+    if (id === 'africa') {
+        $('#world-map').hide();
+        $('#asian-map').hide();
+        $('#europe-map').hide();
+
+        $('#africa-map').show();
+        $('.world-map__list').addClass('internal');
+    }
+
+    if (id === 'back') {
+        $('.world-map__list').removeClass('internal');
+        $('#europe-map').hide();
+        $('#asian-map').hide();
+        $('#africa-map').hide();
+        $('#world-map').show();
+    }
+});

@@ -22,9 +22,21 @@ block content
 				a(href="search.html" class="search-block__link") Силовое оборудование
 		.main-slider__slide
 			.world-map
+				.world-map--img
+					include ../parts/world-map.html
+					include ../parts/europe-map.html
+					include ../parts/asian-map.html
+					include ../parts/africa-map.html
 				.world-map__list
-					each val in [{name: 'Европа'}, {name: 'Азиатско-Тихоокеанский регион'}, {name: 'Африка'}]
-						.world-map__list--item= val.name
+					.world-map__list__item.back(data-region-id="back") Вернуться назад
+					each val in [{name: 'Европа', id: 'europe'}, {name: 'Азиатско-Тихоокеанский регион', id: 'asian-pacific'}, {name: 'Африка', id: 'africa'}]
+						.world-map__list__item.region(data-region-id=val.id)= val.name
+					.world-map__list__item.world-map__list__item__dropdown(data-dropdown)
+						.world-map__list__item__dropdown--value(data-dropdown-value) Выберете вашу страну
+						.world-map__list__item__dropdown__list
+							each val in [1,2,3,4,5,6,7,8]
+								a(href="" class="world-map__list__item__dropdown__list--item")= val
+
 
 	.container
 		.text-block 
