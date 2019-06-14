@@ -3,7 +3,8 @@ mixin product-item-discount(params)
 		.catalog__goods__grid__item--article Артикул: 
 			span 1234
 		.catalog__goods__grid__item--favorite Избранное
-			img(src="img/favorite.svg", alt="")
+			svg
+				use(xlink:href="#icon-favorite")
 		.catalog__goods__grid__item--label -20%
 		a(class="catalog__goods__grid__item--link" href="product-card.html")
 			img(class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="")

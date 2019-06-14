@@ -314,14 +314,23 @@ $leftWidth = 283px
 						align-items: center
 						cursor: pointer
 						letter-spacing: 0.6px
+						&.active 
+							svg 
+								fill: $c-blue
+								stroke: none
 						&:hover 
 							text-decoration: underline
-							img
+							svg
 								transform: scale(1.1)
-						img
+						svg
+							transition: 0.1s
+							height: 15px
 							width: 15px
 							margin-left: 8px
 							margin-right: 4px
+							fill: $c-white
+							stroke: $c-blue
+							font-size: 20px
 					&--label
 						background: #f14a3f
 						padding: 6px 10px
@@ -742,13 +751,20 @@ $leftWidth = 283px
 						right: 36px
 						top: 0px
 						cursor: pointer
+						&.active 
+							svg 
+								fill: $c-blue
+								stroke: none
 						@media mqBigMobile
 							top: 140px
 							right: 0px
 						&:hover
 							transform: scale(1.1)
-						img
+						svg
+							height: 22px
 							width: 22px
+							stroke: #000
+							fill: $c-white
 					&--compare
 						position: absolute
 						right: 36px
@@ -948,6 +964,35 @@ $leftWidth = 283px
 					width: calc(50% - 30px)
 				@media mqBigMobile
 					width: 100%
+					
+				&__table 
+					margin-right: 20px
+					margin-top: 49px
+					border-right: 1px solid #fafafa
+					@media mqBigTablet
+						margin-right: 0
+					&--item
+						font-size: 14px
+						@media mqSmallTablet
+							font-size: 12px
+						@media mqBigMobile
+							font-size: 14px
+						@media mqMidMobile
+							font-size: 12px
+						&:nth-child(odd)
+							background: #fafafa
+						display: flex
+					&--title
+						width: 62%
+						padding: 15px 24px 13px
+						@media mqSmallTablet
+							padding: 13px 18px 11px
+					&--value
+						border-left: 1px solid #fafafa
+						width: 38%
+						padding: 15px 24px 13px
+						@media mqSmallTablet
+							padding: 13px 18px 11px
 				&--top
 					display: flex
 					flex-wrap: wrap
@@ -1000,7 +1045,7 @@ $leftWidth = 283px
 					width: calc(50%)
 				@media mqBigMobile
 					width: 100%
-					margin-top: 20px
+					margin-top: 35px
 				&--top
 					padding: 3px 0
 					width: 100%

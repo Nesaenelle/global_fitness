@@ -149,8 +149,11 @@ header
 		display flex
 		align-items: center
 		justify-content: center
-		img
+		svg
+			height: 27px
 			width: 27px
+			stroke: #000
+			fill: $c-white
 
 	.top-header
 		
@@ -187,13 +190,14 @@ header
 			display: none
 			@media mqBigMobile
 				display: flex!important
+				width: 38px
+			@media mqMidMobile
 				width: 30px
-				
-			img
+			svg
 				@media mqBigMobile
-					width: 23px
-				@media mqMidMobile
 					width: 20px
+				@media mqMidMobile
+					width: 18px
 		.language
 			margin-left: 60px
 			position: relative
@@ -423,6 +427,7 @@ header
 				background: darken(#e8e8e8, 10%)
 			svg
 				width: 26px
+				height: 26px
 				position: relative
 				left: -6px
 				@media mqBigMobile
@@ -430,6 +435,7 @@ header
 					fill: $c-white
 				@media mqMidMobile
 					width: 20px
+					height: 20px
 			&--value
 				// font-family: 'PT Sans', sans-serif
 				position: absolute

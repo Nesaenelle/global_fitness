@@ -11,6 +11,16 @@
 	opacity: 0
 	visibility: hidden
 	transition: 0.2s
+	&[data-modal-id="contact-us"]
+		.modal--body
+			max-width: 430px
+			.btn 
+				width: 100%
+				margin-top: 20px
+				@media mqBigMobile
+					padding: 10px 8px
+					font-size: 14px
+			
 	&.active 
 		opacity: 1
 		visibility: visible
@@ -44,7 +54,7 @@
 		width: 20px
 		height: 20px
 		cursor: pointer
-		font-family: 'PT Sans', sans-serif;
+		font-family: 'PT Sans', sans-serif
 		font-size: 20px
 		color: #666666
 		&:hover
@@ -55,7 +65,7 @@
 		width: 100%
 		color: #666666
 		margin-bottom: 23px
-		letter-spacing: 0.6px;
+		letter-spacing: 0.6px
 		@media mqBigMobile
 			font-size: 20px
 		@media mqMidMobile
@@ -65,7 +75,7 @@
 		color: #555555
 		line-height: 1.4em
 		font-weight: 400
-		letter-spacing: 0.2px;
+		letter-spacing: 0.2px
 		@media mqMidMobile
 			font-size: 12px
 	&--link
@@ -160,8 +170,8 @@
 		.modal--form
 			.btn 
 				margin-right: 10px
-				padding: 17px 10px;
-				font-size: 16px;
+				padding: 17px 10px
+				font-size: 16px
 				font-weight: 500
 				margin-top: 10px
 				@media mqBigMobile

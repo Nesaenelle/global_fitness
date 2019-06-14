@@ -3,7 +3,8 @@ mixin product-item(params)
 		.catalog__goods__grid__item--article Артикул: 
 			span 1234
 		.catalog__goods__grid__item--favorite Избранное
-			img(src="img/favorite.svg", alt="")
+			svg
+				use(xlink:href="#icon-favorite")
 		a(class="catalog__goods__grid__item--link" href="product-card.html")
 			img(class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="")
 			.catalog__goods__grid__item--descr= params.descr
@@ -12,7 +13,7 @@ mixin product-item(params)
 
 		.catalog__goods__grid__item__buttons
 			button(class="btn btn--buy")
-				svg(viewBox="0 0 2138.327 2138.327")
+				svg
 					use(xlink:href="#icon-cart")
 				span Купить
 			a(href="compare.html")

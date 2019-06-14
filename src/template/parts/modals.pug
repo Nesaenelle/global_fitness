@@ -51,3 +51,22 @@
 				img(src="img/facebook.png", alt="")
 				img(src="img/google.png", alt="")
 				.modal--link(data-modal-button="sign-in") Войти
+
+
+.modal(data-modal-id="contact-us")
+	.modal--body
+		.modal--close(data-modal-close) X
+
+		.modal--title Напишите нам
+
+		form.modal--form
+			label Ваше имя
+			input(type="text" required)
+
+			label Эл. почта или телефон
+			input(type="email" required)
+
+			label Ваше сообщение
+			input(type="text" required)
+			
+			button(class="btn btn--blue" type="submit") Отправить
