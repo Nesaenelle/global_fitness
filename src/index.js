@@ -265,37 +265,37 @@ $('.world-map__list__item').on('click', function() {
     let id = $(this).data('region-id');
 
     if (id === 'europe') {
-        $('#world-map').hide();
-        $('#africa-map').hide();
-        $('#asian-map').hide();
+        $('#world-map').fadeOut(100);
+        $('#africa-map').fadeOut(100);
+        $('#asian-map').fadeOut(100);
 
-        $('#europe-map').show();
+        $('#europe-map').fadeIn(100);
         $('.world-map__list').addClass('internal');
     }
 
     if (id === 'asian-pacific') {
-        $('#world-map').hide();
-        $('#africa-map').hide();
-        $('#europe-map').hide();
+        $('#world-map').fadeOut(100);
+        $('#africa-map').fadeOut(100);
+        $('#europe-map').fadeOut(100);
 
-        $('#asian-map').show();
+        $('#asian-map').fadeIn(100);
         $('.world-map__list').addClass('internal');
     }
 
     if (id === 'africa') {
-        $('#world-map').hide();
-        $('#asian-map').hide();
-        $('#europe-map').hide();
+        $('#world-map').fadeOut(100);
+        $('#asian-map').fadeOut(100);
+        $('#europe-map').fadeOut(100);
 
-        $('#africa-map').show();
+        $('#africa-map').fadeIn(100);
         $('.world-map__list').addClass('internal');
     }
 
     if (id === 'back') {
         $('.world-map__list').removeClass('internal');
-        $('#europe-map').hide();
-        $('#asian-map').hide();
-        $('#africa-map').hide();
-        $('#world-map').show();
+        $('#europe-map').fadeOut(100);
+        $('#asian-map').fadeOut(100);
+        $('#africa-map').fadeOut(100);
+        $('#world-map').fadeIn(100);
     }
 });
