@@ -2051,6 +2051,35 @@ footer .logo span:last-child:before {
   align-items: center;
   height: 100%;
 }
+.home-page .world-map.europe #europe-map {
+  display: block;
+}
+.home-page .world-map.asian #asian-map {
+  display: block;
+}
+.home-page .world-map.africa #africa-map {
+  display: block;
+}
+.home-page .world-map.europe #world-map,
+.home-page .world-map.asian #world-map,
+.home-page .world-map.africa #world-map {
+  display: none;
+}
+.home-page .world-map.europe .world-map__list__item.back,
+.home-page .world-map.asian .world-map__list__item.back,
+.home-page .world-map.africa .world-map__list__item.back {
+  display: block;
+}
+.home-page .world-map.europe .world-map__list__item.region,
+.home-page .world-map.asian .world-map__list__item.region,
+.home-page .world-map.africa .world-map__list__item.region {
+  display: none;
+}
+.home-page .world-map.europe .world-map__list__item__dropdown,
+.home-page .world-map.asian .world-map__list__item__dropdown,
+.home-page .world-map.africa .world-map__list__item__dropdown {
+  display: block;
+}
 @media only screen and (max-width: 1280px) {
   .home-page .world-map {
     padding-left: calc(150px * 2 + 10px);
@@ -2093,28 +2122,11 @@ footer .logo span:last-child:before {
 }
 @media only screen and (max-width: 768px) {
   .home-page .world-map--img svg#world-map {
-    transform: none;
-  }
-}
-.home-page .world-map--img svg#europe-map {
-  transform: translateX(40%);
-}
-@media only screen and (max-width: 1280px) {
-  .home-page .world-map--img svg#europe-map {
-    transform: translateX(50%);
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .home-page .world-map--img svg#europe-map {
-    transform: translateX(60%);
-  }
-}
-@media only screen and (max-width: 768px) {
-  .home-page .world-map--img svg#europe-map {
-    transform: none;
+    transform: scale(1.2);
   }
 }
 .home-page .world-map--img svg#asian-map {
+  display: none;
   transform: translateX(10%);
 }
 @media only screen and (max-width: 1280px) {
@@ -2133,6 +2145,7 @@ footer .logo span:last-child:before {
   }
 }
 .home-page .world-map--img svg#africa-map {
+  display: none;
   transform: translateX(10%);
 }
 @media only screen and (max-width: 1280px) {
@@ -2162,21 +2175,21 @@ footer .logo span:last-child:before {
   stroke: #3296f5;
   fill: #ebebeb;
 }
+.home-page .world-map--img svg .country-label {
+  opacity: 0;
+  visible: hidden;
+  transition: 0.3s;
+}
+.home-page .world-map--img svg .country-label.active {
+  opacity: 1;
+  visible: visible;
+}
 .home-page .world-map__list {
   position: relative;
   z-index: 1;
   background: #f3f3f3;
   border-left: 2px solid #f14a3f;
   padding: 0 30px;
-}
-.home-page .world-map__list.internal .world-map__list__item.back {
-  display: block;
-}
-.home-page .world-map__list.internal .world-map__list__item.region {
-  display: none;
-}
-.home-page .world-map__list.internal .world-map__list__item__dropdown {
-  display: block;
 }
 @media only screen and (max-width: 768px) {
   .home-page .world-map__list {
