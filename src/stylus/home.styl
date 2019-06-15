@@ -203,6 +203,26 @@ $slideOffsetMobile = 100px
 		padding-left: 420px
 		align-items: center
 		height: 100%
+		
+		&.europe
+			#europe-map
+				display: block
+		&.asian
+			#asian-map
+				display: block
+		&.africa
+			#africa-map
+				display: block
+				
+		&.europe, &.asian, &.africa
+			#world-map
+				display: none
+			.world-map__list__item.back 
+				display: block
+			.world-map__list__item.region
+				display: none
+			.world-map__list__item__dropdown
+				display: block
 
 		@media mqBigTablet
 			padding-left: "calc(%s * 2 + 10px)" % $slideOffsetTablet
@@ -227,16 +247,18 @@ $slideOffsetMobile = 100px
 					@media mqMidTablet
 						transform: translateX(15%)
 					@media mqBigMobile
-						transform: none
+						transform: scale(1.2)
 				&#europe-map
-					transform: translateX(40%)
-					@media mqBigTablet
-						transform: translateX(50%)
-					@media mqMidTablet
-						transform: translateX(60%)
-					@media mqBigMobile
-						transform: none
+					// display: none
+					// transform: translateX(25%)
+					// @media mqBigTablet
+					// 	transform: translateX(50%)
+					// @media mqMidTablet
+					// 	transform: translateX(60%)
+					// @media mqBigMobile
+					// 	transform: translateX(30%) scale(1.5)
 				&#asian-map
+					display: none
 					transform: translateX(10%)
 					@media mqBigTablet
 						transform: translateX(20%)
@@ -245,6 +267,7 @@ $slideOffsetMobile = 100px
 					@media mqBigMobile
 						transform: none
 				&#africa-map
+					display: none
 					transform: translateX(10%)
 					@media mqBigTablet
 						transform: translateX(20%)
@@ -261,19 +284,22 @@ $slideOffsetMobile = 100px
 					&:hover
 						stroke: #3296f5
 						fill: #ebebeb
+				.country-label 
+					opacity: 0
+					visible:hidden
+					transition: 0.3s
+					&.active
+						opacity: 1
+						visible:visible
+					
 		&__list
 			position: relative
 			z-index: 1
 			background: #f3f3f3
 			border-left: 2px solid $c-border-red
 			padding: 0 30px
-			&.internal
-				.world-map__list__item.back 
-					display: block
-				.world-map__list__item.region
-					display: none
-				.world-map__list__item__dropdown
-					display: block
+			// &.internal
+
 			@media mqBigMobile
 				padding: 0 20px
 			&__item

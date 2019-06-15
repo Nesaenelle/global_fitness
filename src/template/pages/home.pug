@@ -29,14 +29,13 @@ block content
 					include ../parts/africa-map.html
 				.world-map__list
 					.world-map__list__item.back(data-region-id="back") Вернуться назад
-					each val in [{name: 'Европа', id: 'europe'}, {name: 'Азиатско-Тихоокеанский регион', id: 'asian-pacific'}, {name: 'Африка', id: 'africa'}]
+					each val in [{name: 'Европа', id: 'europe'}, {name: 'Азиатско-Тихоокеанский регион', id: 'asian'}, {name: 'Африка', id: 'africa'}]
 						.world-map__list__item.region(data-region-id=val.id)= val.name
 					.world-map__list__item.world-map__list__item__dropdown(data-dropdown)
 						.world-map__list__item__dropdown--value(data-dropdown-value) Выберете вашу страну
 						.world-map__list__item__dropdown__list
-							each val in [1,2,3,4,5,6,7,8]
-								a(href="" class="world-map__list__item__dropdown__list--item")= val
-
+							each val in [{title: 'Albania', id: 'AL'}, {title: 'Austria', id: 'AT'}, {title:'Belarus', id: 'BY'}, {title: 'Belgium', id: 'BE'},{title: 'Bulgaria', id: 'BG'}, {title: 'Croatia', id: 'HR'}, {title: 'Cyprus', id: 'CY'}, {title: 'Czech Republic', id: 'CZ'}, {title: 'Denmark', id: 'DK'},{title: 'Estonia', id: 'EE'},{title: 'Faroe Islands', id: 'FO'}, {title: 'Finland', id: 'FI'},{title: 'France', id: 'FR'}, {title: 'Georgia', id: 'GE'}, {title: 'Germany', id: 'DE'},{title: 'Greece', id: 'GR'}, {title: 'Hungary', id: 'HU'},{title: 'Iceland', id: 'IS'},{title: 'Ireland', id: 'IE'}, {title: 'Italy', id: 'IT'}, {title: 'Latvia', id: 'LV'}, {title: 'Lithuania', id: 'LT'}, {title: 'Luxembourg', id: 'LU'},{title: 'Macedonia', id: 'MK'}, {title: 'Moldova', id: 'MD'},{title: 'Montenegro', id: 'ME'},{title: 'Netherlands', id: 'NL'},{title: 'Norway', id: 'NO'},{title: 'Poland', id: 'PL'},{title: 'Portugal', id: 'PT'}, {title: 'Romania', id: 'RO'},{title: 'Russia', id: 'RU'},{title: 'Serbia', id: 'RS'},{title: 'Slovakia', id: 'SK'},{title: 'Slovenia', id: 'SI'},{title: 'Spain', id: 'ES'},{title: 'Sweden', id: 'SE'},{title: 'Switzerland', id: 'CH'},{title: 'Turkey', id: 'TR'}, {title: 'Ukraine', id: 'UA'}, {title: 'United Kingdom', id: 'GB'}]
+								a(href="" class="world-map__list__item__dropdown__list--item" data-country-id=val.id)= val.title
 
 	.container
 		.text-block 
