@@ -391,8 +391,10 @@ function loadWorldMapInfo() {
     size.width = size.width + 10;
     size.height = size.height + 1;
 
-    addRectToGroup('europe', group, [1050 - 3, 270 - 10], size);
-    addTextToGroup('europe', group, [1050, 270], text, fontSize);
+    // addRectToGroup('europe', group, [1050 - 3, 270 - 10], size);
+    addMarkerToGroup('europe', group, [1050 - 27, 260 - 23], {width: 28, height: 28});
+
+    addTextToGroup('europe', group, [1050, 260], text, fontSize);
 
 
     var text = "Asia pacific";
@@ -401,7 +403,8 @@ function loadWorldMapInfo() {
     size.width = size.width + 10;
     size.height = size.height + 1;
 
-    addRectToGroup('asian', group, [1520 - 3, 350 - 10], size);
+    // addRectToGroup('asian', group, [1520 - 3, 350 - 10], size);
+    addMarkerToGroup('asian', group, [1520 - 27, 350 - 23], {width: 28, height: 28});
     addTextToGroup('asian', group, [1520, 350], text, fontSize);
 
 
@@ -411,7 +414,8 @@ function loadWorldMapInfo() {
     size.width = size.width + 10;
     size.height = size.height + 1;
 
-    addRectToGroup('africa', group, [1050 - 3, 500 - 10], size);
+    // addRectToGroup('africa', group, [1050 - 3, 500 - 10], size);
+    addMarkerToGroup('africa', group, [1050 - 27, 500 - 23], {width: 28, height: 28});
     addTextToGroup('africa', group, [1050, 500], text, fontSize);
 
 }
@@ -435,8 +439,18 @@ function loadEuropeMapInfo() {
         size.width = size.width + 6;
         size.height = size.height + 1;
 
-        addRectToGroup(country, group, center, size);
+        if(country === 'RU') {
+            center = [1200, 200];
+        }
+
+
+        // addRectToGroup(country, group, center, size);
         addTextToGroup(country, group, center, full.Name, '10px');
+
+        center[0] = center[0] - 13;
+        center[1] = center[1] - 12;
+
+        addMarkerToGroup(country, group, center, {width: 14, height: 14});
 
         europeCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
     });
@@ -458,13 +472,18 @@ function loadAsianMapInfo() {
 
         var full = FULL_DATA.filter(r => r.Code === country)[0];
 
-        var size = textSize(full.Name, '10px');
+        var size = textSize(full.Name, '14px');
 
         size.width = size.width + 6;
         size.height = size.height + 1;
 
-        addRectToGroup(country, group, center, size);
-        addTextToGroup(country, group, center, full.Name, '10px');
+        // addRectToGroup(country, group, center, size);
+        addTextToGroup(country, group, center, full.Name, '14px');
+
+        center[0] = center[0] - 24;
+        center[1] = center[1] - 20;
+
+        addMarkerToGroup(country, group, center, {width: 22, height: 22});
 
         asiaCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
     });
@@ -484,13 +503,18 @@ function loadAfricaMapInfo() {
 
         var full = FULL_DATA.filter(r => r.Code === country)[0];
 
-        var size = textSize(full.Name, '10px');
+        var size = textSize(full.Name, '12px');
 
         size.width = size.width + 6;
         size.height = size.height + 1;
 
-        addRectToGroup(country, group, center, size);
-        addTextToGroup(country, group, center, full.Name, '10px');
+        // addRectToGroup(country, group, center, size);
+        addTextToGroup(country, group, center, full.Name, '12px');
+
+        center[0] = center[0] - 20;
+        center[1] = center[1] - 18;
+
+        addMarkerToGroup(country, group, center, {width: 18, height: 18});
 
         africaCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
     });
@@ -509,6 +533,17 @@ function textSize(text, fontSize) {
     return { width: size.width, height: size.height };
 }
 
+function addMarkerToGroup(id, group, center, size) {
+    return group.append("svg:image")
+        .attr('x', center[0])
+        .attr('y', center[1])
+        .attr('width', size.width)
+        .attr('height', size.height)
+        .attr('class', 'country-label')
+        .attr("xlink:href", "img/marker.svg")
+        .attr('data-id', id)
+}
+
 function addRectToGroup(id, group, center, size) {
     return group.append('rect')
         .attr('x', center[0] - 3)
@@ -524,8 +559,10 @@ function addTextToGroup(id, group, center, text, fontSize) {
     return group.append('text')
         .attr('x', center[0])
         .attr('y', center[1])
-        .attr('fill', '#fff')
+        .attr('fill', '#000')
         .style("font-size", fontSize)
+        .style("font-weight", 'bold')
+        .style("font-family", 'Open Sans')
         .attr('class', 'country-label')
         .attr('data-id', id)
         .text(text)
