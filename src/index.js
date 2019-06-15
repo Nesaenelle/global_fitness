@@ -217,9 +217,8 @@ var countriesEU = [
 ];
 
 var countriesAsian = [
-    'CN', 'IN', 'MN', 'JP', 'MM', 'IN', 'NP', 'LK', 'ID', 'MY', 'ID',
-    'PG', 'AU', 'NZ', 'SB', 'NC', 'BD', 'BT', 'TL', 'PH', 'VN', 'KH',
-    'LA', 'TH', 'TW', 'BN', 'KP', 'KR', 'FJ', 'VU', 'SG'
+    'CN', 'JP', 'MY', 'ID', 'PG', 'AU', 'NZ', 'SB', 'NC', 'TL', 
+    'PH', 'VN', 'TH', 'TW', 'BN', 'KP', 'KR', 'FJ', 'VU', 'SG'
 ];
 
 var countriesAfrica = [
@@ -235,6 +234,10 @@ var asianRegion = countriesAsian.map(r => '#world-map path#' + r);
 var africaRegion = countriesAfrica.map(r => '#world-map path#' + r);
 
 var currentRegion;
+var europeCountriesList = [];
+var asiaCountriesList = [];
+var africaCountriesList = [];
+
 $('.world-map__list__item').hover(
     function() {
         let id = $(this).data('region-id');
@@ -274,8 +277,9 @@ $('.world-map__list__item').hover(
     }
 );
 
-$('.world-map__list__item__dropdown__list--item').hover(
-    function() {
+
+$('.world-map__list__item__dropdown__list').on({
+    mouseover:function(){
         let id = $(this).data('country-id');
         var selector = '';
         var countryLabel = ''
@@ -286,33 +290,38 @@ $('.world-map__list__item__dropdown__list--item').hover(
         }
         if (currentRegion === 'asian') {
             selector = '#asian-map #' + id;
+            countryLabel = `#asian-map [data-id=${id}]`;
         }
         if (currentRegion === 'africa') {
             selector = '#africa-map #' + id;
+            countryLabel = `#africa-map [data-id=${id}]`;
         }
         $(selector).addClass('active');
         $(countryLabel).addClass('active');
     },
-    function() {
-        let id = $(this).data('country-id');
+    mouseout:function(){
+      let id = $(this).data('country-id');
 
-        var selector = '';
-        var countryLabel = ''
+      var selector = '';
+      var countryLabel = ''
 
-        if (currentRegion === 'europe') {
-            selector = '#europe-map #' + id;
-            countryLabel = `#europe-map [data-id=${id}]`;
-        }
-        if (currentRegion === 'asian') {
-            selector = '#asian-map #' + id;
-        }
-        if (currentRegion === 'africa') {
-            selector = '#africa-map #' + id;
-        }
+      if (currentRegion === 'europe') {
+          selector = '#europe-map #' + id;
+          countryLabel = `#europe-map [data-id=${id}]`;
+      }
+      if (currentRegion === 'asian') {
+          selector = '#asian-map #' + id;
+          countryLabel = `#asian-map [data-id=${id}]`;
+      }
+      if (currentRegion === 'africa') {
+          selector = '#africa-map #' + id;
+          countryLabel = `#africa-map [data-id=${id}]`;
+      }
 
-        $(selector).removeClass('active');
-        $(countryLabel).removeClass('active');
-    });
+      $(selector).removeClass('active');
+      $(countryLabel).removeClass('active');
+    }
+}, '.world-map__list__item__dropdown__list--item');
 
 
 $('.world-map__list__item').on('click', function() {
@@ -323,17 +332,28 @@ $('.world-map__list__item').on('click', function() {
     if (id === 'europe') {
         currentRegion = 'europe';
         $('.world-map').addClass(currentRegion)
-
+        if(!$('#europe-map .group').length) {
+            loadEuropeMapInfo();
+        }
+        drawCountriesList(europeCountriesList);
     }
 
     if (id === 'asian') {
         currentRegion = 'asian';
         $('.world-map').addClass(currentRegion)
+        if(!$('#asian-map .group').length) {
+            loadAsianMapInfo();
+        }
+        drawCountriesList(asiaCountriesList);
     }
 
     if (id === 'africa') {
         currentRegion = 'africa';
         $('.world-map').addClass(currentRegion)
+        if(!$('#africa-map .group').length) {
+            loadAfricaMapInfo();
+        }
+        drawCountriesList(africaCountriesList);
     }
 
     if (id === 'back') {
@@ -342,8 +362,20 @@ $('.world-map__list__item').on('click', function() {
     }
 });
 
+
 loadWorldMapInfo();
-loadEuropeMapInfo();
+
+
+
+function drawCountriesList(list) {
+    $('.world-map__list__item__dropdown__list').empty();
+    list.forEach(item=> {
+        $('.world-map__list__item__dropdown__list').append(`
+            <a href="" class="world-map__list__item__dropdown__list--item" data-country-id=${item.Code}> ${item.Name}</a>    
+        `);
+    });
+}
+
 
 function loadWorldMapInfo() {
     var body = d3.select("body");
@@ -389,6 +421,7 @@ function loadEuropeMapInfo() {
     var svg = body.select("#europe-map");
 
     var group = svg.append("g")
+        .attr('class', 'group')
 
     countriesEU.forEach((country) => {
         var xxx = svg.select('#' + country);
@@ -405,6 +438,61 @@ function loadEuropeMapInfo() {
         addRectToGroup(country, group, center, size);
         addTextToGroup(country, group, center, full.Name, '10px');
 
+        europeCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
+    });
+
+}
+
+function loadAsianMapInfo() {
+    var body = d3.select("body");
+    var svg = body.select("#asian-map");
+
+    var group = svg.append("g")
+        .attr('class', 'group')
+
+    countriesAsian.forEach((country) => {
+        var xxx = svg.select('#' + country);
+
+
+        var center = getBoundingBoxCenter(xxx);
+
+        var full = FULL_DATA.filter(r => r.Code === country)[0];
+
+        var size = textSize(full.Name, '10px');
+
+        size.width = size.width + 6;
+        size.height = size.height + 1;
+
+        addRectToGroup(country, group, center, size);
+        addTextToGroup(country, group, center, full.Name, '10px');
+
+        asiaCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
+    });
+}
+
+function loadAfricaMapInfo() {
+    var body = d3.select("body");
+    var svg = body.select("#africa-map");
+
+    var group = svg.append("g")
+        .attr('class', 'group')
+
+    countriesAfrica.forEach((country) => {
+        var xxx = svg.select('#' + country);
+
+        var center = getBoundingBoxCenter(xxx);
+
+        var full = FULL_DATA.filter(r => r.Code === country)[0];
+
+        var size = textSize(full.Name, '10px');
+
+        size.width = size.width + 6;
+        size.height = size.height + 1;
+
+        addRectToGroup(country, group, center, size);
+        addTextToGroup(country, group, center, full.Name, '10px');
+
+        africaCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
     });
 }
 

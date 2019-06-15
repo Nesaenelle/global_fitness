@@ -2125,23 +2125,31 @@ footer .logo span:last-child:before {
     transform: scale(1.2);
   }
 }
+.home-page .world-map--img svg#europe-map {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  .home-page .world-map--img svg#europe-map {
+    transform: translateX(-30%) scale(2.2);
+  }
+}
 .home-page .world-map--img svg#asian-map {
   display: none;
   transform: translateX(10%);
 }
 @media only screen and (max-width: 1280px) {
   .home-page .world-map--img svg#asian-map {
-    transform: translateX(20%);
+    transform: translateX(10%);
   }
 }
 @media only screen and (max-width: 1024px) {
   .home-page .world-map--img svg#asian-map {
-    transform: translateX(30%);
+    transform: translateX(10%) scale(0.9);
   }
 }
 @media only screen and (max-width: 768px) {
   .home-page .world-map--img svg#asian-map {
-    transform: none;
+    transform: translateX(-15%) scale(1.3);
   }
 }
 .home-page .world-map--img svg#africa-map {
@@ -2155,7 +2163,7 @@ footer .logo span:last-child:before {
 }
 @media only screen and (max-width: 1024px) {
   .home-page .world-map--img svg#africa-map {
-    transform: translateX(20%) scale(0.7);
+    transform: translateX(20%) scale(0.8);
   }
 }
 @media only screen and (max-width: 768px) {
@@ -2260,7 +2268,7 @@ footer .logo span:last-child:before {
   max-height: 200px;
   overflow-y: auto;
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 980px) {
   .home-page .world-map__list__item__dropdown__list {
     bottom: 53px;
     top: auto;

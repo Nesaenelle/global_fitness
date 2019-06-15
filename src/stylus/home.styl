@@ -249,30 +249,25 @@ $slideOffsetMobile = 100px
 					@media mqBigMobile
 						transform: scale(1.2)
 				&#europe-map
-					// display: none
-					// transform: translateX(25%)
-					// @media mqBigTablet
-					// 	transform: translateX(50%)
-					// @media mqMidTablet
-					// 	transform: translateX(60%)
-					// @media mqBigMobile
-					// 	transform: translateX(30%) scale(1.5)
+					display: none
+					@media mqBigMobile
+						transform: translateX(-30%) scale(2.2)
 				&#asian-map
 					display: none
 					transform: translateX(10%)
 					@media mqBigTablet
-						transform: translateX(20%)
+						transform: translateX(10%)
 					@media mqMidTablet
-						transform: translateX(30%)
+						transform: translateX(10%) scale(0.9)
 					@media mqBigMobile
-						transform: none
+						transform: translateX(-15%) scale(1.3)
 				&#africa-map
 					display: none
 					transform: translateX(10%)
 					@media mqBigTablet
 						transform: translateX(20%)
 					@media mqMidTablet
-						transform: translateX(20%) scale(0.7)
+						transform: translateX(20%) scale(0.8)
 					@media mqBigMobile
 						transform: none
 				path 
@@ -357,7 +352,7 @@ $slideOffsetMobile = 100px
 						box-shadow: 0 3px 10px -2px #ccc
 						max-height: 200px
 						overflow-y: auto
-						@media mqBigMobile
+						@media mqSmallTablet
 							bottom: 53px
 							top: auto
 
