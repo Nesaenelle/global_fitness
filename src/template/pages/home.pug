@@ -4,23 +4,23 @@ block content
 	
 	//- .main-
 	.main-slider
-		.main-slider__slide.active
+		.main-slider__slide.active(data-slide-id="1")
 			.banner-block
 				.banner-block--title LIMITLESS FREE TRAINER
 				.banner-block--text Не следует, однако забывать, что новая модель организационной деятельности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.
 				a(class="banner-block--link" href="") узнай больше
 					svg
 						use(xlink:href="#icon-right-arrow")
-		.main-slider__slide
+		.main-slider__slide(data-slide-id="2")
 			.search-block
 				a(href="search.html" class="search-block__link") Кардио оборудование
 				a(href="search.html" class="search-block__link") Зона свободных весов
 				.search-block__input
 					img(src="img/search.svg", alt="" class="search-input__img")
-					input(type="text" placeholder="Что вы ищите?" )
+					input(type="text" data-placeholder="Что вы ищите?" )
 				a(href="search.html" class="search-block__link") Профессиональные тренажеры
 				a(href="search.html" class="search-block__link") Силовое оборудование
-		.main-slider__slide
+		.main-slider__slide(data-slide-id="3")
 			.world-map
 				.world-map--img
 					include ../parts/world-map.html

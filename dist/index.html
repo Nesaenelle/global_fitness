@@ -15,10 +15,11 @@
         <div><a class="logo" href="index.html"><span>globalfitness</span><span>ukraine</span></a>
 <div class="sign-in" data-modal-button="sign-in"><img src="img/user.svg" alt=""><span>Вход</span></div>
         </div>
-        <div><a class="favorites desktop" href="">
+        <div><a class="favorites" href="">
   <svg>
     <use xlink:href="#icon-favorite"></use>
-  </svg></a>
+  </svg>
+  <div class="favorites--value"></div></a>
 <nav>
   <ul>
     <li><a href="traiding.html">Трейдин</a></li>
@@ -70,10 +71,11 @@
 <div class="sign-in" data-modal-button="sign-in"><img src="img/user.svg" alt=""><span>Вход</span></div>
           <div class="search-input">
             <input type="text" placeholder="Поиск на сайте" maxlength="50"><img class="search-input__img" src="img/search.svg" alt="">
-          </div><a class="favorites desktop" href="">
+          </div><a class="favorites" href="">
   <svg>
     <use xlink:href="#icon-favorite"></use>
-  </svg></a><a class="cart" href="">
+  </svg>
+  <div class="favorites--value"></div></a><a class="cart" href="">
             <svg>
               <use xlink:href="#icon-cart"></use>
             </svg>
@@ -99,7 +101,7 @@
   </header>
   <main class="home-page">
     <div class="main-slider">
-      <div class="main-slider__slide active">
+      <div class="main-slider__slide active" data-slide-id="1">
         <div class="banner-block">
           <div class="banner-block--title">LIMITLESS FREE TRAINER</div>
           <div class="banner-block--text">Не следует, однако забывать, что новая модель организационной деятельности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач.</div><a class="banner-block--link" href="">узнай больше
@@ -108,14 +110,14 @@
             </svg></a>
         </div>
       </div>
-      <div class="main-slider__slide">
+      <div class="main-slider__slide" data-slide-id="2">
         <div class="search-block"><a class="search-block__link" href="search.html">Кардио оборудование</a><a class="search-block__link" href="search.html">Зона свободных весов</a>
           <div class="search-block__input"><img class="search-input__img" src="img/search.svg" alt="">
-            <input type="text" placeholder="Что вы ищите?">
+            <input type="text" data-placeholder="Что вы ищите?">
           </div><a class="search-block__link" href="search.html">Профессиональные тренажеры</a><a class="search-block__link" href="search.html">Силовое оборудование</a>
         </div>
       </div>
-      <div class="main-slider__slide">
+      <div class="main-slider__slide" data-slide-id="3">
         <div class="world-map">
           <div class="world-map--img">
             <svg id="world-map" xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1967.2 848.2">
@@ -582,7 +584,7 @@
         <li> <a href="">Конфиденциальность   </a></li>
         <li> <a href="">Использование личной информации</a></li>
       </ul>
-    </div>
+    </div><a class="designed" href="https://fairtech-marketing.com.ua/ ">Разработано Fairtech.Marketing</a>
   </div>
 </footer>
 <div class="modal--overlay"></div>
@@ -603,7 +605,9 @@
         </form>
       </div>
       <div class="modal--right">
-        <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        <div class="modal--socials">
+          <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        </div>
         <div class="modal--link" data-modal-button="sign-up">Зарегистрироваться</div>
       </div>
     </div>
@@ -629,7 +633,9 @@
         </form>
       </div>
       <div class="modal--right">
-        <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        <div class="modal--socials">
+          <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        </div>
         <div class="modal--link" data-modal-button="sign-in">Войти</div>
       </div>
     </div>
@@ -641,11 +647,9 @@
     <div class="modal--title">Напишите нам</div>
     <form class="modal--form">
       <label>Ваше имя</label>
-      <input type="text" required>
+      <input type="text" required placeholder="Имя">
       <label>Эл. почта или телефон</label>
-      <input type="email" required>
-      <label>Ваше сообщение</label>
-      <input type="text" required>
+      <input type="email" required placeholder="Телефон">
       <button class="btn btn--blue" type="submit">Отправить</button>
     </form>
   </div>

@@ -1,20 +1,16 @@
 header
-	height: 145px 
-	position relative
+	height: calc(47px + 65px)
+	position fixed
+	left: 0
+	top: 0
 	background: #fff
+	width: 100%
+	z-index: 100
 	@media mqBigMobile
-		height: 100px
+		height: calc(40px + 55px)
 	@media mqMidMobile
-		height: 80px
-	&:before
-		content: ""
-		width: 100%
-		left: 0
-		position: absolute
-		height: 10px
-		bottom: 0
-		z-index: -1
-		box-shadow: 0 0 7px -3px #666
+		height: calc(35px + 45px)
+
 	nav
 		@media mqBigMobile
 			display: none
@@ -27,7 +23,7 @@ header
 						display block
 				a
 					display: block
-					padding: 29px 20px 31px
+					padding: 15px 20px 13px
 					font-size: 14px
 					color: #1f1f1f
 					letter-spacing: 0.5px
@@ -43,10 +39,10 @@ header
 						left: 0
 						background: #0786ff
 					@media mqSmallDesktop
-						padding: 30px 5px 31px
+						padding: 13px 5px 15px
 					@media mqMidTablet
 						font-size: 12px
-						padding: 30px 2px 33px
+						padding: 14px 2px 16px
 
 	.logo 
 		display: flex
@@ -97,7 +93,7 @@ header
 	
 					
 			@media mqBigTablet
-				font-size: 30px
+				font-size: 28px
 			@media mqMidTablet
 				font-size: 24px
 			@media mqMidMobile
@@ -149,16 +145,48 @@ header
 		display flex
 		align-items: center
 		justify-content: center
+		position: relative
+		&.active
+			.favorites--value
+				display: flex
 		svg
 			height: 27px
 			width: 27px
 			stroke: #000
 			fill: $c-white
+		&--value
+			// font-family: 'PT Sans', sans-serif
+			position: absolute
+			background: $c-blue
+			font-size: 11px
+			color: $c-white
+			border-radius: 100%
+			width: 18px
+			display: none
+			font-weight: 300
+			align-items: center
+			justify-content: center
+			height: 18px
+			left: 44px
+			top: 15px
+			line-height: 1.6em
+			@media mqBigMobile
+				left: 20px;
+				top: -5px;
+				width: 16px
+				height: 16px
+				font-size: 10px
+				line-height: 1.7em
+			@media mqMidMobile
+				left: 16px
+				height: 14px
+				width: 14px
+				font-size: 9px
 
 	.top-header
 		
 		padding: 10px 0
-		height: 80px
+		height: 47px
 		@media mqBigMobile
 			height: 40px
 		@media mqMidMobile
@@ -192,7 +220,7 @@ header
 				display: flex!important
 				width: 38px
 			@media mqMidMobile
-				width: 30px
+				width: 26px
 			svg
 				@media mqBigMobile
 					width: 20px
@@ -243,22 +271,30 @@ header
 					-webkit-transform: rotate(45deg)
 					transition: 0.2s
 			&__list
-				width: 100px
+				// width: 54px
 				background: $c-white
 				position: absolute
 				opacity: 0
 				visibility: hidden
 				z-index: 6
 				box-shadow: 0 3px 14px -8px #000
-				right: -18px
+				left: -6px
 				transition: 0.1s
+				top: 20px
+				@media mqMidTablet
+					left: -2px
+				@media mqBigMobile
+					left: -6px
 				&--item
 					padding: 5px 10px
 					font-size: 14px
 					color: #1f1f1f
 					cursor: pointer
+					text-align: center
 					@media mqMidTablet
 						font-size: 12px
+					@media mqBigMobile
+						font-size: 14px
 					&:hover
 						background: #e8e8e8
 	.sub-header 
@@ -268,7 +304,7 @@ header
 		position relative
 		z-index: 4
 		@media mqBigMobile
-			height: 60px
+			height: 55px
 		@media mqMidMobile
 			height: 45px
 		.container
@@ -453,7 +489,20 @@ header
 				top: 15px
 				line-height: 1.6em
 				@media mqBigMobile
-					display: none
+					background: $c-white
+					left: 33px
+					color: $c-blue
+					top: 14px
+					width: 16px
+					height: 16px
+					font-size: 10px
+					line-height: 1.7em
+				@media mqMidMobile
+					left: 27px
+					top: 8px
+					height: 14px
+					width: 14px
+					font-size: 9px
 		.burger
 			width: 30px
 			height: 30px

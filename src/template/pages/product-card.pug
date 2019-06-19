@@ -82,30 +82,39 @@ block content
 							span - со склада Новой Почты 
 
 						.product-card__main__info__bottom
-							a(href="#")
-								.product-card__main__info__bottom__banner
+							a.product-card__main__info__bottom__banner(href="#")
 									img(src="img/product-banner.png", alt="")
 									.product-card__main__info__bottom__banner--text Inter Atletika
-							.product-card__main__info__bottom--link
-								svg
-									use(xlink:href="#icon-credit-card")
-								span Трейдин
-							.product-card__main__info__bottom--link 
-								svg
-									use(xlink:href="#icon-mobile-shopping")
-								span Лизинг
+							div
+								.product-card__main__info__bottom--link
+									svg
+										use(xlink:href="#icon-credit-card")
+									span Трейдин
+								.product-card__main__info__bottom--link 
+									svg
+										use(xlink:href="#icon-mobile-shopping")
+									span Лизинг
 				.product-card--wrapper
 					.product-card__menu
 						.product-card__menu--top
-							each val in [{name: 'Описание', active: true}, {name: 'Характеристики'}, {name: 'Комплектация'}]
-								.product-card__menu--item(class=val.active ? 'active' : '')= val.name
-						.product-card__menu--title Описание / Манжет для тяги улучшеный InterAtletika M13-09-MD
-						.product-card__menu--descr Манжет для тяги InterAtletika М3-09 (лямки для щиколоток) имеет удобную и практичную форму. Он применяется как во время выполнения силовых упражнений, так и при занятиях фитнесом, или физкультурой. Сама конструкция состоит из двух комплектующих – D-усиленного кольца, сделанного из стали, и самого неопренового манжета. Все комплектующие высококачественны и износоустойчивы.
-						.product-card__menu__table
-							each val in [{title: 'Тип агрегата', val: 'навесной'}, {title: 'Производительность га/ч', val: '5,6'}, {title: 'Ширина захвата, м', val: '5,6'}, {title: 'Количество обрабатываемых рядков, шт.', val: '8'}, {title: 'Ширина междурядий, мм', val: '700'}, {title: 'Ширина лапы, мм', val: '150'}, {title: 'Количество лап, шт', val: '41'}, {title: 'Суммарная емкость бункеров для удобрений, дм3', val: '320 (80x4)'}, {title: 'Рабочая скорость, км/ч', val: '5-10'}]
-								.product-card__menu__table--item
-									.product-card__menu__table--title= val.title
-									.product-card__menu__table--value= val.val
+							each val in [{id: 1, name: 'Описание', active: true}, {id: 2, name: 'Характеристики'}, {id: 3, name: 'Комплектация'}]
+								.product-card__menu--item(class=val.active ? 'active' : '' data-tab-id=val.id)= val.name
+
+						.product-card__menu--content(data-tab="1")
+							.product-card__menu--title Описание / Манжет для тяги улучшеный InterAtletika M13-09-MD
+							.product-card__menu--descr Манжет для тяги InterAtletika М3-09 (лямки для щиколоток) имеет удобную и практичную форму. Он применяется как во время выполнения силовых упражнений, так и при занятиях фитнесом, или физкультурой. Сама конструкция состоит из двух комплектующих – D-усиленного кольца, сделанного из стали, и самого неопренового манжета. Все комплектующие высококачественны и износоустойчивы.
+							.product-card__menu__table
+								each val in [{title: 'Тип агрегата', val: 'навесной'}, {title: 'Производительность га/ч', val: '5,6'}, {title: 'Ширина захвата, м', val: '5,6'}, {title: 'Количество обрабатываемых рядков, шт.', val: '8'}, {title: 'Ширина междурядий, мм', val: '700'}, {title: 'Ширина лапы, мм', val: '150'}, {title: 'Количество лап, шт', val: '41'}, {title: 'Суммарная емкость бункеров для удобрений, дм3', val: '320 (80x4)'}, {title: 'Рабочая скорость, км/ч', val: '5-10'}]
+									.product-card__menu__table--item
+										.product-card__menu__table--title= val.title
+										.product-card__menu__table--value= val.val
+
+						.product-card__menu--content(data-tab="2")
+							.product-card__menu__table
+								each val in [{title: 'Тип агрегата', val: 'навесной'}, {title: 'Производительность га/ч', val: '5,6'}, {title: 'Ширина захвата, м', val: '5,6'}, {title: 'Количество обрабатываемых рядков, шт.', val: '8'}, {title: 'Ширина междурядий, мм', val: '700'}, {title: 'Ширина лапы, мм', val: '150'}, {title: 'Количество лап, шт', val: '41'}, {title: 'Суммарная емкость бункеров для удобрений, дм3', val: '320 (80x4)'}, {title: 'Рабочая скорость, км/ч', val: '5-10'}]
+									.product-card__menu__table--item
+										.product-card__menu__table--title= val.title
+										.product-card__menu__table--value= val.val
 
 					.product-card__details
 						.product-card__details--top

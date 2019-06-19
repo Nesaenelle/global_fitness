@@ -1,5 +1,5 @@
-$slideOffsetDesktop = 200px
-$slideOffsetTablet = 150px
+$slideOffsetDesktop = 120px
+$slideOffsetTablet = 100px
 $slideOffsetMobile = 100px
 
 .home-page 
@@ -20,6 +20,7 @@ $slideOffsetMobile = 100px
 			animation: slidein 1s ease-in-out
 			visibility: hidden
 			animation-fill-mode: both
+			box-shadow: 0 0 20px 0px #000
 			
 			@media mqBigMobile
 				height: calc(100vh)
@@ -40,6 +41,7 @@ $slideOffsetMobile = 100px
 				z-index: 3
 				left: "calc(-100% + %s)" % $slideOffsetDesktop
 				@media mqBigMobile
+					display: none
 					height: calc(100vh - 100px)
 				@media mqBigTablet
 					left: "calc(-100% + %s)" % $slideOffsetTablet
@@ -74,11 +76,16 @@ $slideOffsetMobile = 100px
 				left: 0
 				background: #d0d0d0
 				left: $slideOffsetDesktop
+				.world-map
+					opacity: 0;
+					@media mqBigMobile
+						opacity: 1
 				@media mqBigTablet
 					left: $slideOffsetTablet
-				&.active {
+				&.active
 					left: 0
-				}
+					.world-map 
+						opacity: 1
 				animation-delay: 1s
 				
 	.banner-block
@@ -172,6 +179,8 @@ $slideOffsetMobile = 100px
 				margin: 6px 0
 			@media mqBigMobile
 				font-size: 18px
+			@media mqMidMobile
+				font-size: 16px
 			&:hover
 				color: $c-border-red
 		&__input
@@ -190,19 +199,27 @@ $slideOffsetMobile = 100px
 				left: 20px
 				margin: auto
 			input
-				padding: 18px 20px
+				padding: 14px 20px 14px 50px
 				text-align: right
-				font-size: 18px
+				font-size: 28px
+				font-weight: 500
 				border: none
 				width: 100%
+				color: #585858
 				@media mqBigTablet
-					padding: 14px 18px
+					font-size: 22px
+					padding: 12px 18px 12px 50px
+				@media mqSmallTablet
+					font-size: 20px
+				@media mqMidMobile
+					font-size: 16px
 	.world-map
 		position: relative
 		display: flex
-		padding-left: 420px
+		padding-left: 22%
 		align-items: center
 		height: 100%
+		transition: 0.2s
 		
 		&.europe
 			#europe-map
@@ -236,16 +253,18 @@ $slideOffsetMobile = 100px
 			position: absolute
 			left: 0
 			top: 0
+			@media mqBigMobile
+				display: none
 			svg 
 				display: block
 				width: 100%
 				height: 100%
 				&#world-map
-					transform: translateX(0%)
+					transform: translateX(-100px)
 					@media mqBigTablet
-						transform: translateX(10%)
+						transform: translateX(-2%)
 					@media mqMidTablet
-						transform: translateX(15%)
+						transform: translateX(0%)
 					@media mqBigMobile
 						transform: scale(1.2)
 				&#europe-map
@@ -272,13 +291,12 @@ $slideOffsetMobile = 100px
 						transform: none
 				path 
 					transition: 0.1s
-					cursor: pointer
 					&.active
 						stroke: #3296f5
 						fill: #ebebeb
-					&:hover
-						stroke: #3296f5
-						fill: #ebebeb
+						cursor: pointer
+				.group
+					pointer-events: none
 				.country-label 
 					opacity: 0
 					visible:hidden

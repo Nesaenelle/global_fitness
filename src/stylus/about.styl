@@ -62,6 +62,8 @@
 			// transform: scale(0.8)
 		@media mqSemiMobile
 			margin: 110px auto 20px
+			width: 200px
+			height: 200px
 		&__logo 
 			width: 300px
 			position absolute
@@ -72,6 +74,8 @@
 			margin: auto
 			@media mqBigTablet
 				width: 200px
+			@media mqSemiMobile
+				width: 140px
 		&__circle
 			width: 37px 
 			height 37px
@@ -80,22 +84,31 @@
 			border: 5px solid $c-blue
 			background: $c-white
 			cursor: pointer
+
 			&:hover
 				.circle-block__info
 					opacity: 1
 					visibility: visible
 			@media mqBigTablet
 				border: 4px solid $c-blue
+			@media mqSemiMobile
+				border: 3px solid $c-blue
+				width: 20px
+				height: 20px
 			&:nth-child(1)
 				left: 13px
 				top: 67px
 				@media mqBigTablet
 					left: 18px
 					top: 27px
+				@media mqSemiMobile
+					left: 7px
 				.circle-block__info
 					transform: translate(50px, -50%)
 					@media mqBigTablet
 						transform: translate(50px, -50%)
+					@media mqSemiMobile
+						transform: translate(76%, -50%)
 				& > div:first-child
 					right: 63px
 					@media mqBigMobile
@@ -111,9 +124,14 @@
 					transform: translate(50px, -50%)
 					@media mqBigTablet
 						transform: translate(25%, -30%)
+					@media mqSemiMobile
+						transform: translate(70%, -100%)
 				@media mqBigTablet
 					left: 10px
 					top: 220px
+				@media mqSemiMobile
+					left: 24px
+					top: 161px
 				& > div:first-child
 					right: 73px
 					@media mqBigMobile
@@ -129,10 +147,15 @@
 					transform: translate(90%, -50%)
 					@media mqBigTablet
 						transform: translate(60%, -20%)
+					@media mqSemiMobile
+						transform: translate(22%, -92%)
 
 				@media mqBigTablet
 					left: 253px
 					top: 200px
+				@media mqSemiMobile
+					left: 161px
+					top: 150px
 				& > div:first-child
 					left: 54px
 					@media mqBigMobile
@@ -147,8 +170,13 @@
 					transform: translate(90%, -50%)
 					@media mqBigTablet
 						transform: translate(70%, -50%)
+					@media mqSemiMobile
+						transform: translate(20%, -50%)
+
 				@media mqBigTablet
 					right: 29px
+				@media mqSemiMobile
+					right: 13px
 				& > div:first-child
 					left: 60px
 					@media mqSemiMobile
@@ -166,6 +194,8 @@
 					font-size: 16px
 					margin-top: 5px
 					white-space: initial
+				@media mqSemiMobile
+					font-size: 14px
 				@media mqMidMobile
 					font-size: 14px
 		&__info
@@ -186,8 +216,8 @@
 			@media mqBigMobile
 				width: 260px
 				padding: 12px 15px 12px 15px
-			@media mqSemiMobile
-				display: none
+			// @media mqSemiMobile
+			// 	display: none
 
 			&--title
 				font-size: 18px
@@ -358,6 +388,7 @@
 					margin-top: 15px
 					overflow: hidden
 					border: 2px solid #e8e8e8
+					display: block
 				img 
 					width: 100%
 					height: 258px

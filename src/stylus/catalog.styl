@@ -183,6 +183,8 @@ $leftWidth = 283px
 				display: flex
 				justify-content: space-between
 				flex-wrap: wrap
+				@media mqMidMobile
+					padding-right: 13px
 				&__item
 					display: flex
 					align-items: center
@@ -200,6 +202,8 @@ $leftWidth = 283px
 						margin-right: 5px
 						color: #a9a9a9
 						letter-spacing: 0.6px
+						@media mqMidMobile
+							width: 160px
 					&--value
 						font-size: 14px
 						color: $c-blue
@@ -671,8 +675,15 @@ $leftWidth = 283px
 				display: flex
 				justify-content: center
 				align-items: center
+				@media mqMidMobile
+					flex-wrap: wrap
+					flex-direction: column-reverse
+					align-items: flex-start
 				.catalog--title:after
 					content: none
+				.catalog--title
+					@media mqMidMobile
+						margin-top: 15px
 				.btn.btn--transparent 
 					font-size: 12px
 					white-space: nowrap
@@ -683,6 +694,9 @@ $leftWidth = 283px
 				justify-content: space-between
 				@media mqBigMobile
 					flex-wrap: wrap
+					margin-top: 30px
+				@media mqMidMobile
+					margin-top: 25px
 				&__slider
 					padding-top: 2px
 					width: calc(55% - 9px)
@@ -704,6 +718,7 @@ $leftWidth = 283px
 						@media mqBigMobile
 							width: 100%
 							height: 300px
+							border: 1px solid #e8e8e8
 						img
 							width: 100%
 							height: 100%
@@ -756,8 +771,12 @@ $leftWidth = 283px
 								fill: $c-blue
 								stroke: none
 						@media mqBigMobile
-							top: 140px
-							right: 0px
+							top: 150px
+							right: 10px
+						@media mqSemiMobile
+							top: 120px
+						@media mqMidMobile
+							top: 90px
 						&:hover
 							transform: scale(1.1)
 						svg
@@ -771,8 +790,12 @@ $leftWidth = 283px
 						top: 44px
 						cursor: pointer
 						@media mqBigMobile
-							top: 176px
-							right: 0px
+							top: 186px
+							right: 10px
+						@media mqSemiMobile
+							top: 156px
+						@media mqMidMobile
+							top: 126px
 						&:hover
 							transform: scale(1.1)
 						img
@@ -783,8 +806,8 @@ $leftWidth = 283px
 						bottom: 0px
 						cursor: pointer
 						@media mqBigMobile
-							right: 0
-							bottom: 20px
+							right: 10px
+							bottom: 10px
 						&:hover
 							transform: scale(1.1)
 						svg
@@ -795,6 +818,7 @@ $leftWidth = 283px
 					width: calc(45% - 33px)
 					@media mqBigMobile
 						width: 100%
+						margin-top: 10px
 					&--article
 						font-size: 14px
 						display: inline-flex
@@ -829,23 +853,33 @@ $leftWidth = 283px
 						flex-wrap: wrap
 						margin-right: 30px
 						margin-top: 22px
+						@media mqSemiMobile
+							width: 100%
+							align-items: center
 						b 
 							width: 100%
 							font-size: 18px
 							color: #4f4f4f
 							font-weight: 600
+							@media mqSemiMobile
+								width: auto
+							@media mqSmallMobile
+								font-size: 16px
 						span
 							display: inline-block
 							margin-top: 10px
 							color: $c-blue
 							font-size: 14px
+							@media mqSemiMobile
+								margin-top: 0
+								margin-left: 16px
 					&__bottom
 						margin-top: 36px
 						border-top: 1px solid #e8e8e8
 						padding-top: 40px
 						display: flex
 						align-items: center
-						@media mqSmallTablet
+						@media mqBigTablet
 							flex-wrap: wrap
 
 						&__banner
@@ -854,10 +888,21 @@ $leftWidth = 283px
 							display: inline-flex
 							flex-wrap: wrap
 							margin-right: 41px
-							@media mqSmallTablet
-								margin-bottom: 20px
+							@media mqBigTablet
+								margin-bottom: 0
+							@media mqMidMobile
+								margin-right: 25px
+								
+							& + div
+								display: flex
+								@media mqBigTablet
+									display: block
+								@media mqBigMobile
+									display: flex
+								@media mqMidMobile
+									display: block
 							img
-								width: 100%
+								width: 100%								
 							&--text
 								width: 100%
 								background: $c-blue
@@ -868,12 +913,19 @@ $leftWidth = 283px
 								font-size: 12px
 						&--link
 							cursor: pointer
-							display: inline-flex
+							display: flex
 							align-items: center
 							margin-right: 41px
 							font-size: 14px
 							text-decoration: underline
 							color: #4f4f4f
+							@media mqBigTablet
+								width: 100%
+								margin: 6px 0
+							@media mqBigMobile
+								margin: 0 41px 0 0
+							@media mqMidMobile
+								margin: 6px 0
 							svg
 								margin-right: 10px
 								width: 25px

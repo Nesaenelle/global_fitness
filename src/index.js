@@ -2,6 +2,7 @@ import './stylus/style.styl'
 import $ from 'jquery'
 import './animate'
 import './jquery.magnify.js'
+import Typed from 'typed.js';
 
 require('webpack-jquery-ui/slider');
 
@@ -15,13 +16,35 @@ $('.burger').on('click', function(e) {
     $('.dropdown-menu').toggleClass('opened')
 });
 
+var fakePlaceholderIsShown = false;
+var typedInstance;
+
+$('.home-page .search-block__input input').on('focus', function() {
+    if (typedInstance) {
+        typedInstance.destroy();
+    }
+});
 
 setTimeout(() => {
     $('.main-slider__slide').hover(
         function() {
+            var id = $(this).data('slide-id');
             $('.main-slider__slide').removeClass("active inactive");
             $(this).addClass("active");
             $(this).prevAll().addClass("inactive");
+
+            if (id == 2 && !fakePlaceholderIsShown) {
+                var placeholder = $('.home-page .search-block__input input').data('placeholder');
+
+                typedInstance = new Typed('.home-page .search-block__input input', {
+                    strings: [placeholder],
+                    typeSpeed: 150,
+                    fadeOut: true,
+                    startDelay: 300,
+                });
+
+                fakePlaceholderIsShown = true;
+            }
         },
         function() {
 
@@ -69,9 +92,12 @@ $('.catalog__goods .catalog__goods__bottom .btn').on('click', function() {
     $('.catalog__goods__grid').append(gridItems);
 });
 
-$('.product-card__menu--item').on('click', function() {
-    $('.product-card__menu--item').removeClass('active');
+$('[data-tab-id]').on('click', function() {
+    let id = $(this).data('tab-id');
+    $(this).parent().children().removeClass('active');
     $(this).addClass('active');
+    $(`[data-tab]`).hide();
+    $(`[data-tab=${id}]`).show();
 });
 
 $('.product-card__main__slider__thumbs--item').on('click', function() {
@@ -139,7 +165,7 @@ $(window).on('click', function(e) {
         $('[data-dropdown]').removeClass('active');
     }
 
-    if ($('.modal--body').length && !$('.modal--body')[0].contains(e.target)) {
+    if ($('.modal.active').length && !$('.modal.active .modal--body')[0].contains(e.target)) {
         $('.modal').removeClass('active');
         $('.modal--overlay').removeClass('active');
     }
@@ -168,8 +194,25 @@ $('[data-modal-close]').on('click', function() {
     $('.modal').removeClass('active');
 });
 
+
+let favoritesPool = [];
 $('.catalog__goods__grid__item--favorite, .product-card__main__slider--favorite').on('click', function() {
-    $(this).toggleClass('active')
+    $(this).toggleClass('active');
+
+    let exists = favoritesPool.filter(r => r.is($(this)))[0];
+    if (exists) {
+        favoritesPool = favoritesPool.filter(r => !r.is($(this)));
+    } else {
+        favoritesPool.push($(this));
+    }
+
+    if (favoritesPool.length > 0) {
+        $('header .favorites').addClass('active');
+    } else {
+        $('header .favorites').removeClass('active');
+    }
+
+    $('header .favorites--value').text(favoritesPool.length);
 });
 
 
@@ -217,7 +260,7 @@ var countriesEU = [
 ];
 
 var countriesAsian = [
-    'CN', 'JP', 'MY', 'ID', 'PG', 'AU', 'NZ', 'SB', 'NC', 'TL', 
+    'CN', 'JP', 'MY', 'ID', 'PG', 'AU', 'NZ', 'SB', 'NC', 'TL',
     'PH', 'VN', 'TH', 'TW', 'BN', 'KP', 'KR', 'FJ', 'VU', 'SG'
 ];
 
@@ -279,7 +322,7 @@ $('.world-map__list__item').hover(
 
 
 $('.world-map__list__item__dropdown__list').on({
-    mouseover:function(){
+    mouseover: function() {
         let id = $(this).data('country-id');
         var selector = '';
         var countryLabel = ''
@@ -299,29 +342,99 @@ $('.world-map__list__item__dropdown__list').on({
         $(selector).addClass('active');
         $(countryLabel).addClass('active');
     },
-    mouseout:function(){
-      let id = $(this).data('country-id');
+    mouseout: function() {
+        let id = $(this).data('country-id');
 
-      var selector = '';
-      var countryLabel = ''
+        var selector = '';
+        var countryLabel = ''
 
-      if (currentRegion === 'europe') {
-          selector = '#europe-map #' + id;
-          countryLabel = `#europe-map [data-id=${id}]`;
-      }
-      if (currentRegion === 'asian') {
-          selector = '#asian-map #' + id;
-          countryLabel = `#asian-map [data-id=${id}]`;
-      }
-      if (currentRegion === 'africa') {
-          selector = '#africa-map #' + id;
-          countryLabel = `#africa-map [data-id=${id}]`;
-      }
+        if (currentRegion === 'europe') {
+            selector = '#europe-map #' + id;
+            countryLabel = `#europe-map [data-id=${id}]`;
+        }
+        if (currentRegion === 'asian') {
+            selector = '#asian-map #' + id;
+            countryLabel = `#asian-map [data-id=${id}]`;
+        }
+        if (currentRegion === 'africa') {
+            selector = '#africa-map #' + id;
+            countryLabel = `#africa-map [data-id=${id}]`;
+        }
 
-      $(selector).removeClass('active');
-      $(countryLabel).removeClass('active');
+        $(selector).removeClass('active');
+        $(countryLabel).removeClass('active');
     }
 }, '.world-map__list__item__dropdown__list--item');
+
+$('#world-map path').hover(
+    function() {
+        let id = $(this).attr('id');
+        if(countriesEU.indexOf(id) > -1) {
+            $(europeRegion.join(',')).addClass('active')
+            $(`#world-map [data-id='europe']`).addClass('active')
+        }  
+        if(countriesAsian.indexOf(id) > -1) {
+            $(asianRegion.join(',')).addClass('active')
+            $(`#world-map [data-id='asian']`).addClass('active')
+        }  
+        if(countriesAfrica.indexOf(id) > -1) {
+            $(africaRegion.join(',')).addClass('active')
+            $(`#world-map [data-id='africa']`).addClass('active')
+        }  
+    },
+    function() {
+        let id = $(this).attr('id');
+        if(countriesEU.indexOf(id) > -1) {
+            $(europeRegion.join(',')).removeClass('active')
+            $(`#world-map [data-id='europe']`).removeClass('active')
+        }  
+        if(countriesAsian.indexOf(id) > -1) {
+            $(asianRegion.join(',')).removeClass('active')
+            $(`#world-map [data-id='asian']`).removeClass('active')
+        }  
+        if(countriesAfrica.indexOf(id) > -1) {
+            $(africaRegion.join(',')).removeClass('active')
+            $(`#world-map [data-id='africa']`).removeClass('active')
+        }  
+    });
+
+$('#europe-map path, #asian-map path, #africa-map path').hover(
+    function() {
+        let id = $(this).attr('id');
+
+        if(countriesEU.indexOf(id) > -1) {
+            $(`#europe-map [data-id=${id}]`).addClass('active')
+            $(this).addClass('active')
+        }  
+
+        if(countriesAsian.indexOf(id) > -1) {
+            $(`#asian-map [data-id=${id}]`).addClass('active')
+            $(this).addClass('active')
+        }  
+
+        if(countriesAfrica.indexOf(id) > -1) {
+            $(`#africa-map [data-id=${id}]`).addClass('active')
+            $(this).addClass('active')
+        }  
+
+    },
+    function() {
+        let id = $(this).attr('id');
+        if(countriesEU.indexOf(id) > -1) {
+            $(`#europe-map [data-id=${id}]`).removeClass('active')
+            $(this).removeClass('active')
+        }  
+
+        if(countriesAsian.indexOf(id) > -1) {
+            $(`#asian-map [data-id=${id}]`).removeClass('active')
+            $(this).removeClass('active')
+        }  
+
+        if(countriesAfrica.indexOf(id) > -1) {
+            $(`#africa-map [data-id=${id}]`).removeClass('active')
+            $(this).removeClass('active')
+        }  
+    });
 
 
 $('.world-map__list__item').on('click', function() {
@@ -332,7 +445,7 @@ $('.world-map__list__item').on('click', function() {
     if (id === 'europe') {
         currentRegion = 'europe';
         $('.world-map').addClass(currentRegion)
-        if(!$('#europe-map .group').length) {
+        if (!$('#europe-map .group').length) {
             loadEuropeMapInfo();
         }
         drawCountriesList(europeCountriesList);
@@ -341,7 +454,7 @@ $('.world-map__list__item').on('click', function() {
     if (id === 'asian') {
         currentRegion = 'asian';
         $('.world-map').addClass(currentRegion)
-        if(!$('#asian-map .group').length) {
+        if (!$('#asian-map .group').length) {
             loadAsianMapInfo();
         }
         drawCountriesList(asiaCountriesList);
@@ -350,7 +463,7 @@ $('.world-map__list__item').on('click', function() {
     if (id === 'africa') {
         currentRegion = 'africa';
         $('.world-map').addClass(currentRegion)
-        if(!$('#africa-map .group').length) {
+        if (!$('#africa-map .group').length) {
             loadAfricaMapInfo();
         }
         drawCountriesList(africaCountriesList);
@@ -369,7 +482,7 @@ loadWorldMapInfo();
 
 function drawCountriesList(list) {
     $('.world-map__list__item__dropdown__list').empty();
-    list.forEach(item=> {
+    list.forEach(item => {
         $('.world-map__list__item__dropdown__list').append(`
             <a href="" class="world-map__list__item__dropdown__list--item" data-country-id=${item.Code}> ${item.Name}</a>    
         `);
@@ -382,6 +495,7 @@ function loadWorldMapInfo() {
     var svg = body.select("#world-map");
 
     var group = svg.append("g")
+        .attr('class', 'group')
 
     var fontSize = '20px';
 
@@ -392,7 +506,7 @@ function loadWorldMapInfo() {
     size.height = size.height + 1;
 
     // addRectToGroup('europe', group, [1050 - 3, 270 - 10], size);
-    addMarkerToGroup('europe', group, [1050 - 27, 260 - 23], {width: 28, height: 28});
+    addMarkerToGroup('europe', group, [1050 - 27, 260 - 23], { width: 28, height: 28 });
 
     addTextToGroup('europe', group, [1050, 260], text, fontSize);
 
@@ -404,7 +518,7 @@ function loadWorldMapInfo() {
     size.height = size.height + 1;
 
     // addRectToGroup('asian', group, [1520 - 3, 350 - 10], size);
-    addMarkerToGroup('asian', group, [1520 - 27, 350 - 23], {width: 28, height: 28});
+    addMarkerToGroup('asian', group, [1520 - 27, 350 - 23], { width: 28, height: 28 });
     addTextToGroup('asian', group, [1520, 350], text, fontSize);
 
 
@@ -415,7 +529,7 @@ function loadWorldMapInfo() {
     size.height = size.height + 1;
 
     // addRectToGroup('africa', group, [1050 - 3, 500 - 10], size);
-    addMarkerToGroup('africa', group, [1050 - 27, 500 - 23], {width: 28, height: 28});
+    addMarkerToGroup('africa', group, [1050 - 27, 500 - 23], { width: 28, height: 28 });
     addTextToGroup('africa', group, [1050, 500], text, fontSize);
 
 }
@@ -439,7 +553,7 @@ function loadEuropeMapInfo() {
         size.width = size.width + 6;
         size.height = size.height + 1;
 
-        if(country === 'RU') {
+        if (country === 'RU') {
             center = [1200, 200];
         }
 
@@ -450,7 +564,7 @@ function loadEuropeMapInfo() {
         center[0] = center[0] - 13;
         center[1] = center[1] - 12;
 
-        addMarkerToGroup(country, group, center, {width: 14, height: 14});
+        addMarkerToGroup(country, group, center, { width: 14, height: 14 });
 
         europeCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
     });
@@ -483,7 +597,7 @@ function loadAsianMapInfo() {
         center[0] = center[0] - 24;
         center[1] = center[1] - 20;
 
-        addMarkerToGroup(country, group, center, {width: 22, height: 22});
+        addMarkerToGroup(country, group, center, { width: 22, height: 22 });
 
         asiaCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
     });
@@ -514,7 +628,7 @@ function loadAfricaMapInfo() {
         center[0] = center[0] - 20;
         center[1] = center[1] - 18;
 
-        addMarkerToGroup(country, group, center, {width: 18, height: 18});
+        addMarkerToGroup(country, group, center, { width: 18, height: 18 });
 
         africaCountriesList.push(FULL_DATA.filter(r => r.Code === country)[0]);
     });

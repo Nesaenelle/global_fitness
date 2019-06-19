@@ -19,21 +19,31 @@ input, button
 	
 
 main 
-	min-height: calc(100% - 145px - 270px)
+	margin-top: calc(47px + 65px)
+	min-height: calc(100% - (47px + 65px) - 270px)
 	padding-top: 34px
 	position: relative
 	overflow: hidden
+	
 	@media mqBigMobile
+		margin-top: calc(40px + 55px)
 		padding-top: 20px
+	@media mqMidMobile
+		margin-top: calc(35px + 45px)
+		
 	&:after
 		content: ''
-		position: absolute
-		top: 0
+		position: fixed
+		top: calc(47px + 65px)
 		left: 0
 		width: 100%
 		box-shadow: 0 0 5px 1px #666
 		height: 0px
 		z-index: 4
+		@media mqBigMobile
+			top: calc(40px + 55px)
+		@media mqMidMobile
+			top: calc(35px + 45px)
 	
 .container 
 	max-width: 1620px
@@ -54,7 +64,11 @@ main
 			text-decoration: underline
 		}
 		& + .breadcrumbs__item 
+			&:last-child 
+				&:before
+					color: #0786ff
 			&:before 
+				color: #878787
 				content: '|'
 				margin: 0 5px
 

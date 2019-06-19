@@ -17,9 +17,10 @@
 					button(class="btn btn--transparent" type="button" data-modal-close) Отмена
 	
 			.modal--right
-				label Войти как пользователь
-				img(src="img/facebook.png", alt="")
-				img(src="img/google.png", alt="")
+				.modal--socials
+					label Войти как пользователь
+					img(src="img/facebook.png", alt="")
+					img(src="img/google.png", alt="")
 				.modal--link(data-modal-button="sign-up") Зарегистрироваться
 
 .modal(data-modal-id="sign-up")
@@ -47,9 +48,10 @@
 					.modal--link.modal--link-small пользовательским соглашением
 
 			.modal--right
-				label Войти как пользователь
-				img(src="img/facebook.png", alt="")
-				img(src="img/google.png", alt="")
+				.modal--socials
+					label Войти как пользователь
+					img(src="img/facebook.png", alt="")
+					img(src="img/google.png", alt="")
 				.modal--link(data-modal-button="sign-in") Войти
 
 
@@ -61,12 +63,9 @@
 
 		form.modal--form
 			label Ваше имя
-			input(type="text" required)
+			input(type="text" required placeholder="Имя")
 
 			label Эл. почта или телефон
-			input(type="email" required)
+			input(type="email" required placeholder="Телефон")
 
-			label Ваше сообщение
-			input(type="text" required)
-			
 			button(class="btn btn--blue" type="submit") Отправить
