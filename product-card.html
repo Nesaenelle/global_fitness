@@ -15,10 +15,11 @@
         <div><a class="logo" href="index.html"><span>globalfitness</span><span>ukraine</span></a>
 <div class="sign-in" data-modal-button="sign-in"><img src="img/user.svg" alt=""><span>Вход</span></div>
         </div>
-        <div><a class="favorites desktop" href="">
+        <div><a class="favorites" href="">
   <svg>
     <use xlink:href="#icon-favorite"></use>
-  </svg></a>
+  </svg>
+  <div class="favorites--value"></div></a>
 <nav>
   <ul>
     <li><a href="traiding.html">Трейдин</a></li>
@@ -70,10 +71,11 @@
 <div class="sign-in" data-modal-button="sign-in"><img src="img/user.svg" alt=""><span>Вход</span></div>
           <div class="search-input">
             <input type="text" placeholder="Поиск на сайте" maxlength="50"><img class="search-input__img" src="img/search.svg" alt="">
-          </div><a class="favorites desktop" href="">
+          </div><a class="favorites" href="">
   <svg>
     <use xlink:href="#icon-favorite"></use>
-  </svg></a><a class="cart" href="">
+  </svg>
+  <div class="favorites--value"></div></a><a class="cart" href="">
             <svg>
               <use xlink:href="#icon-cart"></use>
             </svg>
@@ -159,19 +161,19 @@
               </div>
               <div class="product-card__main__info__list"><b>Адресная доставка</b><span>- цену уточняйте</span></div>
               <div class="product-card__main__info__list"><b>Самовывоз</b><span>- со склада Новой Почты </span></div>
-              <div class="product-card__main__info__bottom"><a href="#">
-                  <div class="product-card__main__info__bottom__banner"><img src="img/product-banner.png" alt="">
-                    <div class="product-card__main__info__bottom__banner--text">Inter Atletika</div>
-                  </div></a>
-                <div class="product-card__main__info__bottom--link">
-                  <svg>
-                    <use xlink:href="#icon-credit-card"></use>
-                  </svg><span>Трейдин</span>
-                </div>
-                <div class="product-card__main__info__bottom--link"> 
-                  <svg>
-                    <use xlink:href="#icon-mobile-shopping"></use>
-                  </svg><span>Лизинг</span>
+              <div class="product-card__main__info__bottom"><a class="product-card__main__info__bottom__banner" href="#"><img src="img/product-banner.png" alt="">
+                  <div class="product-card__main__info__bottom__banner--text">Inter Atletika</div></a>
+                <div>
+                  <div class="product-card__main__info__bottom--link">
+                    <svg>
+                      <use xlink:href="#icon-credit-card"></use>
+                    </svg><span>Трейдин</span>
+                  </div>
+                  <div class="product-card__main__info__bottom--link"> 
+                    <svg>
+                      <use xlink:href="#icon-mobile-shopping"></use>
+                    </svg><span>Лизинг</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -179,48 +181,90 @@
           <div class="product-card--wrapper">
             <div class="product-card__menu">
               <div class="product-card__menu--top">
-                <div class="product-card__menu--item active">Описание</div>
-                <div class="product-card__menu--item">Характеристики</div>
-                <div class="product-card__menu--item">Комплектация</div>
+                <div class="product-card__menu--item active" data-tab-id="1">Описание</div>
+                <div class="product-card__menu--item" data-tab-id="2">Характеристики</div>
+                <div class="product-card__menu--item" data-tab-id="3">Комплектация</div>
               </div>
-              <div class="product-card__menu--title">Описание / Манжет для тяги улучшеный InterAtletika M13-09-MD</div>
-              <div class="product-card__menu--descr">Манжет для тяги InterAtletika М3-09 (лямки для щиколоток) имеет удобную и практичную форму. Он применяется как во время выполнения силовых упражнений, так и при занятиях фитнесом, или физкультурой. Сама конструкция состоит из двух комплектующих – D-усиленного кольца, сделанного из стали, и самого неопренового манжета. Все комплектующие высококачественны и износоустойчивы.</div>
-              <div class="product-card__menu__table">
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Тип агрегата</div>
-                  <div class="product-card__menu__table--value">навесной</div>
+              <div class="product-card__menu--content" data-tab="1">
+                <div class="product-card__menu--title">Описание / Манжет для тяги улучшеный InterAtletika M13-09-MD</div>
+                <div class="product-card__menu--descr">Манжет для тяги InterAtletika М3-09 (лямки для щиколоток) имеет удобную и практичную форму. Он применяется как во время выполнения силовых упражнений, так и при занятиях фитнесом, или физкультурой. Сама конструкция состоит из двух комплектующих – D-усиленного кольца, сделанного из стали, и самого неопренового манжета. Все комплектующие высококачественны и износоустойчивы.</div>
+                <div class="product-card__menu__table">
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Тип агрегата</div>
+                    <div class="product-card__menu__table--value">навесной</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Производительность га/ч</div>
+                    <div class="product-card__menu__table--value">5,6</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Ширина захвата, м</div>
+                    <div class="product-card__menu__table--value">5,6</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Количество обрабатываемых рядков, шт.</div>
+                    <div class="product-card__menu__table--value">8</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Ширина междурядий, мм</div>
+                    <div class="product-card__menu__table--value">700</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Ширина лапы, мм</div>
+                    <div class="product-card__menu__table--value">150</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Количество лап, шт</div>
+                    <div class="product-card__menu__table--value">41</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Суммарная емкость бункеров для удобрений, дм3</div>
+                    <div class="product-card__menu__table--value">320 (80x4)</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Рабочая скорость, км/ч</div>
+                    <div class="product-card__menu__table--value">5-10</div>
+                  </div>
                 </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Производительность га/ч</div>
-                  <div class="product-card__menu__table--value">5,6</div>
-                </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Ширина захвата, м</div>
-                  <div class="product-card__menu__table--value">5,6</div>
-                </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Количество обрабатываемых рядков, шт.</div>
-                  <div class="product-card__menu__table--value">8</div>
-                </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Ширина междурядий, мм</div>
-                  <div class="product-card__menu__table--value">700</div>
-                </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Ширина лапы, мм</div>
-                  <div class="product-card__menu__table--value">150</div>
-                </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Количество лап, шт</div>
-                  <div class="product-card__menu__table--value">41</div>
-                </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Суммарная емкость бункеров для удобрений, дм3</div>
-                  <div class="product-card__menu__table--value">320 (80x4)</div>
-                </div>
-                <div class="product-card__menu__table--item">
-                  <div class="product-card__menu__table--title">Рабочая скорость, км/ч</div>
-                  <div class="product-card__menu__table--value">5-10</div>
+              </div>
+              <div class="product-card__menu--content" data-tab="2">
+                <div class="product-card__menu__table">
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Тип агрегата</div>
+                    <div class="product-card__menu__table--value">навесной</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Производительность га/ч</div>
+                    <div class="product-card__menu__table--value">5,6</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Ширина захвата, м</div>
+                    <div class="product-card__menu__table--value">5,6</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Количество обрабатываемых рядков, шт.</div>
+                    <div class="product-card__menu__table--value">8</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Ширина междурядий, мм</div>
+                    <div class="product-card__menu__table--value">700</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Ширина лапы, мм</div>
+                    <div class="product-card__menu__table--value">150</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Количество лап, шт</div>
+                    <div class="product-card__menu__table--value">41</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Суммарная емкость бункеров для удобрений, дм3</div>
+                    <div class="product-card__menu__table--value">320 (80x4)</div>
+                  </div>
+                  <div class="product-card__menu__table--item">
+                    <div class="product-card__menu__table--title">Рабочая скорость, км/ч</div>
+                    <div class="product-card__menu__table--value">5-10</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -408,7 +452,7 @@
         <li> <a href="">Конфиденциальность   </a></li>
         <li> <a href="">Использование личной информации</a></li>
       </ul>
-    </div>
+    </div><a class="designed" href="https://fairtech-marketing.com.ua/ ">Разработано Fairtech.Marketing</a>
   </div>
 </footer>
 <div class="modal--overlay"></div>
@@ -429,7 +473,9 @@
         </form>
       </div>
       <div class="modal--right">
-        <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        <div class="modal--socials">
+          <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        </div>
         <div class="modal--link" data-modal-button="sign-up">Зарегистрироваться</div>
       </div>
     </div>
@@ -455,7 +501,9 @@
         </form>
       </div>
       <div class="modal--right">
-        <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        <div class="modal--socials">
+          <label>Войти как пользователь</label><img src="img/facebook.png" alt=""><img src="img/google.png" alt="">
+        </div>
         <div class="modal--link" data-modal-button="sign-in">Войти</div>
       </div>
     </div>
@@ -467,11 +515,9 @@
     <div class="modal--title">Напишите нам</div>
     <form class="modal--form">
       <label>Ваше имя</label>
-      <input type="text" required>
+      <input type="text" required placeholder="Имя">
       <label>Эл. почта или телефон</label>
-      <input type="email" required>
-      <label>Ваше сообщение</label>
-      <input type="text" required>
+      <input type="email" required placeholder="Телефон">
       <button class="btn btn--blue" type="submit">Отправить</button>
     </form>
   </div>
