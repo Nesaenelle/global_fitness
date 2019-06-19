@@ -37,24 +37,9 @@ body
 
 					include parts/main-logo.pug
 
-					.additional-menu(data-menu="products")
-						.additional-menu__products-list
-							each val in [{name: 'Беговые дорожки', img: 'treadmill.svg'}, {name: 'Велотренажеры', img: 'spinning.svg'}, {name: 'Эллиптические кросстренажеры', img: 'treadmill.svg'}, {name: 'Гребные тренажеры', img: 'treadmill.svg'}, {name: 'Групповые велотренировки', img: 'spinning.svg'}, {name: 'Тренажеры со стеками', img: 'treadmill.svg'}, {name: 'Свободно нагружаемые тренажеры', img: 'bench.svg'}, {name: 'Многофункциональные силовые тренажеры и Cable Station', img: 'weightlifter.svg'}, {name: 'Степперы и лестничные тренажеры', img: 'treadmill.svg'}, {name: 'Скамьи и стойки', img: 'treadmill.svg'}, {name: 'Тренажеры для верхней части тела', img: 'weight.svg'}, {name: 'Свободные веса', img: 'weights.svg'}]
-								a(class="additional-menu__products-list__item" href="catalog.html")
-									img(src='img/' + val.img, alt="")
-									span= val.name
-						.additional-menu__sections
-							each val in [{name: 'Кардио', url: 'cardio.png'}, {name: 'Силовые', url: 'straight.png'}, {name: 'Функциональные', url: 'funtional.png'}, {name: 'Групповые виды', url: 'group.png'}]
-								a(class="additional-menu__sections__item" href="" style={background: 'url(img/'+val.url+')'})= val.name
-									svg
-										use(xlink:href="#icon-right-arrow")
-							a(class="additional-menu__sections__item" href="") Посмотреть всю продукцию
-					.additional-menu(data-menu="solutions")
-						.additional-menu__solutions-list
-							each val in [{name: 'Решение премиум', img: 'premium.png'}, {name: 'Небольшой зал', img: 'smallhall.png'}, {name: 'Отель', img: 'hotel.png'}, {name: 'Зал на 1000 км.км', img: 'bighall.png'}, {name: 'Реабилитация', img: 'reabilitation.png'}]
-								a(class="additional-menu__solutions-list__item" href="#")
-									img(src='img/' + val.img, alt="")
-									span= val.name
+					include parts/products-menu.pug
+					include parts/solutions-menu.pug
+
 				div
 					include parts/sign-in-icon.pug
 					.search-input
@@ -70,7 +55,15 @@ body
 						span
 
 			.dropdown-menu
-				include parts/main-menu.pug
+				.dropdown-menu--title.active
+					span Продукция
+				include parts/products-menu.pug
+				.dropdown-menu--title.active 
+					span Готовые решения
+				include parts/solutions-menu.pug
+				.dropdown-menu--title.active 
+					span Распродажа
+
 				include parts/socials.pug
 
 			include parts/socials.pug

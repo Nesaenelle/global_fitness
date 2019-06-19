@@ -1,0 +1,12 @@
+.additional-menu(data-menu="products")
+	.additional-menu__products-list
+		each val in [{name: 'Беговые дорожки', img: 'treadmill.svg'}, {name: 'Велотренажеры', img: 'spinning.svg'}, {name: 'Эллиптические кросстренажеры', img: 'treadmill.svg'}, {name: 'Гребные тренажеры', img: 'treadmill.svg'}, {name: 'Групповые велотренировки', img: 'spinning.svg'}, {name: 'Тренажеры со стеками', img: 'treadmill.svg'}, {name: 'Свободно нагружаемые тренажеры', img: 'bench.svg'}, {name: 'Многофункциональные силовые тренажеры и Cable Station', img: 'weightlifter.svg'}, {name: 'Степперы и лестничные тренажеры', img: 'treadmill.svg'}, {name: 'Скамьи и стойки', img: 'treadmill.svg'}, {name: 'Тренажеры для верхней части тела', img: 'weight.svg'}, {name: 'Свободные веса', img: 'weights.svg'}]
+			a(class="additional-menu__products-list__item" href="catalog.html")
+				img(src='img/' + val.img, alt="")
+				span= val.name
+	.additional-menu__sections
+		each val in [{name: 'Кардио', url: 'cardio.png'}, {name: 'Силовые', url: 'straight.png'}, {name: 'Функциональные', url: 'funtional.png'}, {name: 'Групповые виды', url: 'group.png'}]
+			a(class="additional-menu__sections__item" href="" style={background: 'url(img/'+val.url+')'})= val.name
+				svg
+					use(xlink:href="#icon-right-arrow")
+		a(class="additional-menu__sections__item" href="") Посмотреть всю продукцию

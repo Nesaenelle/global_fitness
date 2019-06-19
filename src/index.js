@@ -16,6 +16,11 @@ $('.burger').on('click', function(e) {
     $('.dropdown-menu').toggleClass('opened')
 });
 
+$('.dropdown-menu .dropdown-menu--title').on('click', function() {
+    $(this).next('.additional-menu').stop().slideToggle(300);
+    $(this).toggleClass('active')
+});
+
 var fakePlaceholderIsShown = false;
 var typedInstance;
 
@@ -24,6 +29,11 @@ $('.home-page .search-block__input input').on('focus', function() {
         typedInstance.destroy();
     }
 });
+
+
+if(window.innerWidth <= 768) {
+    initTyped();
+}
 
 setTimeout(() => {
     $('.main-slider__slide').hover(
@@ -34,16 +44,7 @@ setTimeout(() => {
             $(this).prevAll().addClass("inactive");
 
             if (id == 2 && !fakePlaceholderIsShown) {
-                var placeholder = $('.home-page .search-block__input input').data('placeholder');
-
-                typedInstance = new Typed('.home-page .search-block__input input', {
-                    strings: [placeholder],
-                    typeSpeed: 150,
-                    fadeOut: true,
-                    startDelay: 300,
-                });
-
-                fakePlaceholderIsShown = true;
+                initTyped();
             }
         },
         function() {
@@ -51,6 +52,21 @@ setTimeout(() => {
         }
     );
 }, 500)
+
+function initTyped() {
+    if($('.home-page .search-block__input').length) {
+        var placeholder = $('.home-page .search-block__input input').data('placeholder');
+
+        typedInstance = new Typed('.home-page .search-block__input input', {
+            strings: [placeholder],
+            typeSpeed: 150,
+            fadeOut: true,
+            startDelay: 300,
+        });
+
+        fakePlaceholderIsShown = true;
+    }
+}
 
 $('.catalog__filter__section--title').on('click', function() {
     $(this).next().stop().slideToggle(200);

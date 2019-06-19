@@ -1,0 +1,6 @@
+.additional-menu(data-menu="solutions")
+	.additional-menu__solutions-list
+		each val in [{name: 'Решение премиум', img: 'premium.png'}, {name: 'Небольшой зал', img: 'smallhall.png'}, {name: 'Отель', img: 'hotel.png'}, {name: 'Зал на 1000 км.км', img: 'bighall.png'}, {name: 'Реабилитация', img: 'reabilitation.png'}]
+			a(class="additional-menu__solutions-list__item" href="#")
+				img(src='img/' + val.img, alt="")
+				span= val.name
