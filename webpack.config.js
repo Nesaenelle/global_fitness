@@ -133,6 +133,11 @@ module.exports = {
             template: 'src/template/pages/profile.pug',
             page: 'profile'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'dealers.html',
+            template: 'src/template/pages/dealers.pug',
+            page: 'dealers'
+        }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }

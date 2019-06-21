@@ -1,0 +1,49 @@
+.dealers-page
+	& > .container
+		height: calc(100vh - 241px)
+		
+		.title, .breadcrumbs
+			position: relative
+			z-index: 2
+				
+	.world-map
+		position: absolute
+		width: 100%
+		height: calc(100vh - 120px)
+		z-index: 1
+		background: #d0d0d0
+		top: 0
+		padding-left: 15%;
+		left: 0
+
+		
+	.dealers
+		z-index: 2
+		position: relative
+		.dealers__search
+			background: #000
+			padding: 20px 0
+		
+			.container
+				display: flex
+				justify-content: space-between
+				align-items: center
+			&--item
+				text-transform: uppercase
+				color: $c-white
+				cursor: pointer
+				&:hover
+					text-decoration: underline
+		.dealers__countries
+			background: $c-white
+			padding: 30px 0
+			.container
+				display: flex
+				justify-content: space-between
+				flex-wrap: wrap
+			&--item
+				width: calc(100% / 5)
+				margin-bottom: 10px
+				cursor: pointer
+				&:hover
+					text-decoration: underline

@@ -1,0 +1,67 @@
+extends ../layout.pug
+
+block content
+
+	.container
+		ul(class="breadcrumbs")
+			li(class="breadcrumbs__item")
+				a(href="") Главная
+			li(class="breadcrumbs__item") Выбор диллера
+
+		.title Выбор диллера
+
+		.world-map
+			.world-map--img
+				include ../parts/world-map.html
+				include ../parts/europe-map.html
+				include ../parts/asian-map.html
+				include ../parts/africa-map.html
+			.world-map__list
+				.world-map__list__item.back(data-region-id="back") Вернуться назад
+				each val in [{name: 'Европа', id: 'europe'}, {name: 'Азиатско-Тихоокеанский регион', id: 'asian'}, {name: 'Африка', id: 'africa'}]
+					.world-map__list__item.region(data-region-id=val.id)= val.name
+				.world-map__list__item.world-map__list__item__dropdown(data-dropdown)
+					.world-map__list__item__dropdown--value(data-dropdown-value) Выберете вашу страну
+					.world-map__list__item__dropdown__list
+
+
+	.dealers
+		.dealers__search
+			.container
+				button.btn.btn--blue.btn--transparent Все локации
+				each val in ['А','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','э','ю','я']
+					.dealers__search--item= val
+				button.btn.btn--blue Поиск
+
+		.dealers__countries
+			.container
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Albania
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Armenia
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Belarus
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Bolivia
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Burkina Faso 
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Cameroon
+				each val in [1,2,3,4,5]
+					.dealers__countries--item China 
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Croatia 
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Denmark 
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Egypt
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Finland 
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Germany
+				each val in [1,2,3,4,5]
+					.dealers__countries--item Greece
+
+	
+
+	include ../parts/bottom-block.pug
