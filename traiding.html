@@ -22,7 +22,7 @@
   <div class="favorites--value"></div></a>
 <nav>
   <ul>
-    <li><a href="traiding.html">Трейдинг</a></li>
+    <li class="active"><a href="traiding.html">Трейдинг</a></li>
     <li><a href="financing.html">Финансирование</a></li>
     <li><a href="diller.html">Дилеры</a></li>
     <li><a href="about.html">О компании</a></li>
@@ -114,213 +114,77 @@
 <div class="socials"><a class="socials__item" href="#"><img src="img/facebook.svg" alt=""></a><a class="socials__item" href="#"><img src="img/instagram.svg" alt=""></a><a class="socials__item" href="#"><img src="img/telegram.svg" alt=""></a></div>
     </div>
   </header>
-  <main class="catalog-page">
+  <main class="traiding-page">
     <div class="container">
       <ul class="breadcrumbs">
         <li class="breadcrumbs__item"><a href="">Главная</a></li>
-        <li class="breadcrumbs__item">Поиск по товарам</li>
+        <li class="breadcrumbs__item">Трейдинг</li>
       </ul>
-      <div class="catalog">
-        <div class="search">
-          <div class="title">Поиск по товарам</div>
-          <div class="search__result">
-            <div class="search__result--title">Найдено по вашему запросу:</div>
-            <div class="search__result--value">Тренажеры</div>
-          </div>
-          <div class="catalog__goods__grid">
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
+      <div class="title">Трейдинг</div>
+      <div class="subtitle">Замени старое на новое</div>
+      <div class="traiding">
+        <div class="traiding__img"><img src="img/traiding.png" alt=""></div>
+        <form class="form">
+          <div class="form--row">
+            <div class="form--col">
+              <input class="input" type="text" placeholder="ФИО" required>
+              <input class="input" type="email" placeholder="Email" required>
+              <div class="form--col--2">
+                <input class="input" type="text" placeholder="Желаемая цена" required>
+                <div class="dropdown" data-dropdown>
+                  <div class="dropdown--value" data-dropdown-value>Год выпуска</div>
+                  <div class="dropdown__list">
+                    <div class="dropdown__list--item" data-dropdown-item>2010</div>
+                    <div class="dropdown__list--item" data-dropdown-item>2011</div>
+                    <div class="dropdown__list--item" data-dropdown-item>2012</div>
+                  </div>
+                </div>
               </div>
+              <label>Загрузить фото</label>
+              <div class="upload">
+                <div class="upload--item"><img src="img/upload.png" alt=""></div>
+                <div class="upload--item"><img src="img/upload.png" alt=""></div>
+                <div class="upload--item"><img src="img/upload.png" alt=""></div>
+                <div class="upload--item"><img src="img/upload.png" alt=""></div>
+              </div>
+              <button class="btn btn--blue">Отправить</button>
             </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
+            <div class="form--col">
+              <input class="input" type="text" placeholder="Телефон" required>
+              <div class="form--col--2">
+                <div class="dropdown" data-dropdown>
+                  <div class="dropdown--value" data-dropdown-value>Марка</div>
+                  <div class="dropdown__list">
+                    <div class="dropdown__list--item" data-dropdown-item>Марка 1</div>
+                    <div class="dropdown__list--item" data-dropdown-item>Марка 2</div>
+                    <div class="dropdown__list--item" data-dropdown-item>Марка 3</div>
+                  </div>
+                </div>
+                <div class="dropdown" data-dropdown>
+                  <div class="dropdown--value" data-dropdown-value>Модель</div>
+                  <div class="dropdown__list">
+                    <div class="dropdown__list--item" data-dropdown-item>Модель 1</div>
+                    <div class="dropdown__list--item" data-dropdown-item>Модель 2</div>
+                    <div class="dropdown__list--item" data-dropdown-item>Модель 3</div>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
+              <div class="dropdown" data-dropdown>
+                <div class="dropdown--value" data-dropdown-value>Комплектация</div>
+                <div class="dropdown__list">
+                  <div class="dropdown__list--item" data-dropdown-item>Комплектация 1</div>
+                  <div class="dropdown__list--item" data-dropdown-item>Комплектация 2</div>
+                  <div class="dropdown__list--item" data-dropdown-item>Комплектация 3</div>
+                </div>
               </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
-              </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
-              </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
-              </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
-              </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
-              </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
-              </div>
-            </div>
-            <div class="catalog__goods__grid__item">
-              <div class="catalog__goods__grid__item--article">Артикул: <span>1234</span></div>
-              <div class="catalog__goods__grid__item--favorite">Избранное
-                <svg>
-                  <use xlink:href="#icon-favorite"></use>
-                </svg>
-              </div><a class="catalog__goods__grid__item--link" href="product-card.html"><img class="catalog__goods__grid__item--img" src="img/trainersearch.png" alt="">
-                <div class="catalog__goods__grid__item--descr">Бицепс/трицепс машина</div>
-                <div class="catalog__goods__grid__item--title">Pulsefitness 368</div></a>
-              <div class="catalog__goods__grid__item--price">68 000 грн./шт.</div>
-              <div class="catalog__goods__grid__item__buttons">
-                <button class="btn btn--buy">
-                  <svg>
-                    <use xlink:href="#icon-cart"></use>
-                  </svg><span>Купить</span>
-                </button><a href="compare.html">
-                  <button class="btn btn--compare"><img src="img/balance.png" alt=""></button></a>
-              </div>
+              <textarea class="textarea" placeholder="Доролнительная информация" required></textarea>
             </div>
           </div>
-        </div>
+        </form>
       </div>
+      <div class="subtitle">Информация об условиях</div>
+      <div class="text">Global Fitness - мировой лидер в индустрии восстановленных и бывших в употреблении фитнес-оборудования. На протяжении более 20 лет мы постоянно являемся первопроходцами в инновациях, меняя взгляды владельцев и менеджеров на свое оборудование и нарушая традиционную модель. Превосходя высочайший уровень качества и контроля, Global Fitness продолжает расти и развивать свой сегмент рынка, никогда не осваивая и не претворяя в жизнь идеи на новых высотах. </div>
+      <div class="text">Задача организации, в особенности же постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки новых предложений. Таким образом укрепление и развитие структуры в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.</div>
     </div>
 <div class="bottom-block">
   <div class="container">
