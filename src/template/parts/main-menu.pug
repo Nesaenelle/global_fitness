@@ -1,5 +1,5 @@
 nav
 	ul
-		each val in [{url: 'traiding', name: 'Трейдин', pageName:'traiding'}, {url: 'financing', name: 'Финансирование', pageName:'financing'}, {url: 'diller', name: 'Дилеры', pageName:'diller'}, {url: 'about', name: 'О компании', pageName: "about"}, {url: 'our-work', name: 'Наши работы', pageName:'our-work'}, {url: 'contacts', name: 'Контакты', pageName:'contacts'}]
+		each val in [{url: 'traiding', name: 'Трейдинг', pageName:'traiding'}, {url: 'financing', name: 'Финансирование', pageName:'financing'}, {url: 'diller', name: 'Дилеры', pageName:'diller'}, {url: 'about', name: 'О компании', pageName: "about"}, {url: 'examples', name: 'Наши работы', pageName:'our-work'}, {url: 'contacts', name: 'Контакты', pageName:'contacts'}]
 			li(class=((val.pageName == htmlWebpackPlugin.options.page) ? 'active' : ''))
 				a(href=val.url + '.html')= val.name

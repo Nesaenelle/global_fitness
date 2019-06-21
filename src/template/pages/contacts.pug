@@ -1,2 +1,94 @@
-.container
-	h1 Contacts
+extends ../layout.pug
+
+block content
+	.container
+		ul(class="breadcrumbs")
+			li(class="breadcrumbs__item")
+				a(href="") Главная
+			li(class="breadcrumbs__item") Контакты
+
+		.title Контакты
+
+		.contacts
+			.contacts--left
+				.address
+					.address--title Athletic Club Olympus
+					.address--subtitle Спортивний клуб Олімп
+					ul
+						li 
+							svg
+								use(xlink:href="#icon-marker")
+							span вулиця Європейська, 30А, Вишневе, Київська обл., 08132
+						li 
+							svg
+								use(xlink:href="#icon-phone")
+							span 096 088 0011 
+							svg
+								use(xlink:href="#icon-phone")
+							span 569 12-34-56
+						li 
+							svg
+								use(xlink:href="#icon-email")
+							span global@com.ua
+
+				.address
+					.address--title Athletic Club Olympus
+					.address--subtitle Спортивний клуб Олімп
+					ul
+						li 
+							svg
+								use(xlink:href="#icon-marker")
+							span вулиця Європейська, 30А, Вишневе, Київська обл., 08132
+						li 
+							svg
+								use(xlink:href="#icon-phone")
+							span 096 088 0011 
+							svg
+								use(xlink:href="#icon-phone")
+							span 569 12-34-56
+						li 
+							svg
+								use(xlink:href="#icon-email")
+							span global@com.ua
+				
+				form.form
+					.form--title Оставить заявку
+					.form--row
+						.form--col
+							input.input(type="text" placeholder="Ваше имя" required)
+							input.input(type="email" placeholder="Ваш E-mail" required)
+							button.btn.btn--blue Написать
+						.form--col
+							input.input(type="text" placeholder="Ваш телефон" required)
+							textarea.textarea(placeholder="Комментарий" required)
+			.contacts--right
+				#map.map
+
+	include ../parts/bottom-block.pug
+
+	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlBb2IIdB1ipotVn5R7TMYY2llHXs_-yI&callback=initMap" async defer)
+
+	script.
+		var map;
+		function initMap() {
+		map = new google.maps.Map(document.getElementById('map'), {
+		center: { lat: 50.4202, lng: 30.4725 },
+		zoom: 17,
+		disableDefaultUI: true,
+		scaleControl: false,
+		navigationControl: false,
+		draggable: false
+		});
+		var icon = {
+		url: "img/marker.svg", // url
+		scaledSize: new google.maps.Size(36, 36), // scaled size
+		origin: new google.maps.Point(0, 0), // origin
+		anchor: new google.maps.Point(15, 35) // anchor
+		};
+		var marker = new google.maps.Marker({
+		position: { lat: 50.4202, lng: 30.4725  },
+		map: map,
+		title: 'Hello World!',
+		icon: icon
+		});
+		}

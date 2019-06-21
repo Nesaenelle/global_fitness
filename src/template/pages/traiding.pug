@@ -1,2 +1,70 @@
-.container
-	h1 Traiding
+extends ../layout.pug
+
+block content
+	.container
+		ul(class="breadcrumbs")
+			li(class="breadcrumbs__item")
+				a(href="") Главная
+			li(class="breadcrumbs__item") Трейдинг
+
+		.title Трейдинг
+
+		.subtitle Замени старое на новое
+			
+		.traiding
+			.traiding__img
+				img(src="img/traiding.png", alt="")
+			form.form
+				.form--row
+					.form--col
+						input.input(type="text" placeholder="ФИО" required)
+						input.input(type="email" placeholder="Email" required)
+
+						.form--col--2
+							input.input(type="text" placeholder="Желаемая цена" required)
+
+							.dropdown(data-dropdown)
+								.dropdown--value(data-dropdown-value) Год выпуска
+								.dropdown__list
+									.dropdown__list--item(data-dropdown-item) 2010
+									.dropdown__list--item(data-dropdown-item) 2011
+									.dropdown__list--item(data-dropdown-item) 2012
+
+						label Загрузить фото
+						.upload
+							each val in [1,2,3,4]
+								.upload--item
+									img(src="img/upload.png", alt="")
+						button.btn.btn--blue Отправить
+
+					.form--col
+						input.input(type="text" placeholder="Телефон" required)
+
+						.form--col--2
+							.dropdown(data-dropdown)
+								.dropdown--value(data-dropdown-value) Марка
+								.dropdown__list
+									.dropdown__list--item(data-dropdown-item) Марка 1
+									.dropdown__list--item(data-dropdown-item) Марка 2
+									.dropdown__list--item(data-dropdown-item) Марка 3
+							.dropdown(data-dropdown)
+								.dropdown--value(data-dropdown-value) Модель
+								.dropdown__list
+									.dropdown__list--item(data-dropdown-item) Модель 1
+									.dropdown__list--item(data-dropdown-item) Модель 2
+									.dropdown__list--item(data-dropdown-item) Модель 3
+						.dropdown(data-dropdown)
+							.dropdown--value(data-dropdown-value) Комплектация
+							.dropdown__list
+								.dropdown__list--item(data-dropdown-item) Комплектация 1
+								.dropdown__list--item(data-dropdown-item) Комплектация 2
+								.dropdown__list--item(data-dropdown-item) Комплектация 3
+						textarea.textarea(placeholder="Доролнительная информация" required)
+
+		.subtitle Информация об условиях
+
+		.text Global Fitness - мировой лидер в индустрии восстановленных и бывших в употреблении фитнес-оборудования. На протяжении более 20 лет мы постоянно являемся первопроходцами в инновациях, меняя взгляды владельцев и менеджеров на свое оборудование и нарушая традиционную модель. Превосходя высочайший уровень качества и контроля, Global Fitness продолжает расти и развивать свой сегмент рынка, никогда не осваивая и не претворяя в жизнь идеи на новых высотах. 
+
+		.text Задача организации, в особенности же постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки новых предложений. Таким образом укрепление и развитие структуры в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
+
+	include ../parts/bottom-block.pug

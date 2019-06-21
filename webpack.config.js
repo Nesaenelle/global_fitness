@@ -108,6 +108,26 @@ module.exports = {
             template: 'src/template/pages/search.pug',
             page: 'catalog'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'examples.html',
+            template: 'src/template/pages/examples.pug',
+            page: 'examples'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'traiding.html',
+            template: 'src/template/pages/traiding.pug',
+            page: 'traiding'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'contacts.html',
+            template: 'src/template/pages/contacts.pug',
+            page: 'contacts'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'leasing.html',
+            template: 'src/template/pages/leasing.pug',
+            page: 'leasing'
+        }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }

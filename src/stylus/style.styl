@@ -5,16 +5,19 @@
 @import 'header.styl'
 @import 'footer.styl'
 @import 'button.styl'
-@import 'home.styl'
-@import 'about.styl'
-@import 'catalog.styl'
+@import 'pages/home.styl'
+@import 'pages/about.styl'
+@import 'pages/catalog.styl'
+@import 'pages/examples.styl'
+@import 'pages/traiding.styl'
+@import 'pages/contacts.styl'
 @import 'modal.styl'
 @import 'magnify.css'
 
 body 
 	font-family: 'Roboto', sans-serif
 	color: #1f1f1f
-input, button 
+input, button, textarea
 	font-family: 'Roboto', sans-serif
 	
 
@@ -51,6 +54,27 @@ main
 	padding: 0 40px
 	@media mqBigMobile
 		padding: 0 20px
+		
+
+.title 
+	font-size: 24px
+	color: #666666
+	font-weight: 600
+	margin: 43px 0 0 0
+	position relative
+	@media mqBigMobile
+		margin: 30px 0 0 0
+		font-size: 20px
+	&:after 
+		content: ''
+		background: $c-blue
+		height: 2px
+		width: 48px
+		left: 0
+		bottom: -20px
+		position: absolute
+		@media mqBigMobile
+			bottom: -15px
 
 .breadcrumbs
 	&__item
