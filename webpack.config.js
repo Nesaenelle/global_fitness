@@ -128,6 +128,11 @@ module.exports = {
             template: 'src/template/pages/leasing.pug',
             page: 'leasing'
         }),
+        new HtmlWebpackPlugin({
+            filename: 'profile.html',
+            template: 'src/template/pages/profile.pug',
+            page: 'profile'
+        }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([
             { from: 'src/img', to: 'img' }

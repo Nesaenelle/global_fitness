@@ -68,7 +68,7 @@ function initTyped() {
     }
 }
 
-$('.catalog__filter__section--title').on('click', function() {
+$('.catalog__filter__section--title, .profile__menu--title:not(.no-children)').on('click', function() {
     $(this).next().stop().slideToggle(200);
     $(this).toggleClass('active');
 });

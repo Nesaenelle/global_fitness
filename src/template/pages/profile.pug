@@ -1,0 +1,95 @@
+extends ../layout.pug
+include ../mixins/product-item
+
+block content
+	.container
+		ul(class="breadcrumbs")
+			li(class="breadcrumbs__item")
+				a(href="") Главная
+			li(class="breadcrumbs__item") Личный кабинет
+	
+
+		.profile
+			.profile--left
+
+				.title Личный кабинет
+
+				.profile__menu
+					.profile__menu--title Мои заказы
+					.profile__menu__content
+						each val in [{title: 'Завершенные', id: 1}, {title: 'В работе', id: 2}, {title: 'История', id: null}]
+							.profile__menu__content--item(data-tab-id=val.id)= val.title
+
+					.profile__menu--title.no-children Личная информация
+
+					.profile__menu--title.no-children(data-tab-id="2") Избранное
+
+					.profile__menu--title.no-children Лист ожиданий
+
+					.profile__menu--title.no-children Просмотренные
+
+			.profile--right
+				.profile__section(data-tab="1")
+					.profile__section--title Заказы (3)
+
+					table
+						thead
+							tr
+								each val in ['Артикул', 'Заказ', 'Наименование товара', 'Цена', 'Количество', 'Стоимость']
+									td= val
+						tbody
+							each row in [1,2]
+								tr
+									td 1254646
+									td 
+										img(src="img/product-1.jpg", alt="")
+									td
+										b Манжет для тяги InterAtletika М3-09
+										p (лямки для щиколоток) имеет удобную и практичную форму. Он применяется как во время выполнения силовых упражнений, так и при занятиях фитнесом, или физкультурой. 
+									td 1750 грн.
+									td 2
+									td 3500 грн.
+
+					.profile__total 
+						.profile__total--price Итого сумма заказа: 
+							b 7 000 грн.
+						.profile__total--status.profile__total--status-done Выполнен
+
+
+				.profile__section(data-tab="2")
+					.profile__section--title В работе
+
+					.profile__in-progress
+						each val in [{id: '№ 45678541', date: '08 апреля 2019 09:00', img: 'img/product-1.jpg', price: '1 товар на 292 грн', status: 'done'}, {id: '№ 45678541', date: '08 апреля 2019 09:00', img: 'img/product-1.jpg', price: '1 товар на 292 грн', status: 'waiting'}, {id: '№ 45678541', date: '08 апреля 2019 09:00', img: 'img/product-1.jpg', price: '1 товар на 292 грн', status: 'cancel'}]
+							.profile__in-progress__item
+								.profile__in-progress__item--id= val.id
+								.profile__in-progress__item--date= val.date
+								img(src=val.img, alt="")
+								.profile__in-progress__item--price= val.price
+								if val.status == 'done'
+									.profile__in-progress__item--status.profile__in-progress__item--status-done Выполнен
+								if val.status == 'waiting'
+									.profile__in-progress__item--status.profile__in-progress__item--status-waiting Ожидание
+								if val.status == 'cancel'
+									.profile__in-progress__item--status.profile__in-progress__item--status-cancel Отмена
+
+				.profile__section(data-tab="3")
+					.profile__section--title Избранное
+
+					.catalog__goods__grid
+						each val in [{descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}, {descr: 'Бицепс/трицепс машина', title: 'Pulsefitness 368', price: '68 000 грн./шт.'}]
+							+product-item(val)
+					.profile__favorite-total 
+						div
+							span 3 товара на сумма заказа: 
+							b 180 000 грн.
+						button.btn.btn--blue Купить
+
+
+
+		.text Таким образом сложившаяся структура организации представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Не следует, однако забывать, что консультация с широким активом требуют от нас анализа системы обучения кадров, соответствует насущным потребностям. Разнообразный и богатый опыт рамки и место обучения кадров позволяет оценить значение системы обучения кадров, соответствует насущным потребностям. Товарищи! рамки и место обучения кадров способствует подготовки и реализации дальнейших направлений развития.
+
+		.text С другой стороны укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Не следует, однако забывать, что укрепление и развитие структуры играет важную роль в формировании системы обучения кадров, соответствует насущным потребностям. Товарищи! сложившаяся структура организации в значительной степени обуславливает создание направлений прогрессивного развития.
+
+
+	include ../parts/bottom-block.pug
