@@ -84,6 +84,11 @@ module.exports = {
             page: 'about'
         }),
         new HtmlWebpackPlugin({
+            filename: 'principles.html',
+            template: 'src/template/pages/principles.pug',
+            page: 'about'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'catalog.html',
             template: 'src/template/pages/catalog.pug',
             page: 'catalog'
@@ -137,6 +142,17 @@ module.exports = {
             filename: 'dealers.html',
             template: 'src/template/pages/dealers.pug',
             page: 'dealers'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'dealer.html',
+            template: 'src/template/pages/dealer.pug',
+            page: 'dealer'
+        }),
+
+        new HtmlWebpackPlugin({
+            filename: 'not-found.html',
+            template: 'src/template/pages/not-found.pug',
+            page: 'not-found'
         }),
         new ExtractTextPlugin({ allChunks: true, filename: "styles.css" }),
         new CopyWebpackPlugin([

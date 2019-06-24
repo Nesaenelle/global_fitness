@@ -14,6 +14,7 @@
 @import 'pages/leasing.styl'
 @import 'pages/profile.styl'
 @import 'pages/dealers.styl'
+@import 'pages/not-found.styl'
 @import 'modal.styl'
 @import 'magnify.css'
 
@@ -25,17 +26,15 @@ input, button, textarea
 	
 
 main 
-	margin-top: calc(47px + 65px)
-	min-height: calc(100% - (47px + 65px) - 270px)
-	padding-top: 34px
+	min-height: calc(100vh - 265px)
+	padding-top: calc(47px + 65px + 34px)
 	position: relative
 	overflow: hidden
 	
 	@media mqBigMobile
-		margin-top: calc(40px + 55px)
-		padding-top: 20px
+		padding-top: calc(40px + 55px + 20px)
 	@media mqMidMobile
-		margin-top: calc(35px + 45px)
+		padding-top: calc(35px + 45px + 20px)
 		
 	&:after
 		content: ''

@@ -1,12 +1,76 @@
 extends ../layout.pug
 
 block content
+
+	.leasing-top
+		img(src="img/leasing.png", alt="")
 	.container
 		ul(class="breadcrumbs")
 			li(class="breadcrumbs__item")
 				a(href="") Главная
 			li(class="breadcrumbs__item") Лизинг
 
-		.title Лизинг
+		.title Условия приобретения в лизинг
+
+		.text Global Fitness - мировой лидер в индустрии восстановленных и бывших в употреблении фитнес-оборудования. На протяжении более 20 лет мы постоянно являемся первопроходцами в инновациях, меняя взгляды владельцев и менеджеров на свое оборудование и нарушая традиционную модель. Превосходя высочайший уровень качества и контроля, Global Fitness продолжает расти и развивать свой сегмент рынка, никогда не осваивая и не претворяя в жизнь идеи на новых высотах. 
+
+		.text Задача организации, в особенности же постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки новых предложений. Таким образом укрепление и развитие структуры в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
+
+
+		.steps
+			.steps__item
+				.steps__item--img
+					img(src="img/contract.svg", alt="")
+				.steps__item--text Пользователь (лизингополучатель) обращается в лизинговую компанию с заявкой на приобретение определенного вида имущества.
+			.steps__item
+				.steps__item--img
+					img(src="img/employee.svg", alt="")
+				.steps__item--text Лизинговая компания рассматривает все необходимые документы и производит оценку ликвидности имущества.
+			.steps__item
+				.steps__item--img
+					img(src="img/hand-shake.svg", alt="")
+				.steps__item--text При положительной оценке и решении, лизинговая компания закупает имущество у производителя (Продавца).
+			.steps__item
+				.steps__item--img
+					img(src="img/award_.svg", alt="")
+				.steps__item--text Лизинговая компания подписывает с лизинго получателем договор, согласно которому пользователь берет товар в долгосрочную аренду, постепенно выплачивая за него компании.
+
+		.title Рассчитать лизинг
+
+		.calculator
+			form.form
+				input.input(type="text" required placeholder="Срок кредита")
+				input.input(type="text" required placeholder="Сумма кредита")
+				input.input(type="text" required placeholder="Первый взнос, сумма")
+				input.input(type="text" required placeholder="Процентная ставка")
+
+				.dropdown(data-dropdown)
+					.dropdown--value(data-dropdown-value) Метод погашения
+					.dropdown__list
+						.dropdown__list--item(data-dropdown-item) Метод
+						.dropdown__list--item(data-dropdown-item) Метод
+						.dropdown__list--item(data-dropdown-item) Метод
+
+			.table
+				.table__head
+					each val in ['Месяц', 'Погашение кредита', 'Погашение%', 'Сумарный платеж', 'Остаток кредита']
+						.table--item= val
+				.table__body
+					each val in ['12', '20 000', '15', '200 000', '180 000']
+						.table--item= val
+
+		form.form.request-form
+			.request-form--title Отправить запрос на получение лизинга
+		
+			input.input(type="text" required placeholder="ФИО")
+			input.input(type="text" required placeholder="НОМЕР ТЕЛЕФОНА")
+			button.btn.btn--blue Отправить
+
+		.bank-list
+			each val in [1,2,3]
+				each val in [1,2,3,4]
+					.bank-list__item
+						img(src='img/bank-' + val + '.png', alt="")
+
 
 	include ../parts/bottom-block.pug

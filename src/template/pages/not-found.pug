@@ -1,0 +1,14 @@
+extends ../layout.pug
+
+block content
+
+	.container
+		.not-found
+			.not-found--img
+				img(src="img/404.png", alt="")
+			.not-found__info
+				.not-found__info--number 404
+				.not-found__info--title На сайте нет такой страницы!
+				.not-found__info--text Возможно не верная ссылка 
+					a(href="index.html") перейти на главную.
+				

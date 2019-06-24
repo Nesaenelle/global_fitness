@@ -112,8 +112,8 @@ $('[data-tab-id]').on('click', function() {
     let id = $(this).data('tab-id');
     $(this).parent().children().removeClass('active');
     $(this).addClass('active');
-    $(`[data-tab]`).hide();
-    $(`[data-tab=${id}]`).show();
+    $(`[data-tab]`).removeClass('active');
+    $(`[data-tab=${id}]`).addClass('active');
 });
 
 $('.product-card__main__slider__thumbs--item').on('click', function() {

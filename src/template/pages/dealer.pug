@@ -1,0 +1,58 @@
+extends ../layout.pug
+
+block content
+
+	.dealer-top
+		img(src="img/dealer.png", alt="")
+		.dealer-top--text Global Fitness Ukraine
+
+
+		.dropdown(data-dropdown)
+			.dropdown--value(data-dropdown-value) Выберете офис
+			.dropdown__list
+				label.dropdown__list--item(data-dropdown-item) 
+					input(type="checkbox")
+					svg
+						use(xlink:href="#icon-marker")
+					| Globalfitness (Munich) Munchen
+				label.dropdown__list--item(data-dropdown-item) 
+					input(type="checkbox")
+					svg
+						use(xlink:href="#icon-marker")
+					| Globalfitness (Dusseldorf) Dusseldorf
+				label.dropdown__list--item(data-dropdown-item) 
+					input(type="checkbox")
+					svg
+						use(xlink:href="#icon-marker")
+					| Globalfitness (Erlangen) Erlangen
+
+	.container
+		ul(class="breadcrumbs")
+			li(class="breadcrumbs__item")
+				a(href="") Главная
+			li(class="breadcrumbs__item")
+				a(href="") Выбор диллера
+			li(class="breadcrumbs__item") Global Fitness Ukraine
+
+		.dealer-details
+			div
+				.text С другой стороны постоянный количественный рост и сфера нашей активности позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Значимость этих проблем настолько очевидна, что новая модель организационной деятельности в значительной степени обуславливает создание соответствующий условий активизации. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации дальнейших направлений развития.
+				.text Равным образом постоянный количественный рост и сфера нашей активности играет важную роль в формировании модели развития. Задача организации, в особенности же постоянный количественный рост и сфера нашей активности представляет собой интересный эксперимент проверки новых предложений. Таким образом укрепление и развитие структуры в значительной степени обуславливает создание позиций, занимаемых участниками в отношении поставленных задач. Задача организации, в особенности же рамки и место обучения кадров влечет за собой процесс внедрения и модернизации позиций, занимаемых участниками в отношении поставленных задач.
+			div
+				.dealer-details__info
+					img(src="img/avatar.png", alt="")
+					div
+						.dealer-details__info--title Андрей Сергеевич
+						.dealer-details__info--position Заместитель директора
+						.dealer-details__info--place Украина
+						.dealer-details__info--phone 
+							svg
+								use(xlink:href="#icon-phone")
+							| +380 98 22 23 789
+						.dealer-details__info--email 
+							svg
+								use(xlink:href="#icon-email")
+							| globalfitnes@mail.com
+				
+	
+	include ../parts/bottom-block.pug

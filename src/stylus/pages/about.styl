@@ -463,3 +463,57 @@
 	.btn--blue
 		margin: auto
 		display block
+
+	.principles
+		display: flex
+		justify-content: space-between
+		margin-top: 35px
+		margin-bottom: 35px
+		@media mqBigTablet
+			flex-wrap: wrap
+		& > div
+			width: 49%
+			@media mqBigTablet
+				width: 100%
+			.text
+				margin-top: 0
+			iframe
+				width: 100%
+				display block
+				height: 100%
+				@media mqBigTablet
+					height: 40vw
+
+		&__list
+			margin: 28px 0 0 0 
+			display flex
+			justify-content: space-between
+			flex-wrap: wrap
+			&__item
+				display flex
+				align-items: center
+				width: calc(100%/ 2 - 20px)
+				margin-bottom: 35px
+				@media mqBigMobile 
+					flex-wrap: wrap
+					justify-content: center
+					text-align: center
+					flex-flow: wrap-reverse
+				@media mqMidMobile 
+					width: 100%
+				img 
+					display block
+					width: 100%
+					max-width: 111px
+					@media mqBigMobile 
+						max-width: 80px
+						margin-top: 10px
+				&--title
+					text-transform: uppercase
+					font-size: 14px
+					margin-left: 29px
+					font-weight: 600
+					letter-spacing: 0.2px
+					@media mqBigMobile 
+						width: 100%
+						margin-left: 0

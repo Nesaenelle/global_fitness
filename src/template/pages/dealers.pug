@@ -29,14 +29,15 @@ block content
 		.dealers__search
 			.container
 				button.btn.btn--blue.btn--transparent Все локации
-				each val in ['А','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','э','ю','я']
-					.dealers__search--item= val
+				.dealers__search--wrap
+					each val in ['А','б','в','г','д','е','ё','ж','з','и','й','к','л','м','н','о','п','р','с','т','у','ф','х','ц','ч','ш','щ','э','ю','я']
+						a(href="dealer.html").dealers__search--item= val
 				button.btn.btn--blue Поиск
 
 		.dealers__countries
 			.container
 				each val in [1,2,3,4,5]
-					.dealers__countries--item Albania
+					a(href="dealer.html").dealers__countries--item Albania
 				each val in [1,2,3,4,5]
 					.dealers__countries--item Armenia
 				each val in [1,2,3,4,5]
