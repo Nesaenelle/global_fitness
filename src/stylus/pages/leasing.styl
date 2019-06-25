@@ -1,8 +1,10 @@
 .leasing-page
 	display: block
 	padding-top: calc(47px + 65px)
-
-
+	@media mqBigMobile
+		padding-top: calc(40px + 54px)
+	@media mqSemiMobile
+		padding-top: calc(35px + 45px)
 	.breadcrumbs
 		margin-top: 25px
 
@@ -23,15 +25,27 @@
 		line-height: 1.75em
 		letter-spacing: 0px
 		font-family: 'PT Sans', sans-serif
-
+	
+	.leasing-top
+		img
+			width: 100%
+			display: block
 	.steps
 		margin-top: 52px
 		display flex
 		justify-content: space-between
+		@media mqBigMobile
+			flex-wrap: wrap
 		& + .title 
 			margin-top: 70px
+			@media mqBigMobile
+				margin-top: 20px
 		&__item
 			width: calc(100%/4)
+			
+			@media mqBigMobile
+				width: 100%
+				margin-bottom: 45px
 
 			&:last-child
 				.steps__item--img:after
@@ -45,17 +59,28 @@
 				img
 					width: 50px
 					margin-left: -21px
+					@media mqBigMobile
+						width: 45px 
+						margin-top: -14px
+						margin-left: -1px
 
 			&:nth-child(3)
 				img
 					width: 50px
 					margin-left: -19px
 					margin-top: 3px
-						
+					@media mqBigMobile
+						width: 45px
+						margin-top: -7px
+						margin-left: -1px						
 			&:nth-child(4)
 				img
 					width: 47px
 					margin-left: -18px
+					@media mqBigMobile
+						width: 42px
+						margin-top: -10px
+						margin-left: -1px						
 
 			&--text 
 				font-size: 14px
@@ -63,16 +88,36 @@
 				text-align: center
 				font-family: 'PT Sans', sans-serif
 				padding: 0px 15px
-			    line-height: 1.6em
+				line-height: 1.6em
+				@media mqSemiMobile
+					margin-top: 40px
+				@media mqBigMobile
+					width: 70%
+					margin: 10px auto 0
+				@media mqSemiMobile
+					width: 100%
 			&--img
 				width: 141px
 				height: 102px
 				display flex
 				align-items: center
 				justify-content: center
-				background: url(../img/step.png) no-repeat
 				margin: auto
 				position relative
+				@media mqBigMobile
+					width: 100px
+				&:before
+					content: ''
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					position: absolute
+					background: url(../img/step.png) no-repeat
+					background-size: contain
+					background-position: center
+					@media mqBigMobile
+						transform: rotate(90deg)
 				&:after
 					content: ''
 					margin-right: 7px
@@ -90,33 +135,61 @@
 					transform: rotate(-45deg)
 					-webkit-transform: rotate(-45deg)
 					transition: 0.2s
+					z-index: 1
+					@media mqBigMobile
+						display: none
+						bottom: -30px
+						top: auto
+						left: 0
+						right: 0
+						transform: rotate(45deg)
+						-webkit-transform: rotate(45deg)
 				img
+					position: relative
 					transition: 0.2s
 					width: 45px
 					margin-left: -10px
+					@media mqBigMobile
+						width: 35px
+						margin-top: -7px
+						margin-left: 7px
 
 	.calculator
 		display flex
 		justify-content: space-between
 		margin-top: 27px
+		@media mqBigMobile
+			flex-wrap: wrap
 		.form
 			width: 27%
+			@media mqBigMobile
+				width: 100%
+				padding-right: 0
 			.input
 				& + .input, & + .dropdown
 					margin-top: 9px
 		.table
 			width: 73%
+			overflow: auto
+			@media mqBigMobile
+				width: 100%
+				margin-top: 30px
 			&__head, &__body 
 				display flex
 				border: 1px solid #e8e8e8
+				min-width: 600px
 
 			&__head
 				.table--item
 					padding: 16px 20px
+					@media mqBigMobile
+						padding: 12px 15px
 			&__body 
 				border-top: none
 				.table--item
 					padding: 24px 20px
+					@media mqBigMobile
+						padding: 20px 15px
 			&--item
 				width: calc(100%/5)
 				text-align: center
@@ -130,6 +203,15 @@
 		flex-wrap: nowrap
 		align-items: center
 		justify-content: space-between
+		@media mqBigTablet
+			padding: 30px 30px 30px 30px
+			flex-wrap: wrap
+			justify-content: flex-start
+		@media mqBigMobile
+			margin: 38px 0 0px 0
+			display: block
+			border: 3px solid $c-blue
+			padding: 20px 30px 20px 30px
 		&--title
 			font-size: 28px
 			text-transform: uppercase
@@ -137,23 +219,60 @@
 			color: #191919
 			width: 350px
 			font-family: 'PT Sans', sans-serif
+			margin-right: 10px
+			@media mqBigTablet
+				font-size: 24px
+				width: 100%
+				margin-right: 0
+				margin-bottom: 15px
+			@media mqBigMobile
+				font-size: 20px
+				width: 100%
+				margin-bottom: 15px
+				text-align: center
 			& + .input
 				margin-left: auto
+				@media mqBigTablet
+					margin-left: 0
 		.input
 			width: 320px
 			height: 55px
 			margin-right: 20px
+			@media mqBigTablet
+				width: 100%
+				max-width: 260px
+				margin-right: 10px
+			@media mqSmallTablet
+				max-width: 200px
+			@media mqBigMobile
+				display: block
+				width: 100%
+				margin: 10px auto
+				max-width: 260px
+				height: 42px
 			& + .input
 				margin-top: 0
+				@media mqBigMobile
+					margin: 0px auto 10px
+			& + .btn
+				display: block
 		.btn
-			width: 280px
+			width: 100%
+			max-width: 280px
 			margin-top: 0
+			@media mqSmallTablet
+				max-width: 200px
+			@media mqBigMobile
+				max-width: 260px
+				margin: 0px auto 0
 
 	.bank-list
 		margin-top: 40px
 		display: flex
 		justify-content: space-between
 		flex-wrap: wrap
+		@media mqBigMobile
+			margin-top: 25px
 		&__item
 			display flex
 			align-items: center
@@ -161,6 +280,9 @@
 			width: calc(100%/ 4 - 14px)
 			border: 2px solid  #dcdcdc
 			margin-top: 20px
+			@media mqBigMobile
+				width: calc(100%/ 2 - 8px)
+				margin-top: 15px
 			&:hover
 				img 
 					transform: scale(1.05)
@@ -168,3 +290,10 @@
 				display block
 				margin: 10px 0
 				transition: 0.1s
+				@media mqBigTablet
+					width: 100%
+					max-width: 150px
+					padding: 10px
+					
+				
+					

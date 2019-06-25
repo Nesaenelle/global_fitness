@@ -2,22 +2,35 @@
 	
 	.bottom-block
 		margin-top: 90px
+		@media mqBigMobile
+			margin-top: 60px
 	
 	.contacts
 		margin-top: 60px
 		display: flex
 		justify-content: space-between
-		
+		@media mqBigMobile
+			margin-top: 50px
+		@media mqSmallTablet
+			flex-wrap: wrap
 		.map
 			width: 100%
 			height: 100%
+			@media mqSmallTablet
+				margin-top: 20px
+				height: 50vw
 		&--left
 			width: 50%
 			display: flex
 			flex-wrap: wrap
+			@media mqSmallTablet
+				width: 100%
 			.address
 				width: calc(50% - 8px)
 				margin-top: -3px
+				@media mqMidMobile
+					width: 100%
+					margin-bottom: 20px
 				&--title
 					font-size: 18px
 				&--subtitle
@@ -27,18 +40,33 @@
 					li
 						font-size: 14px
 						margin: 15px 0 20px 0
-						width: 70%
+						width: 64%
 						display: flex
 						align-items: flex-start
+						justify-content: space-between
+						flex-wrap: wrap
+						@media mqBigTablet
+							width: 75%
+						@media mqSmallTablet
+							width: 64%
+						@media mqBigMobile
+							width: 75%
+						@media mqMidMobile
+							width: 100%
 						&:nth-child(2)
 							svg
 								margin-top: 0px
 						&:nth-child(3)
 							svg
 								margin-top: 0px
-						span 
-							& + svg
-								margin-left: 30px
+						& > div
+							display: flex
+							align-items: flex-start
+							& + div
+								@media mqMidMobile
+									margin-right: auto
+									margin-left: 20px
+
 						svg
 							min-width: 14px
 							width: 14px
@@ -49,13 +77,27 @@
 						
 			.form
 				margin-top: 53px
+				@media mqSmallTablet
+					padding-right: 0
+				@media mqBigMobile
+					margin-top: 15px
+
 				&--title
 					margin-bottom: 27px
+					@media mqBigMobile
+						margin-bottom: 15px
 				.textarea
 					height: 125px
+					@media mqBigMobile
+						height: 98px
 					
 				.btn.btn--blue 
 					margin-top: 20px
+					@media mqBigMobile
+						margin-top: 15px
 		&--right
 			width: 50%
 			padding-right: 20px
+			@media mqSmallTablet
+				padding-right: 0
+				width: 100%

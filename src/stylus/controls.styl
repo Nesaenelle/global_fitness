@@ -114,6 +114,9 @@
 	border: 1px solid #e8e8e8
 	outline: none
 	font-size: 14px
+	@media mqBigMobile
+		height: 42px
+		padding: 8px 22px 8px 13px
 	
 .textarea
 	width: 100%
@@ -122,6 +125,8 @@
 	outline: none
 	font-size: 14px
 	resize: none
+	@media mqBigMobile
+		padding: 13px 22px 10px 13px
 	
 .input, .textarea
 	&::-webkit-input-placeholder
@@ -134,12 +139,17 @@
 		color: #d2d2d2
 
 $formOffset = 20px
+$formOffsetMobile = 15px
+
 .form
 	width: 100%
 	display: flex
 	align-items: flex-start
 	padding-right: 20px
 	flex-wrap: wrap
+	
+	@media mqMidMobile
+		padding-right: 0
 	
 	&--title 
 		font-size: 18px
@@ -148,44 +158,79 @@ $formOffset = 20px
 		font-weight: 600
 		color: #666666
 		font-family: 'PT Sans', sans-serif
+		@media mqBigMobile
+			font-size: 16px
 	label
 		width: 100%
 		margin-bottom: 40px
 		font-size: 14px
 		letter-spacing: 0.3px
 	.input
+		& + .btn
+			@media mqMidMobile
+				display: none
 		& + .input, & + .dropdown, & + .form--col--2, & + .textarea
 			margin-top: $formOffset
-			
+			@media mqBigMobile
+				margin-top: $formOffsetMobile
 	.textarea
 		height: 153px
+		& + .btn
+			display: none
+			@media mqMidMobile
+				display: block
 		
 	.upload
 		width: 100%
 		display: flex
 		justify-content: space-between
+		& + .btn
+			@media mqMidMobile
+				display: none
 		&--item
 			width: calc(100%/4 - 10px)
+			max-width: 81px
+			img
+				width: 100%
+				display: block
 	.dropdown
 		height: 50px
 		width: 100%
+		@media mqBigMobile
+			height: 42px
 		& + .dropdown
 			margin-top: $formOffset
+			@media mqBigMobile
+				margin-top: $formOffsetMobile
 		& + .textarea
 			margin-top: 26px
 			
 	.btn.btn--blue
 		width: 100%
-		margin-top: 11px
+		margin-top: 14px
+		@media mqBigMobile
+			margin-top: 15px
+			padding: 11px 20px
+			font-size: 14px
 	&--row
 		display: flex
 		justify-content: space-between
 		align-items: flex-start
+		@media mqMidMobile
+			flex-wrap: wrap
 	&--col
 		display: flex
 		flex-wrap: wrap
 		align-items: flex-start
 		width: calc(50% - 10px)
+		@media mqBigMobile
+			width: calc(50% - 6px)
+		@media mqMidMobile
+			width: 100%
+			
+		& + .form--col
+			@media mqMidMobile
+				margin-top: $formOffsetMobile
 		&--2
 			width: 100%
 			display: flex
@@ -195,6 +240,8 @@ $formOffset = 20px
 				margin: 20px 0 10px 0
 			& + .input, & + .dropdown
 				margin-top: $formOffset
+				@media mqBigMobile
+					margin-top: $formOffsetMobile
 			.input
 				width: calc(50% - 10px)
 				& + .dropdown 
