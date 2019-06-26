@@ -382,6 +382,37 @@ $('.world-map__list__item__dropdown__list').on({
     }
 }, '.world-map__list__item__dropdown__list--item');
 
+$('#world-map path').on('click', function() {
+    let id = $(this).attr('id');
+    $('.world-map').removeClass(currentRegion)
+
+    if(countriesEU.indexOf(id) > -1) {
+        currentRegion = 'europe';
+           $('.world-map').addClass(currentRegion)
+           if (!$('#europe-map .group').length) {
+               loadEuropeMapInfo();
+           }
+           drawCountriesList(europeCountriesList);
+    }  
+    if(countriesAsian.indexOf(id) > -1) {
+        currentRegion = 'asian';
+        $('.world-map').addClass(currentRegion)
+        if (!$('#asian-map .group').length) {
+            loadAsianMapInfo();
+        }
+        drawCountriesList(asiaCountriesList);
+    }  
+    if(countriesAfrica.indexOf(id) > -1) {
+        currentRegion = 'africa';
+        $('.world-map').addClass(currentRegion)
+        if (!$('#africa-map .group').length) {
+            loadAfricaMapInfo();
+        }
+        drawCountriesList(africaCountriesList);
+    }  
+
+});
+
 $('#world-map path').hover(
     function() {
         let id = $(this).attr('id');
@@ -413,6 +444,14 @@ $('#world-map path').hover(
             $(`#world-map [data-id='africa']`).removeClass('active')
         }  
     });
+
+$('#europe-map path, #asian-map path, #africa-map path').on('click', function() {
+    let id = $(this).attr('id');
+
+    if(countriesEU.indexOf(id) > -1 || countriesAsian.indexOf(id) > -1 || countriesAfrica.indexOf(id) > -1) {
+        window.open('dealer.html', '_blank');
+    }
+});
 
 $('#europe-map path, #asian-map path, #africa-map path').hover(
     function() {
@@ -500,7 +539,7 @@ function drawCountriesList(list) {
     $('.world-map__list__item__dropdown__list').empty();
     list.forEach(item => {
         $('.world-map__list__item__dropdown__list').append(`
-            <a href="" class="world-map__list__item__dropdown__list--item" data-country-id=${item.Code}> ${item.Name}</a>    
+            <a href="dealer.html" class="world-map__list__item__dropdown__list--item" data-country-id=${item.Code}> ${item.Name}</a>    
         `);
     });
 }

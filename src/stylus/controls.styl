@@ -190,6 +190,19 @@ $formOffsetMobile = 15px
 		&--item
 			width: calc(100%/4 - 10px)
 			max-width: 81px
+			position: relative
+			overflow: hidden
+			input
+				width: 100%
+				height: 100%
+				opacity: 0
+				position: absolute
+				left: 0
+				top: 0
+				cursor: pointer
+				&::-webkit-file-upload-button
+					cursor: pointer
+				
 			img
 				width: 100%
 				display: block
