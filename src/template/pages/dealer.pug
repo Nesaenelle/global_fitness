@@ -10,21 +10,44 @@ block content
 		.dropdown(data-dropdown class="active")
 			.dropdown--value(data-dropdown-value) Выберете офис
 			.dropdown__list
-				label.dropdown__list--item(data-dropdown-item) 
+				label.dropdown__list--item(data-dropdown-item="dealer" data-dropdown-item-value="Munich") 
 					input(type="checkbox")
 					svg
 						use(xlink:href="#icon-marker")
 					| Globalfitness (Munich) Munchen
-				label.dropdown__list--item(data-dropdown-item) 
+				label.dropdown__list--item(data-dropdown-item="dealer" data-dropdown-item-value="Dusseldorf") 
 					input(type="checkbox")
 					svg
 						use(xlink:href="#icon-marker")
 					| Globalfitness (Dusseldorf) Dusseldorf
-				label.dropdown__list--item(data-dropdown-item) 
+				label.dropdown__list--item(data-dropdown-item="dealer" data-dropdown-item-value="Erlangen") 
 					input(type="checkbox")
 					svg
 						use(xlink:href="#icon-marker")
 					| Globalfitness (Erlangen) Erlangen
+
+			.dropdown__dealer
+				.dropdown__dealer--item
+					svg
+						use(xlink:href="#icon-marker")
+					| Globalfitness (Munich) Munchen
+					| Thomas-Wimmer-Ring 1-3 80539
+					| München
+				.dropdown__dealer--item
+					svg
+						use(xlink:href="#icon-world")
+
+					| www.globalfitness.com
+				.dropdown__dealer--item
+					svg
+						use(xlink:href="#icon-phone")
+					| +380 98 22 23 789
+
+				.dropdown__dealer--item
+					svg
+						use(xlink:href="#icon-email")
+					| globalfitnes@mail.com
+
 
 	.container
 		ul(class="breadcrumbs")

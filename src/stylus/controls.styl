@@ -310,6 +310,20 @@ $formOffsetMobile = 15px
 				top: 3px
 				transform: rotate(225deg)
 				-webkit-transform: rotate(225deg)
+	&.dealer
+		.dropdown--value
+			text-transform: uppercase
+			font-weight: 500
+			background: #f14a3f!important
+			color: #fff
+			&:after 
+				border: solid #fff
+				border-width: 0 1px 1px 0
+		.dropdown__dealer
+			display: block
+		.dropdown__list
+			opacity: 0
+			visibility: hidden
 	&--value
 		cursor: pointer
 		color: #4f4f4f
@@ -358,3 +372,25 @@ $formOffsetMobile = 15px
 			cursor: pointer
 			&:hover
 				background: #e8e8e8
+				
+	&__dealer
+		position: absolute
+		left: 0
+		top: calc(100% - 1px)
+		width: 100%
+		display: none
+		background: #e8e8e8
+		border: 1px solid #e8e8e8
+		z-index: 1
+		box-shadow: 0 3px 10px -2px #ccc
+		&--item 
+			display: flex
+			align-items: center
+			padding: 10px 20px
+			svg
+				min-width: 14px
+				width: 14px
+				height: 14px
+				margin-right: 10px
+				margin-top: -4px
+				fill: #f14a3f
