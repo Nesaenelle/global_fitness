@@ -620,7 +620,12 @@ header
 				border-top: 1px solid #e8e8e8
 				border-bottom: 1px solid #e8e8e8
 				position: relative
+				&.no-children
+					span:after
+						display: none
 				&.active
+					& + .additional-menu 
+						display: block
 					span
 						&:after
 							top: 2px
@@ -659,9 +664,9 @@ header
 					margin: 0 4px
 					
 			.additional-menu 
-				opacity:1
+				opacity: 1
 				visibility: visible
-				display: block
+				display: none
 				position: static
 				border: none
 				padding: 30px 20px

@@ -187,12 +187,19 @@ $leftWidth = 283px
 				flex-wrap: wrap
 				@media mqMidMobile
 					padding-right: 13px
+				& > div
+					@media mqSmallTablet
+						width: 100%
 				&__item
 					display: flex
 					align-items: center
 					position: relative
 					margin-right: 10px
 					margin-bottom: 5px
+					@media mqSmallTablet
+						position: relative
+						display: inline-flex
+	
 					&:last-child
 						margin-right: 0
 					&.active
@@ -204,7 +211,7 @@ $leftWidth = 283px
 						margin-right: 5px
 						color: #a9a9a9
 						letter-spacing: 0.6px
-						@media mqMidMobile
+						@media mqSmallTablet
 							width: 160px
 					&--value
 						font-size: 14px
@@ -1145,7 +1152,7 @@ $leftWidth = 283px
 							width: calc(100% + 37px)
 							@media mqBigMobile
 								width: 100%
-								text-align: center
+								text-align: left
 						&--title
 							font-size: 18px
 							@media mqBigMobile

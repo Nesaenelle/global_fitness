@@ -63,7 +63,7 @@ block content
 
 					.profile__in-progress
 						each val in [{id: '№ 45678541', date: '08 апреля 2019 09:00', img: 'img/product-1.jpg', price: '1 товар на 292 грн', status: 'done'}, {id: '№ 45678541', date: '08 апреля 2019 09:00', img: 'img/product-1.jpg', price: '1 товар на 292 грн', status: 'waiting'}, {id: '№ 45678541', date: '08 апреля 2019 09:00', img: 'img/product-1.jpg', price: '1 товар на 292 грн', status: 'cancel'}]
-							.profile__in-progress__item
+							.profile__in-progress__item(data-tab-id="1")
 								.profile__in-progress__item--id= val.id
 								.profile__in-progress__item--date= val.date
 								img(src=val.img, alt="")
