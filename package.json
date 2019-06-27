@@ -4,6 +4,7 @@
   "description": "",
   "main": "webpack.config.js",
   "dependencies": {
+    "slick-carousel": "^1.8.1",
     "typed.js": "^2.0.10",
     "webpack": "^4.32.2"
   },

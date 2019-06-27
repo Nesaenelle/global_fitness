@@ -119,6 +119,11 @@ module.exports = {
             page: 'examples'
         }),
         new HtmlWebpackPlugin({
+            filename: 'example.html',
+            template: 'src/template/pages/example.pug',
+            page: 'example'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'traiding.html',
             template: 'src/template/pages/traiding.pug',
             page: 'traiding'

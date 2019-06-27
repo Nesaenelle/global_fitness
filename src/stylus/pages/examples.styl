@@ -1,3 +1,147 @@
+.example-page
+	padding-top: 0//calc(47px + 65px)
+	// transition: 0.5s
+	
+	&:after
+		position: absolute
+		top: 0
+	.bottom-block
+		margin-top: 0
+	&.full-size
+		padding-top: 0
+		height: 100vh
+		&:after
+			top: -200px
+			
+	.example-label
+		display: flex
+		flex-wrap: wrap
+		align-items: center
+		position: absolute
+		bottom: 115px
+		max-width: 728px
+		left: 50%
+		font-size: 54px
+		background: #fff
+		letter-spacing: 1px
+		padding: 30px 30px
+		border-left: 3px solid #f14a3f
+		@media mqSmallDesktop
+			right: 0
+			left: auto
+			max-width: 650px
+		@media mqBigTablet
+			padding: 20px 
+			max-width: 550px
+		@media mqBigMobile
+			max-width: 400px
+		@media mqMidMobile
+			width: 70%
+		@media mqMidMobile
+			bottom: 60px
+		&--title
+			width: 100%
+			text-transform: uppercase
+			font-size: 54px
+			font-weight: 500
+			font-family: 'PT Sans', sans-serif
+			@media mqBigTablet
+				font-size: 42px
+			@media mqMidTablet
+				font-size: 32px
+			@media mqBigMobile
+				font-size: 24px
+			@media mqMidMobile
+				font-size: 20px
+		&--text
+			font-family: 'PT Sans', sans-serif
+			margin-top: 10px
+			font-size: 14px
+			font-weight: 400
+			@media mqBigMobile
+				font-size: 12px
+			
+	.example-wrapper
+		height: calc(100vh)
+		position: relative
+		@media mqBigMobile
+			height: calc(100vh - 95px)
+		@media mqMidMobile
+			height: calc(100vh - 80px)
+	.example-slider
+		width: 100%
+		.slick-slide
+			// height: 100%
+			// width: 100%
+			img
+				display: block
+				height: calc(100vh)
+				// height: 100vh
+				width: 100%
+				object-fit: cover
+				@media mqBigMobile
+					height: calc(100vh - 95px)
+				@media mqMidMobile
+					height: calc(100vh - 80px)
+				
+		.slick-dots
+			position: absolute
+			z-index: 3
+			left: 0
+			right: 0
+			margin: auto
+			bottom: 30px
+			display: flex
+			justify-content: center
+			li
+				margin: 0 3px
+				cursor: pointer
+				&.slick-active
+					button
+						background: #fff
+				button
+					font-size: 0
+					width: 30px
+					height: 2px
+					background: #ccc
+					border: none
+			
+		.slick-arrow
+			&.slick-prev, &.slick-next
+				position: absolute
+				top: 0
+				bottom: 0
+				height: 50px
+				width: 50px
+				margin: auto
+				
+				z-index: 5
+				font-size: 0
+				border: none
+				cursor: pointer
+				transition: 0.1s
+				@media mqBigMobile
+					width: 40px
+					height: 40px
+			&.slick-prev
+				left: 30px
+				background: url(../img/arrow-point-to-right.svg)
+				background-size: cover
+				transform: rotate(180deg)
+				@media mqBigMobile
+					left: 0px
+				&:hover
+					transform: scale(1.1) rotate(180deg)
+				
+			&.slick-next
+				right: 30px
+				background: url(../img/arrow-point-to-right.svg)
+				background-size: cover
+				@media mqBigMobile
+					right: 0px
+				&:hover
+					transform: scale(1.1)
+
 .examples-page
 	.bottom-block 
 		margin-top: 90px

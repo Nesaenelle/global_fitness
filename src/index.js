@@ -3,6 +3,7 @@ import $ from 'jquery'
 import './animate'
 import './jquery.magnify.js'
 import Typed from 'typed.js';
+import 'slick-carousel';
 
 require('webpack-jquery-ui/slider');
 
@@ -765,3 +766,25 @@ function getBoundingBoxCenter(selection) {
 
 
 /***********MAP***********/
+
+
+
+$('.example-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: true,
+  dots: true
+});
+
+$('.example-slider .slick-slide').on('click', function() {
+    // if($('header').hasClass('hidden')) {
+    //     $('header').removeClass('hidden');
+    //     $('main').removeClass('full-size');
+    //     $('footer').removeClass('hidden');
+    // } else {
+    //     $('header').addClass('hidden');
+    //     $('main').addClass('full-size');
+    //     $('footer').addClass('hidden');
+    // }
+});
