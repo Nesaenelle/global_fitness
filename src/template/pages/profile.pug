@@ -20,9 +20,11 @@ block content
 						each val in [{title: 'Завершенные', id: 1}, {title: 'В работе', id: 2}, {title: 'История', id: null}]
 							.profile__menu__content--item(data-tab-id=val.id)= val.title
 
-					.profile__menu--title.no-children Личная информация
+					.profile__menu--title Личная информация
+					.profile__menu__content
+						.profile__menu__content--item Сменить пароль
 
-					.profile__menu--title.no-children(data-tab-id="2") Избранное
+					.profile__menu--title.no-children(data-tab-id="3") Избранное
 
 					.profile__menu--title.no-children Лист ожиданий
 
