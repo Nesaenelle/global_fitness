@@ -76,29 +76,31 @@ block content
 
 	include ../parts/bottom-block.pug
 
-	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDn1A1EXWtb3Bko71FO1PhxeW7tune4Gsw&callback=initMap")
+	
 
 	script.
 		var map;
 		function initMap() {
-		map = new google.maps.Map(document.getElementById('map'), {
-		center: { lat: 50.4202, lng: 30.4725 },
-		zoom: 17,
-		disableDefaultUI: true,
-		scaleControl: false,
-		navigationControl: false,
-		draggable: false
-		});
-		var icon = {
-		url: "img/marker.svg", // url
-		scaledSize: new google.maps.Size(36, 36), // scaled size
-		origin: new google.maps.Point(0, 0), // origin
-		anchor: new google.maps.Point(15, 35) // anchor
-		};
-		var marker = new google.maps.Marker({
-		position: { lat: 50.4202, lng: 30.4725  },
-		map: map,
-		title: 'Hello World!',
-		icon: icon
-		});
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: { lat: 50.4202, lng: 30.4725 },
+				zoom: 17,
+				disableDefaultUI: true,
+				scaleControl: false,
+				navigationControl: false,
+				draggable: false
+			});
+			var icon = {
+				url: "img/marker.svg", // url
+				scaledSize: new google.maps.Size(36, 36), // scaled size
+				origin: new google.maps.Point(0, 0), // origin
+				anchor: new google.maps.Point(15, 35) // anchor
+			};
+			var marker = new google.maps.Marker({
+				position: { lat: 50.4202, lng: 30.4725  },
+				map: map,
+				title: 'Hello World!',
+				icon: icon
+				});
 		}
+	
+	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDn1A1EXWtb3Bko71FO1PhxeW7tune4Gsw&callback=initMap")
