@@ -19,7 +19,7 @@
     "jquery-ui-slider": "^1.12.1",
     "jquery.magnify": "^1.4.3",
     "nib": "^1.1.2",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "pug-loader": "^2.4.0",
     "style-loader": "^0.23.1",
     "stylus": "^0.54.5",
